@@ -11,8 +11,7 @@ enum class Valor : char {
     SETE = '7',
     OITO = '8',
     NOVE = '9',
-    // TODO: Resolver o tipo que o enum de valores representa
-    DEZ = '?',
+    DEZ = 'T',
     VALETE = 'J',
     DAMA = 'Q',
     REI = 'K'
