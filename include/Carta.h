@@ -13,6 +13,12 @@ public:
     /**
      * @brief Constrói um novo objeto Carta.
      * 
+     */
+    Carta() = default;
+
+    /**
+     * @brief Constrói um novo objeto Carta.
+     * 
      * @param valor Valor da carta.
      * @param naipe Naipe da carta.
      */
@@ -22,7 +28,7 @@ public:
      * @brief Destrói o objeto carta.
      * 
      */
-    ~Carta();
+    ~Carta() = default;
 };
 
 #endif

@@ -1,5 +1,7 @@
 #ifndef SIMBOLO_H
 #define SIMBOLO_H
+#define QTDE_NAIPES 4
+#define QTDE_VALORES 13
 
 namespace Simbolo {
 
