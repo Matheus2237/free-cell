@@ -11,7 +11,7 @@ enum class Valor : char {
     SETE = '7',
     OITO = '8',
     NOVE = '9',
-    DEZ = 'T',
+    DEZ = 'D',
     VALETE = 'J',
     DAMA = 'Q',
     REI = 'K'

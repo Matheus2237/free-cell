@@ -2,10 +2,10 @@
 #define NAIPE_H
 
 enum class Naipe : char {
-    ESPADAS = 'S',
-    OUROS = 'D',
-    PAUS = 'C',
-    COPAS = 'H'
+    ESPADAS = 'E',
+    OUROS = 'O',
+    PAUS = 'P',
+    COPAS = 'C'
 };
 
 #endif
