@@ -21,6 +21,9 @@ public:
      * 
      */
     ~Baralho() = default;
+
+    [[deprecated("Método para imprimir cartas será removido")]]
+    void imprimeCartas() const;
 };
 
 #endif

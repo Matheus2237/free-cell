@@ -8,3 +8,9 @@ Baralho::Baralho() {
         }
     }
 }
+
+void Baralho::imprimeCartas() const {
+    for (int carta = 0; carta < TAMANHO_BARALHO; carta++) {
+        this->cartas[carta].imprimeCarta();
+    }
+}

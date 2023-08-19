@@ -29,6 +29,9 @@ public:
      * 
      */
     ~Carta() = default;
+
+    [[deprecated("Método para imprimir carta será removido")]]
+    void imprimeCarta() const;
 };
 
 #endif
