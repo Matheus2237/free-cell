@@ -1,16 +1,15 @@
-#include "Naipe.h"
-#include "Valor.h"
+#include "Simbolo.h"
 
 #ifndef CARTA_H
 #define CARTA_H
 
 class Carta {
 private:
-    Valor valor;
-    Naipe naipe;
+    Simbolo::Valor valor;
+    Simbolo::Naipe naipe;
 
 public:
-    Carta(Valor valor, Naipe naipe);
+    Carta(Simbolo::Valor valor, Simbolo::Naipe naipe);
     ~Carta();
 };
 

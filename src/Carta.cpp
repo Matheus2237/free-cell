@@ -1,6 +1,6 @@
-#include "include/Carta.h"
+#include "../include/Carta.h"
 
-Carta::Carta(Valor valor, Naipe naipe):
+Carta::Carta(Simbolo::Valor valor, Simbolo::Naipe naipe):
     valor(valor),
     naipe(naipe)
 {}
