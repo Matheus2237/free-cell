@@ -11,16 +11,23 @@ private:
 public:
 
     /**
-     * @brief Constrói um novo objeto baralho.
-     * 
-     */
+    * @brief Constrói um novo objeto baralho.
+    * 
+    */
     Baralho();
 
     /**
-     * @brief Destrói o objeto baralho.
+    * @brief Destrói o objeto baralho.
+    * 
+    */
+    ~Baralho() = default;
+
+
+    /**
+     * @brief Embaralha as cartas.
      * 
      */
-    ~Baralho() = default;
+    void embaralhar();
 
     [[deprecated("Método para imprimir cartas será removido")]]
     void imprimeCartas() const;

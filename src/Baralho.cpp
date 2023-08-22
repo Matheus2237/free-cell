@@ -1,4 +1,6 @@
 #include "../include/Baralho.h"
+#include <random>
+#include <algorithm>
 
 Baralho::Baralho() {
     for (int naipe = 0; naipe < QTDE_NAIPES; naipe++) {
@@ -13,4 +15,8 @@ void Baralho::imprimeCartas() const {
     for (int carta = 0; carta < TAMANHO_BARALHO; carta++) {
         this->cartas[carta].imprimeCarta();
     }
+}
+
+void Baralho::embaralhar(){
+    std::shuffle(std::begin(this->cartas), std::end(this->cartas), std::mt19937(std::random_device()()));
 }
