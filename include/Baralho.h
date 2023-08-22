@@ -31,6 +31,9 @@ public:
 
     [[deprecated("Método para imprimir cartas será removido")]]
     void imprimeCartas() const;
+
+    [[deprecated("Método não implementado")]]
+    Carta getCartas() const;
 };
 
 #endif
