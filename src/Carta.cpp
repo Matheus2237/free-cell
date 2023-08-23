@@ -12,3 +12,11 @@ void Carta::imprimeCarta() const {
         static_cast<char>(this->naipe) << 
         " ]" << std::endl;
 }
+
+unsigned int Carta::getColuna() const {
+    return this->coluna;
+}
+
+void Carta::setColuna(unsigned int coluna) {
+    this->coluna = coluna;
+}

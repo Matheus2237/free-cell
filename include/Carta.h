@@ -7,6 +7,7 @@ class Carta {
 private:
     Simbolo::Valor valor;
     Simbolo::Naipe naipe;
+    unsigned int coluna;
 
 public:
 
@@ -32,6 +33,12 @@ public:
 
     [[deprecated("Método para imprimir carta será removido")]]
     void imprimeCarta() const;
+
+    [[deprecated("Método em análise")]]
+    unsigned int getColuna() const;
+
+    [[deprecated("Método em análise")]]
+    void setColuna(unsigned int coluna);
 };
 
 #endif

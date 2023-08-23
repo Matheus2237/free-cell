@@ -20,3 +20,7 @@ void Baralho::imprimeCartas() const {
 void Baralho::embaralhar(){
     std::shuffle(std::begin(this->cartas), std::end(this->cartas), std::mt19937(std::random_device()()));
 }
+
+Carta* Baralho::getCartas() {
+    return cartas;
+}

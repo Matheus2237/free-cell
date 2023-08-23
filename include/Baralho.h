@@ -33,7 +33,7 @@ public:
     void imprimeCartas() const;
 
     [[deprecated("Método não implementado")]]
-    Carta getCartas() const;
+    Carta* getCartas();
 };
 
 #endif
