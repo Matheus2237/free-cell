@@ -13,7 +13,7 @@ void Estrutura::distribuiEmColunas() {
         if(iterador == 7 || iterador == 14 || iterador == 21 || iterador == 28 ||
                 iterador == 34 || iterador == 40 || iterador == 46)
             coluna++;
-        cartas[iterador].setColuna(coluna);
+        this->cartas[iterador].setColuna(coluna);
     }
 }
 
@@ -22,12 +22,22 @@ void Estrutura::imprimeCartas() const {
     for (int coluna = 5; coluna <= 12; coluna++) {
         std::cout << "Coluna " << coluna << ":" << std::endl;
         for (int carta = 0; carta < TAMANHO_BARALHO; carta++)
-            if(cartas[carta].getColuna() == coluna)
-                cartas[carta].imprimeCarta();
+            if(this->cartas[carta].getColuna() == coluna)
+                this->cartas[carta].imprimeCarta();
     }
 }
 
-// TODO: Implementar metodo
-void Estrutura::movimenta(int inicial, int final) {
+void Estrutura::movimenta(unsigned int colunaInicial, unsigned int colunaFinal) {
+    unsigned int posicaoInicial = this->encontraUltimaCartaDaColuna(colunaInicial);
+    Carta* carta = &this->cartas[posicaoInicial];
+    carta->setColuna(colunaFinal);
+    for (int i = posicaoInicial; i < TAMANHO_BARALHO-1; i++)
+        this->cartas[i] = this->cartas[i+1];
+    this->cartas[TAMANHO_BARALHO-1] = *carta;
+}
 
+unsigned int Estrutura::encontraUltimaCartaDaColuna(unsigned int coluna) {
+    for (int i = TAMANHO_BARALHO-1; i >= 0; i--)
+        if (this->cartas[i].getColuna() == coluna)
+            return i;
 }

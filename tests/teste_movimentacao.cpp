@@ -6,4 +6,6 @@ int main() {
     baralho.embaralhar();
     Estrutura estrutura(baralho.getCartas());
     estrutura.imprimeCartas();
+    estrutura.movimenta(6, 7);
+    estrutura.imprimeCartas();
 }
