@@ -25,15 +25,16 @@ void Estrutura::imprimeCartas() const {
             if(this->cartas[carta].getColuna() == coluna)
                 this->cartas[carta].imprimeCarta();
     }
+    std::cout << std::endl << std::endl;
 }
 
 void Estrutura::movimenta(unsigned int colunaInicial, unsigned int colunaFinal) {
     unsigned int posicaoInicial = this->encontraUltimaCartaDaColuna(colunaInicial);
-    Carta* carta = &this->cartas[posicaoInicial];
-    carta->setColuna(colunaFinal);
+    Carta carta = this->cartas[posicaoInicial];
+    carta.setColuna(colunaFinal);
     for (int i = posicaoInicial; i < TAMANHO_BARALHO-1; i++)
         this->cartas[i] = this->cartas[i+1];
-    this->cartas[TAMANHO_BARALHO-1] = *carta;
+    this->cartas[TAMANHO_BARALHO-1] = carta;
 }
 
 unsigned int Estrutura::encontraUltimaCartaDaColuna(unsigned int coluna) {

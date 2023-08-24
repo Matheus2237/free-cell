@@ -32,7 +32,7 @@ public:
     [[deprecated("Método para imprimir cartas será removido")]]
     void imprimeCartas() const;
 
-    [[deprecated("Método não implementado")]]
+    [[deprecated("Método em análise")]]
     Carta* getCartas();
 };
 
