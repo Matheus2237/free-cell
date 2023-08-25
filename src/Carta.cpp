@@ -1,5 +1,7 @@
 #include "../include/Carta.h"
 #include <iostream>
+#include <locale.h>
+#include <wchar.h>
 
 Carta::Carta(Simbolo::Valor valor, Simbolo::Naipe naipe):
     valor(valor),
@@ -7,10 +9,11 @@ Carta::Carta(Simbolo::Valor valor, Simbolo::Naipe naipe):
 {}
 
 void Carta::imprimeCarta() const {
-    std::cout << "[ " <<
+    setlocale(LC_ALL, "");
+    std::wcout << "[ " <<
         static_cast<int>(this->valor) <<
-        static_cast<char>(this->naipe) << 
-        " ]" << "  ";
+        static_cast<wchar_t>(this->naipe) << 
+        " ]" << " ";
 }
 
 unsigned int Carta::getColuna() const {

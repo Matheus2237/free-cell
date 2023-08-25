@@ -2,22 +2,25 @@
 #define SIMBOLO_H
 #define QTDE_NAIPES 4
 #define QTDE_VALORES 13
+#include <iostream>
+#include <locale.h>
+#include <wchar.h>
 
 namespace Simbolo {
 
     /**
      * 
-     * @brief Representa os naipes do baralho como chars.
-     *    Espadas = 'E'                           
-     *    Ouros = 'O'                             
-     *    Paus = 'P'                              
-     *    Copas = 'C'                             
+     * @brief Representa os naipes do baralho como wchars.
+     *    Espadas = ''                           
+     *    Ouros = ''                             
+     *    Paus = ''                              
+     *    Copas = ''                             
      */
-    enum class Naipe : char {
-        ESPADAS = 'E',
-        OUROS = 'O',
-        PAUS = 'P',
-        COPAS = 'C'
+    enum class Naipe : wchar_t {
+        ESPADAS = L'\u2660',
+        OUROS = L'\u2666',
+        PAUS = L'\u2663',
+        COPAS = L'\u2665'
     };
 
     /**
