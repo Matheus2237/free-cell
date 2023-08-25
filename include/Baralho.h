@@ -32,7 +32,11 @@ public:
     [[deprecated("Método para imprimir cartas será removido")]]
     void imprimeCartas() const;
 
-    [[deprecated("Método em análise")]]
+    /**
+     * @brief Recupera o ponteiro para o vetor de cartas.
+     * 
+     * @return Carta* O ponteiro para o vetor de cartas.
+     */
     Carta* getCartas();
 };
 

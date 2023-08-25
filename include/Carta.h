@@ -34,10 +34,18 @@ public:
     [[deprecated("Método para imprimir carta será removido")]]
     void imprimeCarta() const;
 
-    [[deprecated("Método em análise")]]
+    /**
+     * @brief Recupera o atributo coluna.
+     * 
+     * @return unsigned int Valor da coluna.
+     */
     unsigned int getColuna() const;
 
-    [[deprecated("Método em análise")]]
+    /**
+     * @brief Atribui o valor especificado ao atributo coluna.
+     * 
+     * @param coluna Valor a ser atribuido.
+     */
     void setColuna(unsigned int coluna);
 };
 

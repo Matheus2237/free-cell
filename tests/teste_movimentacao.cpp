@@ -1,5 +1,5 @@
 #include "../include/Baralho.h"
-#include "Estrutura.h"
+#include "../include/Estrutura.h"
 
 int main() {
     Baralho baralho;

@@ -1,4 +1,4 @@
-#include "Estrutura.h"
+#include "../include/Estrutura.h"
 #include <iostream>
 
 Estrutura::Estrutura(Carta* cartas):
