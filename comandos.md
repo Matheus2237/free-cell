@@ -1,5 +1,4 @@
 # git
-
 - puxar commits do remoto
 git fetch origin main
 git pull origin main
@@ -10,5 +9,5 @@ git commit -m "mensagem do commit"
 git push origin main
 
 # build
-g++ -o build/freecell src/*.cpp
-g++ -o build/freecell.exe src/*.cpp
+g++ -o build/FreeCellApp FreeCellApp.cpp src/*.cpp
+g++ -o build/FreeCellApp.exe FreeCellApp.cpp src/*.cpp
