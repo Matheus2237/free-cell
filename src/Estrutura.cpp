@@ -37,7 +37,7 @@ void Estrutura::movimenta(unsigned int colunaInicial, unsigned int colunaFinal) 
     this->cartas[TAMANHO_BARALHO-1] = carta;
 }
 
-unsigned int Estrutura::encontraUltimaCartaDaColuna(unsigned int coluna) {
+unsigned int Estrutura::encontraUltimaCartaDaColuna(unsigned int coluna) const {
     for (int i = TAMANHO_BARALHO-1; i >= 0; i--)
         if (this->cartas[i].getColuna() == coluna)
             return i;

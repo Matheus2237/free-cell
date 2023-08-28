@@ -54,5 +54,5 @@ private:
      * @param coluna Coluna onde será realizda a busca.
      * @return unsigned int Posição no vetor de cartas da carta encontrada.
      */
-    unsigned int encontraUltimaCartaDaColuna(unsigned int coluna);
+    unsigned int encontraUltimaCartaDaColuna(unsigned int coluna) const;
 };

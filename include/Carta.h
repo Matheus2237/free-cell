@@ -31,7 +31,7 @@ public:
      */
     ~Carta() = default;
 
-    [[deprecated("Método para imprimir carta será removido")]]
+    [[deprecated("Método deve ser melhorado")]]
     void imprimeCarta() const;
 
     /**

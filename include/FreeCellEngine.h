@@ -32,7 +32,7 @@ public:
      * @return true Se o jogo tiver ganho.
      * @return false Se o jogo não estiver ganho.
      */
-    bool ganhou();
+    bool ganhou() const;
 
     /**
      * @brief Executa mais uma rodada do jogo. Em uma rodada, é exibido na tela o estado atual
@@ -53,7 +53,7 @@ private:
 
     /**
      * @brief Realiza uma busca nas pilhas de saída verificando se todas as cartas do
-     *  topo são reis (K). 
+     *  topo são reis (K). Caso todas sejam, o jogo acabou e o atributo jogoGanho é alterado para true.
      * 
      */
     [[deprecated("Método não implementado")]]
