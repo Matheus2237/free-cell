@@ -2,5 +2,6 @@
 
 int main() {
     FreeCellEngine engine;
-    engine.setUp();
+    while(!engine.ganhou())
+        engine.jogaProximaRodada();
 }

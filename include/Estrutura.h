@@ -2,11 +2,18 @@
 #include "Baralho.h"
 #include "Carta.h"
 
+// TODO: Encontrar um melhor nome para a classe
 class Estrutura {
 private:
     Carta* cartas;
 
 public:
+
+    /**
+     * @brief Constrói um novo objeto Estrutura.
+     * 
+     */
+    Estrutura() = default;
 
     /**
      * @brief Constrói um novo objeto Estrutura.
@@ -29,7 +36,7 @@ public:
      */
     void movimenta(unsigned int colunaInicial, unsigned int colunaFinal);
     
-    [[deprecated("Método para imprimir cartas será removido")]]
+    [[deprecated("Método para imprimir cartas será removido. O melhor lugar para este método é na classe GUI")]]
     void imprimeCartas() const;
 
 private:
