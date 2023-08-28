@@ -45,6 +45,7 @@ private:
      * @brief Atribui os valores iniciais das colunas nas cartas.
      * 
      */
+    [[deprecated("Método deverá ser refeito de maneira melhor")]]
     void distribuiEmColunas();
 
     /**
