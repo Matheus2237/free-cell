@@ -17,17 +17,6 @@ void Estrutura::distribuiEmColunas() {
     }
 }
 
-
-void Estrutura::imprimeCartas() const {
-    for (int coluna = 5; coluna <= 12; coluna++) {
-        std::cout << "Coluna " << coluna << ":" << std::endl;
-        for (int carta = 0; carta < TAMANHO_BARALHO; carta++)
-            if(this->cartas[carta].getColuna() == coluna)
-                this->cartas[carta].imprimeCarta();
-    }
-    std::cout << std::endl << std::endl;
-}
-
 void Estrutura::movimenta(unsigned int colunaInicial, unsigned int colunaFinal) {
     unsigned int posicaoInicial = this->encontraUltimaCartaDaColuna(colunaInicial);
     Carta carta = this->cartas[posicaoInicial];
@@ -41,4 +30,8 @@ unsigned int Estrutura::encontraUltimaCartaDaColuna(unsigned int coluna) const {
     for (int i = TAMANHO_BARALHO-1; i >= 0; i--)
         if (this->cartas[i].getColuna() == coluna)
             return i;
+}
+
+Carta* Estrutura::getCartas() const {
+    return this->cartas;
 }

@@ -1,24 +1,26 @@
 #include "../include/Baralho.h"
 #include "../include/Estrutura.h"
+#include "../include/FreeCellGui.h"
 
 int main() {
     Baralho baralho;
     baralho.embaralhar();
     Estrutura estrutura(baralho.getCartas());
-    estrutura.imprimeCartas();
+    FreeCellGui freeCellGui;
+    freeCellGui.imprimeCartas(estrutura.getCartas());
     
     estrutura.movimenta(6, 7); 
-    estrutura.imprimeCartas();
+    freeCellGui.imprimeCartas(estrutura.getCartas());
     
     estrutura.movimenta(5, 8);
-    estrutura.imprimeCartas();
+    freeCellGui.imprimeCartas(estrutura.getCartas());
     
     estrutura.movimenta(6, 9);
-    estrutura.imprimeCartas();
+    freeCellGui.imprimeCartas(estrutura.getCartas());
 
     estrutura.movimenta(9, 8);
-    estrutura.imprimeCartas();
+    freeCellGui.imprimeCartas(estrutura.getCartas());
 
     estrutura.movimenta(7, 6);
-    estrutura.imprimeCartas();
+    freeCellGui.imprimeCartas(estrutura.getCartas());
 }

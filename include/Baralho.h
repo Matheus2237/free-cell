@@ -29,9 +29,6 @@ public:
      */
     void embaralhar();
 
-    [[deprecated("Método para imprimir cartas será removido")]]
-    void imprimeCartas() const;
-
     /**
      * @brief Recupera o ponteiro para o vetor de cartas.
      * 

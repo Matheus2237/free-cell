@@ -8,6 +8,7 @@ Carta::Carta(Simbolo::Valor valor, Simbolo::Naipe naipe):
     naipe(naipe)
 {}
 
+// !!! Impressão está falhando -> Necessita mais testes
 void Carta::imprimeCarta() const {
     setlocale(LC_ALL, "");
     std::wcout << "[ " <<

@@ -11,12 +11,6 @@ Baralho::Baralho() {
     }
 }
 
-void Baralho::imprimeCartas() const {
-    for (int carta = 0; carta < TAMANHO_BARALHO; carta++) {
-        this->cartas[carta].imprimeCarta();
-    }
-}
-
 void Baralho::embaralhar() {
     std::shuffle(std::begin(this->cartas), std::end(this->cartas), std::mt19937(std::random_device()()));
 }

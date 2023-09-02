@@ -35,9 +35,8 @@ public:
      * @param colunaFinal Coluna final.
      */
     void movimenta(unsigned int colunaInicial, unsigned int colunaFinal);
-    
-    [[deprecated("Método para imprimir cartas será removido. O melhor lugar para este método é na classe GUI")]]
-    void imprimeCartas() const;
+
+    Carta* getCartas() const;
 
 private:
 
