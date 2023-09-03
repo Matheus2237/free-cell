@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ESTRUTURA_H
+#define ESTRUTURA_H
 #include "Baralho.h"
 #include "Carta.h"
 
@@ -55,3 +56,5 @@ private:
      */
     unsigned int encontraUltimaCartaDaColuna(unsigned int coluna) const;
 };
+
+#endif

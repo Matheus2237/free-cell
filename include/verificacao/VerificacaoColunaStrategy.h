@@ -1,6 +1,5 @@
 #ifndef VERIFICACAO_COLUNA_STRATEGY_H
 #define VERIFICACAO_COLUNA_STRATEGY_H
-
 #include "Verificacao.h"
 
 class VerificacaoColunaStrategy : public Verificacao {

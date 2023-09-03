@@ -1,4 +1,5 @@
 #include "../../include/verificacao/VerificacaoColunaStrategy.h"
+#include <iostream>
 
 // TODO: Reimplementar regra
 bool VerificacaoColunaStrategy::podeMovimentar(unsigned short int colunaInicial,

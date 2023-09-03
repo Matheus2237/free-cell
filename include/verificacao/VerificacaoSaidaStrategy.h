@@ -1,6 +1,5 @@
 #ifndef VERIFICACAO_SAIDA_STRATEGY_H
 #define VERIFICACAO_SAIDA_STRATEGY_H
-
 #include "Verificacao.h"
 
 class VerificacaoSaidaStrategy : public Verificacao {

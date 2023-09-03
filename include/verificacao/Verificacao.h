@@ -1,9 +1,6 @@
 #ifndef VERIFICACAO_H
 #define VERIFICACAO_H
 
-// ! Remover
-#include <iostream>
-
 class Verificacao {
 public:
 

@@ -1,6 +1,5 @@
 #ifndef VERIFICACAO_FACTORY_H
 #define VERIFICACAO_FACTORY_H
-
 #include "Verificacao.h"
 
 class VerificacaoFactory {

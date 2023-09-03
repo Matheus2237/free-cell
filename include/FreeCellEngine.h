@@ -1,6 +1,5 @@
 #ifndef FREE_CELL_ENGINE_H
 #define FREE_CELL_ENGINE_H
-
 #include "Estrutura.h"
 #include "FreeCellGui.h"
 

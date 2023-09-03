@@ -1,4 +1,5 @@
 #include "../../include/verificacao/VerificacaoFreeCellStrategy.h"
+#include <iostream>
 
 // TODO: Reimplementar regra
 bool VerificacaoFreeCellStrategy::podeMovimentar(unsigned short int colunaInicial,

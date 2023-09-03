@@ -1,6 +1,5 @@
 #ifndef VERIFICACAO_FREE_CELL_STRATEGY_H
 #define VERIFICACAO_FREE_CELL_STRATEGY_H
-
 #include "Verificacao.h"
 
 class VerificacaoFreeCellStrategy : public Verificacao {

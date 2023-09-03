@@ -1,8 +1,7 @@
-#include "Carta.h"
-
 #ifndef BARALHO_H
 #define BARALHO_H
 #define TAMANHO_BARALHO 52
+#include "Carta.h"
 
 class Baralho {
 private:

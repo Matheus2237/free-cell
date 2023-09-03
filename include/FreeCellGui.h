@@ -1,7 +1,9 @@
 #ifndef FREE_CELL_GUI_H
 #define FREE_CELL_GUI_H
 #define TAMANHO_BARALHO 52
-#include "../include/Carta.h"
+#define CLEAR_LINE_ABOVE std::cout << "\x1b[1A\x1b[K"
+#include "Carta.h"
+#include <string>
 
 class FreeCellGui {
 
