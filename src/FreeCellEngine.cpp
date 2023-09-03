@@ -13,7 +13,7 @@ FreeCellEngine::FreeCellEngine():
 void FreeCellEngine::setUp() {
     Baralho baralho;
     baralho.embaralhar();
-    Estrutura estrutura(baralho.getCartas());
+    this->estrutura = Estrutura(baralho.getCartas());
 }
 
 bool FreeCellEngine::ganhou() const {
