@@ -16,5 +16,5 @@ void Baralho::embaralhar() {
 }
 
 Carta* Baralho::getCartas() {
-    return cartas;
+    return this->cartas;
 }
