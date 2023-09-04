@@ -27,7 +27,27 @@ public:
      * @return false Se não for possível realizar a movimentação.
      */
     bool podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal) override;
+      unsigned short int colunaFinal) override;
+
+    /**
+     * @brief Verifica se a carta de destino é de cor diferente da carta final
+     * 
+     * @param cartaMovimentacao Carta inicial.
+     * @param cartaComparacao Carta final.
+     * @return true se as cartas forem diferentes. 
+    */
+    bool corDiferente(Carta cartaMovimentacao, Carta cartaComparacao);
+
+
+    /**
+     * @brief Verifica se a carta de destino é imediatamente menor que a carta final
+     * 
+     * @param cartaMovimentacao Carta inicial.
+     * @param cartaComparacao Carta final.
+     * @return true se a carta de destino for imediatamente menor que a carta final.
+    */
+    bool valorImediatamenteMenor(Carta cartaMovimentacao, Carta cartaComparacao);
+
 };
 
 #endif
