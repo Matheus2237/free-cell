@@ -23,7 +23,7 @@ bool FreeCellEngine::ganhou() const {
 void FreeCellEngine::jogaProximaRodada() {
     interfaceGrafica.imprimeCartas(estrutura.getCartas());
     unsigned short int colunaInicial = interfaceGrafica.leColunaInicial(this->estrutura);
-    unsigned short int colunaFinal = interfaceGrafica.leColunaFinal(colunaInicial); // * Feita verificação se é a mesma coluna que a inicial. Esse método pode internamente chamar o método privado leColuna genérico.
+    unsigned short int colunaFinal = interfaceGrafica.leColunaFinal(colunaInicial);
     Verificacao* verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
     if (verificacao->podeMovimentar(colunaInicial, colunaFinal))
         estrutura.movimenta(colunaInicial, colunaFinal);
