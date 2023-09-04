@@ -1,0 +1,15 @@
+O jogador fará quantos movimentos quiser, entre as pilhas que quiser,
+respeitando as seguintes regras:
+• Para uma free cell desocupada: qualquer carta do topo de uma pilha
+de jogo;
+• Para uma das pilhas de saída: qualquer carta de uma free cell ou do
+topo de uma pilha de jogo. Movimentos para uma pilha de saída
+devem ser feitos em ordem do menor para o maior, sempre de
+mesmo naipe. Assim, temos uma pilha de saída para cada um dos 4 naipes. Ases sempre podem ser movidos para uma pilha de saída
+vazia;
+• Para o topo de uma pilha de jogo: qualquer carta de uma das free
+cells ou do topo de uma outra pilha de jogo. Movimentos para uma
+pilha de jogo devem ser feitos em ordem do maior para o menor,
+alternando a cor do naipe. Por exemplo: se o topo de uma pilha de
+jogo contém um 4 de paus (que é preto), podemos mover para o topo
+dessa pilha um 3 de copas ou de ouro (que são vermelhos).
