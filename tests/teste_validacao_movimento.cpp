@@ -10,14 +10,14 @@ int main() {
     Verificacao* verificacao;
     
     verificacao = VerificacaoFactory::criaVerificacao(0);
-    verificacao->podeMovimentar(7, 0);
+    verificacao->podeMovimentar(7, 0, estrutura);
     delete verificacao;
 
     verificacao = VerificacaoFactory::criaVerificacao(3);
-    verificacao->podeMovimentar(6, 3);
+    verificacao->podeMovimentar(6, 3, estrutura);
     delete verificacao;
 
     verificacao = VerificacaoFactory::criaVerificacao(7);
-    verificacao->podeMovimentar(6, 7);
+    verificacao->podeMovimentar(6, 7, estrutura);
     delete verificacao;
 }

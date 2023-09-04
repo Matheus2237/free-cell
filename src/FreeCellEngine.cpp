@@ -17,7 +17,7 @@ void FreeCellEngine::jogaProximaRodada() {
     unsigned short int colunaInicial = interfaceGrafica.leColunaInicial(this->estrutura);
     unsigned short int colunaFinal = interfaceGrafica.leColunaFinal(colunaInicial);
     Verificacao* verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
-    if (verificacao->podeMovimentar(colunaInicial, colunaFinal))
+    if (verificacao->podeMovimentar(colunaInicial, colunaFinal, this->estrutura))
         estrutura.movimenta(colunaInicial, colunaFinal);
     // * Implementar impressão na tela de não ser possível realizar movimentação
     delete verificacao;
