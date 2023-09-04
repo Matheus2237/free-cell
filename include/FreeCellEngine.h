@@ -12,11 +12,7 @@ private:
 
 public:
 
-    /**
-     * @brief Constrói um novo objeto Free Cell Engine.
-     * 
-     */
-    FreeCellEngine();
+    FreeCellEngine(const Estrutura& estrutura);
 
     /**
      * @brief Destrói o objeto Free Cell Engine.
@@ -42,13 +38,6 @@ public:
     void jogaProximaRodada();
 
 private:
-
-    /**
-     * @brief Realiza a organização inicial do jogo. Instancia todo o baralho, 
-     * embaralha as cartas e as distribui nas posições iniciais do jogo.
-     * 
-     */
-    void setUp();
 
     /**
      * @brief Realiza uma busca nas pilhas de saída verificando se todas as cartas do

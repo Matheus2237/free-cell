@@ -1,19 +1,15 @@
 #include "../include/Carta.h"
 #include <iostream>
-#include <locale.h>
-#include <wchar.h>
 
 Carta::Carta(Simbolo::Valor valor, Simbolo::Naipe naipe):
     valor(valor),
     naipe(naipe)
 {}
 
-// !!! Impressão está falhando -> Necessita mais testes
 void Carta::imprimeCarta() const {
-    setlocale(LC_ALL, "");
-    std::wcout << "[ " <<
+    std::cout << "[ " <<
         static_cast<int>(this->valor) <<
-        static_cast<wchar_t>(this->naipe) << 
+        static_cast<char>(this->naipe) << 
         " ]" << " ";
 }
 

@@ -1,20 +1,12 @@
 #include "../include/FreeCellEngine.h"
-#include "../include/Baralho.h"
 #include "../include/verificacao/Verificacao.h"
 #include "../include/verificacao/VerificacaoFactory.h"
 
-FreeCellEngine::FreeCellEngine():
+FreeCellEngine::FreeCellEngine(const Estrutura& estrutura):
     jogoGanho(false),
-    interfaceGrafica(FreeCellGui())
-{
-    this->setUp();
-}
-
-void FreeCellEngine::setUp() {
-    Baralho baralho;
-    baralho.embaralhar();
-    this->estrutura = Estrutura(baralho.getCartas());
-}
+    interfaceGrafica(FreeCellGui()),
+    estrutura(estrutura)
+{}
 
 bool FreeCellEngine::ganhou() const {
     return this->jogoGanho;
