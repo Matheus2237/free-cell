@@ -37,6 +37,17 @@ public:
      */
     void movimenta(unsigned int colunaInicial, unsigned int colunaFinal);
 
+    /**
+     * @brief Encontra a última carta de uma coluna.
+     * 
+     * @param coluna Coluna onde será realizada a busca.
+     * @return unsigned int Posição no vetor de cartas da carta encontrada.
+    */
+    unsigned int encontraUltimaCartaDaColuna(unsigned int coluna) const;
+
+    /**
+     * @brief Retorna o vetor de cartas.
+    */
     Carta* getCartas() const;
 
 private:
@@ -47,14 +58,6 @@ private:
      */
     [[deprecated("Método deverá ser refeito de maneira melhor")]]
     void distribuiEmColunas();
-
-    /**
-     * @brief Encontra a carta do topo em determinada coluna.
-     * 
-     * @param coluna Coluna onde será realizda a busca.
-     * @return unsigned int Posição no vetor de cartas da carta encontrada.
-     */
-    unsigned int encontraUltimaCartaDaColuna(unsigned int coluna) const;
 };
 
 #endif

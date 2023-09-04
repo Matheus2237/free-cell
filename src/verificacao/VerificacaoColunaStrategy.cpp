@@ -1,14 +1,16 @@
 #include "../../include/verificacao/VerificacaoColunaStrategy.h"
 #include <iostream>
 
-// TODO: Reimplementar regra
 bool VerificacaoColunaStrategy::podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal) {
-    std::cout << "Verificacao Coluna Strategy" << std::endl;
-    return true;
+        unsigned short int colunaFinal, const Estrutura& estrutura) {    
+    Carta* cartas = estrutura.getCartas();
+    Carta cartaMovimentacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaInicial)];
+    Carta cartaComparacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaFinal)];
+    return this->corDiferente(cartaMovimentacao, cartaComparacao) &&
+        this->valorImediatamenteMenor(cartaMovimentacao, cartaComparacao);
 }
 
-bool VerificacaoColunaStrategy::corDiferente(Carta cartaMovimentacao, Carta cartaComparacao){
+bool VerificacaoColunaStrategy::corDiferente(const Carta cartaMovimentacao, const Carta cartaComparacao){
 
     switch(cartaMovimentacao.getNaipe()){
         case Simbolo::Naipe::ESPADAS:
@@ -22,7 +24,7 @@ bool VerificacaoColunaStrategy::corDiferente(Carta cartaMovimentacao, Carta cart
     }
 }
 
-bool VerificacaoColunaStrategy::valorImediatamenteMenor(Carta cartaMovimentacao, Carta cartaComparacao){
+bool VerificacaoColunaStrategy::valorImediatamenteMenor(const Carta cartaMovimentacao, const Carta cartaComparacao){
 
     return static_cast<int>(cartaMovimentacao.getValor()) + 1 == static_cast<int>(cartaComparacao.getValor());  
 }

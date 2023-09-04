@@ -2,6 +2,7 @@
 #define VERIFICACAO_H
 
 #include "../Carta.h"
+#include "../Estrutura.h"
 
 class Verificacao {
 public:
@@ -28,7 +29,7 @@ public:
      * @return false Se não for possível realizar a movimentação.
      */
     virtual bool podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal) = 0;
+        unsigned short int colunaFinal, const Estrutura& estrutura) = 0;
 };
 
 #endif
