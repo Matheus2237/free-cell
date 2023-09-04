@@ -29,10 +29,17 @@ public:
      */
     void imprimeCartas(Carta* cartas) const;
 
-    [[deprecated("Método não implementado.")]]
+    [[deprecated("Necessita verificacao.")]]
     unsigned short int leColunaInicial(const Estrutura& estrutura);
 
-    [[deprecated("Método não implementado.")]]
+    /**
+     * @brief Lê do mecanismo de entrada padrão o valor de uma coluna final válida. 
+     *  Para que seja válida, ela deve ser um numero inteiro entre 0 a 12 e não deve 
+     *  ser igual ao valor da coluna inicial. 
+     * 
+     * @param colunaInicial Valor da coluna inicial para ser usada na verificação de movimentação.
+     * @return unsigned short int Valor da coluna final.
+     */
     unsigned short int leColunaFinal(unsigned short int colunaInicial);
 
 private:

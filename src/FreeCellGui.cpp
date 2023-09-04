@@ -22,12 +22,27 @@ unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura) {
             std::cout << "Não pode mover carta da saída, tente novamente. ";
             continue;
         }
+        // TODO: Implementar verificacao de coluna vazia
         colunaValida = true;
     }
     return colunaInicial;
 }
 
-unsigned short int FreeCellGui::leColunaFinal(unsigned short int colunaInicial) {}
+unsigned short int FreeCellGui::leColunaFinal(unsigned short int colunaInicial) {
+    const std::string mensagemLeitura = "Entre o valor da coluna final: ";
+    unsigned short int colunaFinal;
+    bool colunaValida = false;
+    while (!colunaValida) {
+        colunaFinal = this->leColuna(mensagemLeitura);
+        if (colunaFinal == colunaInicial) {
+            CLEAR_LINE;
+            std::cout << "Não pode mover a carta para a mesma coluna, tente novamente. ";
+            continue;
+        }
+        colunaValida = true;
+    }
+    return colunaFinal;
+}
 
 unsigned short int FreeCellGui::leColuna(const std::string mensagemLeitura) {
     unsigned short int coluna;
