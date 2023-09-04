@@ -22,8 +22,21 @@ public:
      * @param valor Valor da carta.
      * @param naipe Naipe da carta.
      */
-    Carta(Simbolo::Valor valor, Simbolo::Naipe naipe);
+    Carta(Simbolo::Valor valor, Simbolo::Naipe naipe);   
+
+    /**
+    *@brief Recupera o atributo naipe.
+    * 
+    *@return Simbolo::Naipe.
+    */
+    Simbolo::Naipe getNaipe() const;
     
+    /**
+     * @brief Recupera o atributo valor.
+     * 
+     * @return Simbolo::Valor.
+    */
+    Simbolo::Valor getValor() const;
     /**
      * @brief Destrói o objeto carta.
      * 

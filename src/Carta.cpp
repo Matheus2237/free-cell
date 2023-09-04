@@ -24,3 +24,11 @@ unsigned int Carta::getColuna() const {
 void Carta::setColuna(unsigned int coluna) {
     this->coluna = coluna;
 }
+
+Simbolo::Naipe Carta::getNaipe() const {
+    return this->naipe;
+}
+
+Simbolo::Valor Carta::getValor() const {
+    return this->valor;
+}
