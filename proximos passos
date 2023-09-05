@@ -1,0 +1,10 @@
+Dúvidas:
+    Encoding UTF-8
+    Usar simbolos dos naipes (static_cast zoando)
+
+
+Validacao free cells
+Implementar impressao crescente para baixo
+Ajustar engine para usar o método correto de impressão;
+Corrigir formatação da interface gráfica
+Ajustar método de impressão das cartas (chamada do gui deve receber o formata carta da classe Carta)
