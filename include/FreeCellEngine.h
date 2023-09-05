@@ -12,6 +12,11 @@ private:
 
 public:
 
+    /**
+     * @brief Constrói um novo objeto Free Cell Engine.
+     * 
+     * @param estrutura Estrutura que contém as cartas do jogo.
+     */
     FreeCellEngine(const Estrutura& estrutura);
 
     /**

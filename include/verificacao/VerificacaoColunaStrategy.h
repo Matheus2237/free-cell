@@ -23,6 +23,7 @@ public:
      * 
      * @param colunaInicial Coluna de onde a carta sairia.
      * @param colunaFinal Coluna para onde a carta iria.
+     * @param estrutura Estrutura que contém as cartas do jogo.
      * @return true Se for possível realizar a movimentação.
      * @return false Se não for possível realizar a movimentação.
      */
