@@ -29,9 +29,15 @@ public:
      * @param cartas Ponteiro para vetor de cartas da estrutura.
      */
     void imprimeCartas(Carta* cartas) const;
-    void imprimeRegras();
 
-    [[deprecated("Necessita verificacao.")]]
+    /**
+     * @brief Lê do mecanismo de entrada padrão o valor de uma coluna inicial válida.
+     *  Para que seja válida, ela deve ser um número inteiro entre 1 a 12 e não deve
+     *  ser o valor de uma coluna vazia.
+     * 
+     * @param estrutura Estrutura que contém as cartas do jogo.
+     * @return unsigned short int Valor da coluna inicial.
+     */
     unsigned short int leColunaInicial(const Estrutura& estrutura);
 
     /**
@@ -45,6 +51,8 @@ public:
     unsigned short int leColunaFinal(unsigned short int colunaInicial);
 
     void imprimeLinhas(Carta* cartas);
+
+    void imprimeRegras();
 
 private:
     
