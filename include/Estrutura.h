@@ -1,5 +1,6 @@
 #ifndef ESTRUTURA_H
 #define ESTRUTURA_H
+#define COLUNA_VAZIA -1
 #include "Baralho.h"
 #include "Carta.h"
 
@@ -41,9 +42,11 @@ public:
      * @brief Encontra a última carta de uma coluna.
      * 
      * @param coluna Coluna onde será realizada a busca.
-     * @return unsigned int Posição no vetor de cartas da carta encontrada.
+     * @return short int Posição no vetor de cartas da carta encontrada.
+     * @return short int -1 se a coluna estiver vazia.
     */
-    unsigned int encontraUltimaCartaDaColuna(unsigned int coluna) const;
+    // TODO: Validar se uso de exceção é melhor
+    short int encontraUltimaCartaDaColuna(unsigned int coluna) const;
 
     /**
      * @brief Retorna o vetor de cartas.

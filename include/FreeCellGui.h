@@ -61,6 +61,13 @@ private:
      * @return false se tiver no mínimo um caracter não numérico.
      */
     bool somenteNumeros(std::string colunaString);
+
+    /**
+     * @brief Limpa a última linha escrita do terminal e imprime a mensagem de erro.
+     * 
+     * @param mensagemErro Mensagem informando erro a ser exibida no terminal.
+     */
+    void trataLinhaErro(const std::string mensagemErro);
 };
 
 #endif

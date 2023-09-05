@@ -18,11 +18,12 @@ unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura) {
     while (!colunaValida) {
         colunaInicial = this->leColuna(mensagemLeitura);
         if (colunaInicial == 0) {
-            CLEAR_LINE;
-            std::cout << "Não pode mover carta da saída, tente novamente. ";
+            this->trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
+            continue;
+        }  else if (estrutura.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA) {
+            this->trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
             continue;
         }
-        // TODO: Implementar verificacao de coluna vazia
         colunaValida = true;
     }
     return colunaInicial;
@@ -35,8 +36,7 @@ unsigned short int FreeCellGui::leColunaFinal(unsigned short int colunaInicial) 
     while (!colunaValida) {
         colunaFinal = this->leColuna(mensagemLeitura);
         if (colunaFinal == colunaInicial) {
-            CLEAR_LINE;
-            std::cout << "Não pode mover a carta para a mesma coluna, tente novamente. ";
+            this->trataLinhaErro("Não pode mover a carta para a mesma coluna, tente novamente. ");
             continue;
         }
         colunaValida = true;
@@ -53,14 +53,12 @@ unsigned short int FreeCellGui::leColuna(const std::string mensagemLeitura) {
         std::cout << mensagemLeitura;
         std::getline(std::cin, colunaString);
         if (colunaString.empty() || !this->somenteNumeros(colunaString)) {
-            CLEAR_LINE;
-            std::cout << mensagemErro;
+            this->trataLinhaErro(mensagemErro);
             continue;
         }
         coluna = std::stoi(colunaString);
         if (coluna < 0 || coluna > 12) {
-            CLEAR_LINE;
-            std::cout << mensagemErro;
+            this->trataLinhaErro(mensagemErro);
             continue;
         }
         colunaValida = true;
@@ -73,4 +71,9 @@ bool FreeCellGui::somenteNumeros(std::string colunaString) {
         if(!isdigit(colunaString[i]))
             return false;
     return true;
+}
+
+void FreeCellGui::trataLinhaErro(const std::string mensagemErro) {
+    CLEAR_LINE;
+    std::cout << mensagemErro;
 }
