@@ -68,6 +68,15 @@ private:
      * @param mensagemErro Mensagem informando erro a ser exibida no terminal.
      */
     void trataLinhaErro(const std::string mensagemErro);
+
+    /**
+     * @brief Reformula a linha onde é solicitada a entrada pelo usuário. Após  
+     *  limpar a linha do terminal, é impresso na tela a coluna e seu valor digitado apenas.
+     * 
+     * @param mensagemExibicao Mensagem a ser exibida após limpeza. 
+     * @param coluna Coluna digitada pelo usuŕio a ser exibida.
+     */
+    void exibeEntrada(const std::string mensagemExibicao, const unsigned short int coluna);
 };
 
 #endif

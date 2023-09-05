@@ -26,6 +26,7 @@ unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura) {
         }
         colunaValida = true;
     }
+    this->exibeEntrada("Coluna incial: ", colunaInicial);
     return colunaInicial;
 }
 
@@ -41,6 +42,7 @@ unsigned short int FreeCellGui::leColunaFinal(unsigned short int colunaInicial) 
         }
         colunaValida = true;
     }
+    this->exibeEntrada("Coluna final: ", colunaFinal);
     return colunaFinal;
 }
 
@@ -76,4 +78,9 @@ bool FreeCellGui::somenteNumeros(std::string colunaString) {
 void FreeCellGui::trataLinhaErro(const std::string mensagemErro) {
     CLEAR_LINE;
     std::cout << mensagemErro;
+}
+
+void FreeCellGui::exibeEntrada(const std::string mensagemExibicao, const unsigned short int coluna) {
+    CLEAR_LINE;
+    std::cout << mensagemExibicao << coluna << std::endl;
 }
