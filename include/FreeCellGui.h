@@ -2,6 +2,7 @@
 #define FREE_CELL_GUI_H
 #define TAMANHO_BARALHO 52
 #define CLEAR_LINE std::cout << "\x1b[1A\x1b[K"
+#define CARTA_VAZIA std::cout << "        "
 #include "Carta.h"
 #include "Estrutura.h"
 #include <string>
@@ -28,6 +29,7 @@ public:
      * @param cartas Ponteiro para vetor de cartas da estrutura.
      */
     void imprimeCartas(Carta* cartas) const;
+    void imprimeRegras();
 
     [[deprecated("Necessita verificacao.")]]
     unsigned short int leColunaInicial(const Estrutura& estrutura);
@@ -41,6 +43,8 @@ public:
      * @return unsigned short int Valor da coluna final.
      */
     unsigned short int leColunaFinal(unsigned short int colunaInicial);
+
+    void imprimeLinhas(Carta* cartas);
 
 private:
     
@@ -77,6 +81,13 @@ private:
      * @param coluna Coluna digitada pelo usuŕio a ser exibida.
      */
     void exibeEntrada(const std::string mensagemExibicao, const unsigned short int coluna);
+
+    int buscaCarta(Carta* cartas, int pos, int col);
+
+    void imprimeCarta(Carta* cartas, int i);
+
+    int maiorColuna(Carta* cartas);
+
 };
 
 #endif

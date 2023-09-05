@@ -75,6 +75,7 @@ bool FreeCellGui::somenteNumeros(std::string colunaString) {
     return true;
 }
 
+
 void FreeCellGui::trataLinhaErro(const std::string mensagemErro) {
     CLEAR_LINE;
     std::cout << mensagemErro;
@@ -84,3 +85,68 @@ void FreeCellGui::exibeEntrada(const std::string mensagemExibicao, const unsigne
     CLEAR_LINE;
     std::cout << mensagemExibicao << coluna << std::endl;
 }
+
+int FreeCellGui::buscaCarta(Carta* cartas, int pos, int col){
+    int p = 0;
+    for (int i = TAMANHO_BARALHO-1; i >= 0; i--) {
+        if (cartas[i].getColuna() == col) {
+            if(p == pos)
+                return i;
+            else
+                p++;    
+        }
+    }
+    return -1;
+}
+
+int FreeCellGui::maiorColuna(Carta* cartas){
+    int maiorColl = 0;
+    for(int coluna = 5; coluna <= 12; coluna++){
+        int countColl = 0;
+        for(int i = TAMANHO_BARALHO-1; i >= 0; i--){
+            if(cartas[i].getColuna() == coluna)
+                countColl++;
+        }
+        if(countColl > maiorColl)
+            maiorColl = countColl;
+    }
+    return maiorColl;
+}
+
+void FreeCellGui::imprimeCarta(Carta* cartas, int i){
+    if(static_cast<int>(cartas[i].getValor()) > 9){
+        std::cout << " [" << static_cast<char>(cartas[i].getNaipe()) << static_cast<int>(cartas[i].getValor()) << static_cast<char>(cartas[i].getNaipe()) << "] ";
+    }else
+        std::cout << " [" << static_cast<char>(cartas[i].getNaipe()) << ' ' << static_cast<int>(cartas[i].getValor()) << static_cast<char>(cartas[i].getNaipe()) << "] ";
+}
+
+void FreeCellGui::imprimeLinhas(Carta* cartas){
+    for(int linha = maiorColuna(cartas); linha >= 0; linha--){
+        for(int coluna = 5; coluna <= 12; coluna++){
+            if(buscaCarta(cartas, linha, coluna) != -1)
+                imprimeCarta(cartas, buscaCarta(cartas, linha, coluna));
+            else
+                CARTA_VAZIA;
+        }
+        if(linha == 0)
+        std::cout << "<--TOPO";
+        std::cout << std::endl;        
+    }
+    std::cout << std::endl;
+}
+
+void FreeCellGui::imprimeRegras(){
+    std::cout << "O jogador fará quantos movimentos quiser, entre as pilhas que quiser, respeitando as seguintes regras: " << std::endl
+              << "Para uma free cell desocupada: qualquer carta do topo de uma pilha de jogo; " << std::endl
+              << "Para uma das pilhas de saída: qualquer carta de uma free cell ou do topo de uma pilha de jogo. Movimentos para uma pilha de saída " << std::endl
+              << "devem ser feitos em ordem do menor para o maior, sempre de mesmo naipe. Assim, temos uma pilha de saída para cada um dos 4 " << std::endl
+              << "naipes. Ases sempre podem ser movidos para uma pilha de saída vazia; " << std::endl
+              << "Para o topo de uma pilha de jogo: qualquer carta de uma das free cells ou do topo de uma outra pilha de jogo. Movimentos para uma " << std::endl
+              << "pilha de jogo devem ser feitos em ordem do maior para o menor, alternando a cor do naipe. Por exemplo: se o topo de uma pilha de " << std::endl
+              << "jogo contém um 4 de paus (que é preto), podemos mover para o topo dessa pilha um 3 de copas ou de ouro (que são vermelhos). " << std::endl
+              << "O fim do jogo é alcançado quando todas as cartas forem movidas para as pilhas de saída ou quando não há movimento que permita mais alguma " << std::endl
+              << "carta ser movida para uma das pilhas de saída." << std::endl;
+    std::cout << std::endl;
+}
+
+
