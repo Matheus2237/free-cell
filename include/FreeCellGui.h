@@ -1,6 +1,7 @@
 #ifndef FREE_CELL_GUI_H
 #define FREE_CELL_GUI_H
 #define TAMANHO_BARALHO 52
+#define CLEAR_ALL std::cout << "\x1B[2J\x1B[H"
 #define CLEAR_LINE std::cout << "\x1b[1A\x1b[K"
 #define CARTA_VAZIA std::cout << "        "
 #include "Carta.h"

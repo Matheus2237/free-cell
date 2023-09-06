@@ -5,6 +5,7 @@
 
 // TODO: Imprimir free cells e saídas e alterar nome para imprimeColunas
 void FreeCellGui::imprimeCartas(Carta* cartas) {
+    CLEAR_ALL;
     for(int linha = maiorColuna(cartas); linha >= 0; linha--){
         for(int coluna = 1; coluna <= 8; coluna++){
             if(buscaCarta(cartas, linha, coluna) != COLUNA_VAZIA)
