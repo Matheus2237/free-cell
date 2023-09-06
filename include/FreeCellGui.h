@@ -37,9 +37,11 @@ public:
      *  ser o valor de uma coluna vazia.
      * 
      * @param estrutura Estrutura que contém as cartas do jogo.
+     * @param limpaErroPrimeiraLeitura Determina se deve limpar a linha de erro acima da linha de leitura.
      * @return unsigned short int Valor da coluna inicial.
      */
-    unsigned short int leColunaInicial(const Estrutura& estrutura);
+    unsigned short int leColunaInicial(const Estrutura& estrutura,
+        bool limpaErroPrimeiraLeitura);
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna final válida. 
@@ -50,6 +52,8 @@ public:
      * @return unsigned short int Valor da coluna final.
      */
     unsigned short int leColunaFinal(unsigned short int colunaInicial);
+
+    void trataMovimentacaoProibida(const std::string mensagemErro) const;
 
     void imprimeLinhas(Carta* cartas);
 

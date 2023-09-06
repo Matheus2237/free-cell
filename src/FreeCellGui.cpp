@@ -20,20 +20,23 @@ void FreeCellGui::imprimeCartas(Carta* cartas) {
     std::cout << std::endl;
 }
 
-unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura) {
+unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura,
+        bool limpaErroPrimeiraLeitura) {
     const std::string mensagemLeitura = "Entre o valor da coluna inicial: ";
     unsigned short int colunaInicial;
     bool colunaValida = false;
     while (!colunaValida) {
         colunaInicial = this->leColuna(mensagemLeitura);
-        if (colunaInicial == 0) {
-            this->trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
-            continue;
-        }  else if (estrutura.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA) {
-            this->trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
-            continue;
+        if (limpaErroPrimeiraLeitura) {
+            CLEAR_LINE;
+            limpaErroPrimeiraLeitura = false;
         }
-        colunaValida = true;
+        if (colunaInicial == 0)
+            this->trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
+        else if (estrutura.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)
+            this->trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
+        else
+            colunaValida = true;
     }
     this->exibeEntrada("Coluna incial: ", colunaInicial);
     return colunaInicial;
@@ -144,4 +147,8 @@ void FreeCellGui::imprimeRegras(){
     std::cout << std::endl;
 }
 
-
+void FreeCellGui::trataMovimentacaoProibida(std::string mensagemErro) const {
+    CLEAR_LINE;
+    CLEAR_LINE;
+    std::cout << mensagemErro << std::endl;
+}

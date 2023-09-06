@@ -28,7 +28,8 @@ public:
      * @return false Se não for possível realizar a movimentação.
      */
     bool podeMovimentar(unsigned short int colunaInicial,
-      unsigned short int colunaFinal, const Estrutura& estrutura) override;
+      unsigned short int colunaFinal, const Estrutura& estrutura,
+      const FreeCellGui& gui) override;
 
 private:
 

@@ -14,13 +14,22 @@ bool FreeCellEngine::ganhou() const {
 
 void FreeCellEngine::jogaProximaRodada() {
     interfaceGrafica.imprimeCartas(estrutura.getCartas());
-    unsigned short int colunaInicial = interfaceGrafica.leColunaInicial(this->estrutura);
-    unsigned short int colunaFinal = interfaceGrafica.leColunaFinal(colunaInicial);
-    Verificacao* verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
-    if (verificacao->podeMovimentar(colunaInicial, colunaFinal, this->estrutura))
-        estrutura.movimenta(colunaInicial, colunaFinal);
-    // * Implementar impressão na tela de não ser possível realizar movimentação
-    delete verificacao;
+    unsigned short int colunaInicial;
+    unsigned short int colunaFinal;
+    Verificacao* verificacao;
+    bool limpaErroPrimeiraLeitura = false;
+    bool movimentacaoValida = false;
+    while (!movimentacaoValida) {
+        colunaInicial = interfaceGrafica.leColunaInicial(this->estrutura, limpaErroPrimeiraLeitura);
+        colunaFinal = interfaceGrafica.leColunaFinal(colunaInicial);
+        verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
+        if (verificacao->podeMovimentar(colunaInicial, colunaFinal, this->estrutura, interfaceGrafica))
+            movimentacaoValida = true;
+        else
+            limpaErroPrimeiraLeitura = true;
+        delete verificacao;
+    }
+    estrutura.movimenta(colunaInicial, colunaFinal);
     this->verificaSeGanhou(); // * Se ganhar, alterar o estado de jogoGanho para true 
 }
 
