@@ -2,6 +2,7 @@
 #include "../include/verificacao/Verificacao.h"
 #include "../include/verificacao/VerificacaoFactory.h"
 
+// TODO: melhorar instanciacao do jogo
 FreeCellEngine::FreeCellEngine(const Estrutura& estrutura):
     jogoGanho(false),
     interfaceGrafica(FreeCellGui()),

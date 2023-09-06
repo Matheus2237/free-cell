@@ -20,6 +20,7 @@ void FreeCellGui::imprimeCartas(Carta* cartas) {
     std::cout << std::endl;
 }
 
+// TODO: Melhorar leitura
 unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura,
         bool limpaErroPrimeiraLeitura) {
     const std::string mensagemLeitura = "Entre o valor da coluna inicial: ";
