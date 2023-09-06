@@ -45,7 +45,6 @@ public:
      * @return short int Posição no vetor de cartas da carta encontrada.
      * @return short int -1 se a coluna estiver vazia.
     */
-    // TODO: Validar se uso de exceção é melhor
     short int encontraUltimaCartaDaColuna(unsigned int coluna) const;
 
     /**

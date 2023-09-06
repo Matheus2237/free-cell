@@ -1,10 +1,18 @@
-Dúvidas:
-    Encoding UTF-8
-    Usar simbolos dos naipes (static_cast zoando)
-
-
-Validacao free cells
-Implementar impressao crescente para baixo
 Ajustar engine para usar o método correto de impressão;
-Corrigir formatação da interface gráfica
 Ajustar método de impressão das cartas (chamada do gui deve receber o formata carta da classe Carta)
+
+
+
+
+Corrigir formatação da interface gráfica
+Implementar impressao crescente para baixo
+Coluna das cartas - 1 a 8 (colunas), 9 a 12 (free cells), 0 (saida)
+Implementar saída (4 variáveis guardando os últimos valores)
+Método de conversão de valor de inteiro pra char
+Validacao free cells - Verificar se estão vazias
+
+
+
+Após terminar:
+Encoding UTF-8 - Testar a configuração
+Usar simbolos dos naipes - Testar configuração para exibição
