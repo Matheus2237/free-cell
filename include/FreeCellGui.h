@@ -28,7 +28,8 @@ public:
      * 
      * @param cartas Ponteiro para vetor de cartas da estrutura.
      */
-    void imprimeCartas(Carta* cartas) const;
+    void imprimeCartas(Carta* cartas);
+    void imprimeRegras();
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna inicial válida.
@@ -51,8 +52,6 @@ public:
     unsigned short int leColunaFinal(unsigned short int colunaInicial);
 
     void imprimeLinhas(Carta* cartas);
-
-    void imprimeRegras();
 
 private:
     

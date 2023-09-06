@@ -1,14 +1,23 @@
 #include "../include/FreeCellGui.h"
 #include <iostream>
 
-void FreeCellGui::imprimeCartas(Carta* cartas) const {
-    for (int coluna = 5; coluna <= 12; coluna++) {
-        std::cout << "Coluna " << coluna << ":" << std::endl;
-        for (int carta = 0; carta < TAMANHO_BARALHO; carta++)
-            if(cartas[carta].getColuna() == coluna)
-                cartas[carta].imprimeCarta();
+// TODO: Implementar imprimeCabecalho e chama lo na engine
+
+// TODO: Imprimir free cells e saídas e alterar nome para imprimeColunas
+void FreeCellGui::imprimeCartas(Carta* cartas) {
+    for(int linha = maiorColuna(cartas); linha >= 0; linha--){
+        for(int coluna = 5; coluna <= 12; coluna++){
+            if(buscaCarta(cartas, linha, coluna) != COLUNA_VAZIA)
+                imprimeCarta(cartas, buscaCarta(cartas, linha, coluna));
+            else
+                CARTA_VAZIA;
+        }
+        if(linha == 0)
+        std::cout << "<--TOPO";
+        std::cout << std::endl;        
     }
-    std::cout << std::endl << std::endl;
+    std::cout << "    5       6       7       8       9      10      11      12" << std::endl;
+    std::cout << std::endl;
 }
 
 unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura) {
@@ -96,7 +105,7 @@ int FreeCellGui::buscaCarta(Carta* cartas, int pos, int col){
                 p++;    
         }
     }
-    return -1;
+    return COLUNA_VAZIA;
 }
 
 int FreeCellGui::maiorColuna(Carta* cartas){
@@ -113,26 +122,12 @@ int FreeCellGui::maiorColuna(Carta* cartas){
     return maiorColl;
 }
 
+// TODO: Mover para Carta e recuperar via método que retorna string
 void FreeCellGui::imprimeCarta(Carta* cartas, int i){
     if(static_cast<int>(cartas[i].getValor()) > 9){
         std::cout << " [" << static_cast<char>(cartas[i].getNaipe()) << static_cast<int>(cartas[i].getValor()) << static_cast<char>(cartas[i].getNaipe()) << "] ";
     }else
         std::cout << " [" << static_cast<char>(cartas[i].getNaipe()) << ' ' << static_cast<int>(cartas[i].getValor()) << static_cast<char>(cartas[i].getNaipe()) << "] ";
-}
-
-void FreeCellGui::imprimeLinhas(Carta* cartas){
-    for(int linha = maiorColuna(cartas); linha >= 0; linha--){
-        for(int coluna = 5; coluna <= 12; coluna++){
-            if(buscaCarta(cartas, linha, coluna) != -1)
-                imprimeCarta(cartas, buscaCarta(cartas, linha, coluna));
-            else
-                CARTA_VAZIA;
-        }
-        if(linha == 0)
-        std::cout << "<--TOPO";
-        std::cout << std::endl;        
-    }
-    std::cout << std::endl;
 }
 
 void FreeCellGui::imprimeRegras(){
