@@ -6,9 +6,9 @@
 Verificacao* VerificacaoFactory::criaVerificacao(unsigned short int colunaFinal) {
     if (colunaFinal == 0)
         return new VerificacaoSaidaStrategy();
-    else if (colunaFinal >=1 && colunaFinal <= 4)
-        return new VerificacaoFreeCellStrategy();
-    else if (colunaFinal >= 5 && colunaFinal <= 12)
+    else if (colunaFinal >=1 && colunaFinal <= 8)
         return new VerificacaoColunaStrategy();
+    else if (colunaFinal >= 9 && colunaFinal <= 12)
+        return new VerificacaoFreeCellStrategy();
     return nullptr;
 }

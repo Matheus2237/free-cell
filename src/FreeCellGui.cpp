@@ -6,7 +6,7 @@
 // TODO: Imprimir free cells e saídas e alterar nome para imprimeColunas
 void FreeCellGui::imprimeCartas(Carta* cartas) {
     for(int linha = maiorColuna(cartas); linha >= 0; linha--){
-        for(int coluna = 5; coluna <= 12; coluna++){
+        for(int coluna = 1; coluna <= 8; coluna++){
             if(buscaCarta(cartas, linha, coluna) != COLUNA_VAZIA)
                 imprimeCarta(cartas, buscaCarta(cartas, linha, coluna));
             else
@@ -16,7 +16,7 @@ void FreeCellGui::imprimeCartas(Carta* cartas) {
         std::cout << "<--TOPO";
         std::cout << std::endl;        
     }
-    std::cout << "    5       6       7       8       9      10      11      12" << std::endl;
+    std::cout << "    1       2       3       4       5       6       7       8" << std::endl;
     std::cout << std::endl;
 }
 
@@ -113,7 +113,7 @@ int FreeCellGui::buscaCarta(Carta* cartas, int pos, int col){
 
 int FreeCellGui::maiorColuna(Carta* cartas){
     int maiorColl = 0;
-    for(int coluna = 5; coluna <= 12; coluna++){
+    for(int coluna = 1; coluna <= 8; coluna++){
         int countColl = 0;
         for(int i = TAMANHO_BARALHO-1; i >= 0; i--){
             if(cartas[i].getColuna() == coluna)

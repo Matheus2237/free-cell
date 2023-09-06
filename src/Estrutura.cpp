@@ -8,7 +8,7 @@ Estrutura::Estrutura(Carta* cartas):
 }
 
 void Estrutura::distribuiEmColunas() {
-    int coluna = 5;
+    int coluna = 1;
     for(int iterador = 0; iterador < TAMANHO_BARALHO; iterador++) {
         if(iterador == 7 || iterador == 14 || iterador == 21 || iterador == 28 ||
                 iterador == 34 || iterador == 40 || iterador == 46)
