@@ -48,6 +48,14 @@ public:
     short int encontraUltimaCartaDaColuna(unsigned int coluna) const;
 
     /**
+     * @brief Encontra a última carta de um determinado naipe das saídas do jogo.
+     * 
+     * @param naipe Naipe da carta a ser encontrada.
+     * @return short int Posição no vetor desta carta.
+     */
+    short int encontraUltimaCartaSaida(Simbolo::Naipe naipe) const;
+
+    /**
      * @brief Retorna o vetor de cartas.
     */
     Carta* getCartas() const;

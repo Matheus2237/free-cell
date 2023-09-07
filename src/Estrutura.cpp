@@ -33,6 +33,13 @@ short int Estrutura::encontraUltimaCartaDaColuna(unsigned int coluna) const {
     return COLUNA_VAZIA;
 }
 
+short int Estrutura::encontraUltimaCartaSaida(Simbolo::Naipe naipe) const {
+    for (int i = TAMANHO_BARALHO-1; i >= 0; i--)
+        if (this->cartas[i].getColuna() == 0 && this->cartas[i].getNaipe() == naipe)
+            return i;
+    return COLUNA_VAZIA;
+}
+
 Carta* Estrutura::getCartas() const {
     return this->cartas;
 }
