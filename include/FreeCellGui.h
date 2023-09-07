@@ -139,6 +139,15 @@ private:
      */
     int maiorColuna(Carta* cartas);
 
+    /**
+     * @brief Trata os possíveis erros de lógica que podem acontecer na leitura da coluna inicial.
+     *  São estes os erros: tentar mover a partir da pilha de saídas e tentar mover de uma pilha vazia.
+     *  Em caso de falha, imprime o motivo de erro na saída padrão.
+     * 
+     * @param colunaInicial Coluna de onde o usuário deseja retirar a carta.
+     * @param estrutura Estrutura que guarda as cartas durante o jogo.
+     * @param colunaValida Flag que determina quando a movimentação parte de uma coluna inicial válida.
+     */
     void trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
         const Estrutura& estrutura, bool& colunaValida);
 };
