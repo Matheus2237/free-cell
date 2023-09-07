@@ -3,6 +3,7 @@
 #include "../Carta.h"
 #include "../Estrutura.h"
 #include "../FreeCellGui.h"
+#include <string>
 
 class Verificacao {
 public:

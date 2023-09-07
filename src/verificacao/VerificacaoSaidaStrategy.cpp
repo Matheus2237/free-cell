@@ -1,5 +1,5 @@
 #include "../../include/verificacao/VerificacaoSaidaStrategy.h"
-#include <iostream>
+#include <iostream> // ! Remover iostream
 
 // TODO: Reimplementar regra
 bool VerificacaoSaidaStrategy::podeMovimentar(unsigned short int colunaInicial,

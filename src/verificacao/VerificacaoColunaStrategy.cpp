@@ -1,5 +1,4 @@
 #include "../../include/verificacao/VerificacaoColunaStrategy.h"
-#include <iostream>
 
 bool VerificacaoColunaStrategy::podeMovimentar(unsigned short int colunaInicial,
         unsigned short int colunaFinal, const Estrutura& estrutura) {    
