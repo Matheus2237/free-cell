@@ -11,19 +11,12 @@ void FreeCellGui::imprimeCabecalho(Carta* cartas) {
     // TODO: Implement me :)
 }
 
-// !!! Finalizar implementação de inverter as cartas
 void FreeCellGui::imprimeColunas(Carta* cartas) {
-    int tamanhoMaiorColuna = maiorColuna(cartas);
-    //std::string* mesaDoJogo = new std::string[tamanhoMaiorColuna];
-    for(int linha = tamanhoMaiorColuna; linha >= 0; linha--){
-        std::string linhaImpressao;
+    for(int linha = 0; linha <= maiorColuna(cartas); linha++){
         for(int coluna = 1; coluna <= 8; coluna++){
             int posicaoCarta = buscaCarta(cartas, linha, coluna);
-            linhaImpressao.append(posicaoCarta != COLUNA_VAZIA ? cartas[posicaoCarta].toString() : CARTA_VAZIA);
+            std::cout << (posicaoCarta != COLUNA_VAZIA ? cartas[posicaoCarta].toString() : CARTA_VAZIA);
         }
-        std::cout << linhaImpressao;
-        if(linha == 0)
-        std::cout << "<--TOPO";
         std::cout << std::endl;        
     }
     std::cout << "    1       2       3       4       5       6       7       8" << std::endl;
@@ -104,7 +97,7 @@ void FreeCellGui::exibeEntrada(const std::string mensagemExibicao, const unsigne
 
 int FreeCellGui::buscaCarta(Carta* cartas, int pos, int col){
     int p = 0;
-    for (int i = TAMANHO_BARALHO-1; i >= 0; i--) {
+    for (int i = 0; i < TAMANHO_BARALHO; i++) {
         if (cartas[i].getColuna() == col) {
             if(p == pos)
                 return i;
