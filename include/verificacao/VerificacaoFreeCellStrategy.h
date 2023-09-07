@@ -3,6 +3,9 @@
 #include "Verificacao.h"
 
 class VerificacaoFreeCellStrategy : public Verificacao {
+private:
+    const std::string mensagemErro = "Free cell já está cheia! Tente novamente."; // TODO: Reescrever mensagem de erro a ser exibido no terminal
+
 public:
 
     /**
@@ -28,8 +31,9 @@ public:
      * @return false Se não for possível realizar a movimentação.
      */
     bool podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Estrutura& estrutura,
-        const FreeCellGui& gui) override;
+        unsigned short int colunaFinal, const Estrutura& estrutura) override;
+
+    std::string getMensagemErro() const override;
 };
 
 #endif

@@ -3,6 +3,9 @@
 #include "Verificacao.h"
 
 class VerificacaoSaidaStrategy : public Verificacao {
+private:
+    const std::string mensagemErro = ""; // TODO: Escrever mensagem de erro a ser exibida no terminal
+
 public:
 
     /**
@@ -18,8 +21,8 @@ public:
     ~VerificacaoSaidaStrategy() = default;
 
     /**
-     * @brief Verifica se a carta de topo na saida é imediatamente maior
-     *  e de mesmo naipe do que a carta da coluna de origem.
+     * @brief Verifica se a free cell na posição desejada está
+     *  vazia.
      * 
      * @param colunaInicial Coluna de onde a carta sairia.
      * @param colunaFinal Coluna para onde a carta iria.
@@ -28,8 +31,9 @@ public:
      * @return false Se não for possível realizar a movimentação.
      */
     bool podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Estrutura& estrutura,
-        const FreeCellGui& gui) override;
+        unsigned short int colunaFinal, const Estrutura& estrutura) override;
+
+    std::string getMensagemErro() const override;
 };
 
 #endif

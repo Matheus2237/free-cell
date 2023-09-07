@@ -2,6 +2,8 @@
 #include "../include/verificacao/Verificacao.h"
 #include "../include/verificacao/VerificacaoFactory.h"
 
+#include <iostream>
+
 // TODO: melhorar instanciacao do jogo
 FreeCellEngine::FreeCellEngine(const Estrutura& estrutura):
     jogoGanho(false),
@@ -24,10 +26,11 @@ void FreeCellEngine::jogaProximaRodada() {
         colunaInicial = interfaceGrafica.leColunaInicial(this->estrutura, limpaErroPrimeiraLeitura);
         colunaFinal = interfaceGrafica.leColunaFinal(colunaInicial);
         verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
-        if (verificacao->podeMovimentar(colunaInicial, colunaFinal, this->estrutura, interfaceGrafica))
-            movimentacaoValida = true;
-        else
+        movimentacaoValida = verificacao->podeMovimentar(colunaInicial, colunaFinal, this->estrutura);
+        if (!movimentacaoValida) {
+            interfaceGrafica.trataMovimentacaoProibida(verificacao->getMensagemErro());
             limpaErroPrimeiraLeitura = true;
+        }
         delete verificacao;
     }
     estrutura.movimenta(colunaInicial, colunaFinal);

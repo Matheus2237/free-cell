@@ -29,10 +29,8 @@ unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura,
     bool colunaValida = false;
     while (!colunaValida) {
         colunaInicial = this->leColuna(mensagemLeitura);
-        if (limpaErroPrimeiraLeitura) {
+        if (limpaErroPrimeiraLeitura)
             CLEAR_LINE;
-            limpaErroPrimeiraLeitura = false;
-        }
         if (colunaInicial == 0)
             this->trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
         else if (estrutura.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)

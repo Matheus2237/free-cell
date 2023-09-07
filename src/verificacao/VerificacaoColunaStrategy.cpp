@@ -2,8 +2,7 @@
 #include <iostream>
 
 bool VerificacaoColunaStrategy::podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Estrutura& estrutura,
-        const FreeCellGui& gui) {    
+        unsigned short int colunaFinal, const Estrutura& estrutura) {    
     Carta* cartas = estrutura.getCartas();
     Carta cartaMovimentacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaInicial)];
     Carta cartaComparacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaFinal)];
@@ -28,4 +27,8 @@ bool VerificacaoColunaStrategy::corDiferente(const Carta cartaMovimentacao, cons
 bool VerificacaoColunaStrategy::valorImediatamenteMenor(const Carta cartaMovimentacao, const Carta cartaComparacao){
 
     return static_cast<int>(cartaMovimentacao.getValor()) + 1 == static_cast<int>(cartaComparacao.getValor());  
+}
+
+std::string VerificacaoColunaStrategy::getMensagemErro() const {
+    return this->mensagemErro;
 }
