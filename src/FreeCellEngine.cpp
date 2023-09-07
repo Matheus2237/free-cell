@@ -19,13 +19,12 @@ void FreeCellEngine::jogaProximaRodada() {
     interfaceGrafica.imprimeCartas(estrutura.getCartas());
     unsigned short int colunaInicial;
     unsigned short int colunaFinal;
-    Verificacao* verificacao;
     bool limpaErroPrimeiraLeitura = false;
     bool movimentacaoValida = false;
     while (!movimentacaoValida) {
         colunaInicial = interfaceGrafica.leColunaInicial(this->estrutura, limpaErroPrimeiraLeitura);
         colunaFinal = interfaceGrafica.leColunaFinal(colunaInicial);
-        verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
+        Verificacao* verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
         movimentacaoValida = verificacao->podeMovimentar(colunaInicial, colunaFinal, this->estrutura);
         if (!movimentacaoValida) {
             interfaceGrafica.trataMovimentacaoProibida(verificacao->getMensagemErro());
@@ -38,5 +37,3 @@ void FreeCellEngine::jogaProximaRodada() {
 }
 
 void FreeCellEngine::verificaSeGanhou() {}
-
-void FreeCellEngine::tearDown() {}

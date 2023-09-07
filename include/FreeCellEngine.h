@@ -51,9 +51,6 @@ private:
      */
     [[deprecated("Método não implementado")]]
     void verificaSeGanhou();
-
-    // TODO: Verificar a necessidade de destruir objetos explicitamente.
-    void tearDown();
 };
 
 #endif
