@@ -25,12 +25,17 @@ public:
     ~FreeCellGui() = default;
 
     /**
+     * @brief Imprime as regras no início do jogo se o usuário desejar.
+     * 
+     */
+    void imprimeRegras();
+
+    /**
      * @brief Imprime a estrutura de cartas do jogo.
      * 
      * @param cartas Ponteiro para vetor de cartas da estrutura.
      */
     void imprimeCartas(Carta* cartas);
-    void imprimeRegras();
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna inicial válida.
@@ -54,9 +59,13 @@ public:
      */
     unsigned short int leColunaFinal(unsigned short int colunaInicial);
 
+    /**
+     * @brief Limpa as linhas de entrada para exibir a mensagem de erro quando uma
+     *  movimentação é proibida pelas regras do jogo.
+     * 
+     * @param mensagemErro Mensagem de erro a ser impressa.
+     */
     void trataMovimentacaoProibida(const std::string mensagemErro) const;
-
-    void imprimeLinhas(Carta* cartas);
 
 private:
     
@@ -94,12 +103,27 @@ private:
      */
     void exibeEntrada(const std::string mensagemExibicao, const unsigned short int coluna);
 
+    /**
+     * @brief Busca dentro da estrutura uma carta em uma determinada posição da 
+     *  sua coluna de jogo.
+     * 
+     * @param cartas Vetor de cartas.
+     * @param pos Posição da carta na coluna do jogo.
+     * @param col Coluna que a carta se encontra.
+     * @return int Posição no vetor da determinada carta.
+     */
     int buscaCarta(Carta* cartas, int pos, int col);
 
+    // TODO: Ajustar método
     void imprimeCarta(Carta* cartas, int i);
 
+    /**
+     * @brief Encontra qual coluna do jogo tem a maior quantidade de cartas.
+     * 
+     * @param cartas Vetor de cartas.
+     * @return int Coluna que possui a maior quantidade de cartas.
+     */
     int maiorColuna(Carta* cartas);
-
 };
 
 #endif

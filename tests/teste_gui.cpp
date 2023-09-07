@@ -10,10 +10,10 @@ int main(){
     FreeCellGui gui;
 
     gui.imprimeRegras();
-    gui.imprimeLinhas(estr.getCartas());
+    gui.imprimeCartas(estr.getCartas());
     estr.movimenta(5, 12);
     estr.movimenta(5, 12);
     estr.movimenta(5, 12);
-    gui.imprimeLinhas(estr.getCartas());
+    gui.imprimeCartas(estr.getCartas());
     
 }
