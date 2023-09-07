@@ -1,8 +1,3 @@
-Ajustar engine para usar o método correto de impressão;
-Ajustar método de impressão das cartas (chamada do gui deve receber o formata carta da classe Carta)
-
-
-
 Implementar impressao crescente para baixo
 Implementar saída (4 variáveis guardando os últimos valores)
 Método de conversão de valor de inteiro pra char
