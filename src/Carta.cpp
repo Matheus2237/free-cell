@@ -1,16 +1,22 @@
 #include "../include/Carta.h"
-#include <iostream>
+#include <sstream>
 
 Carta::Carta(Simbolo::Valor valor, Simbolo::Naipe naipe):
     valor(valor),
     naipe(naipe)
 {}
 
-void Carta::imprimeCarta() const {
-    std::cout << "[ " <<
-        static_cast<int>(this->valor) <<
-        static_cast<char>(this->naipe) << 
-        " ]" << " ";
+std::string Carta::toString() const {
+    std::stringstream carta;
+    std::string espacoCondicional = this->valor != Simbolo::Valor::DEZ ? " " : "";
+    carta << " [" << static_cast<char>(this->naipe) << espacoCondicional
+        << this->formataValor(static_cast<int>(this->valor))
+        << static_cast<char>(this->naipe) << "] ";
+    return carta.str();
+}
+
+std::string Carta::formataValor(const int valor) const {
+    return std::to_string(valor);
 }
 
 unsigned int Carta::getColuna() const {

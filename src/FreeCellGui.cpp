@@ -11,14 +11,17 @@ void FreeCellGui::imprimeCabecalho(Carta* cartas) {
     // TODO: Implement me :)
 }
 
+// !!! Finalizar implementação de inverter as cartas
 void FreeCellGui::imprimeColunas(Carta* cartas) {
-    for(int linha = maiorColuna(cartas); linha >= 0; linha--){
+    int tamanhoMaiorColuna = maiorColuna(cartas);
+    //std::string* mesaDoJogo = new std::string[tamanhoMaiorColuna];
+    for(int linha = tamanhoMaiorColuna; linha >= 0; linha--){
+        std::string linhaImpressao;
         for(int coluna = 1; coluna <= 8; coluna++){
-            if(buscaCarta(cartas, linha, coluna) != COLUNA_VAZIA)
-                imprimeCarta(cartas, buscaCarta(cartas, linha, coluna));
-            else
-                CARTA_VAZIA;
+            int posicaoCarta = buscaCarta(cartas, linha, coluna);
+            linhaImpressao.append(posicaoCarta != COLUNA_VAZIA ? cartas[posicaoCarta].toString() : CARTA_VAZIA);
         }
+        std::cout << linhaImpressao;
         if(linha == 0)
         std::cout << "<--TOPO";
         std::cout << std::endl;        
@@ -126,14 +129,12 @@ int FreeCellGui::maiorColuna(Carta* cartas){
     return maiorColl;
 }
 
-// TODO: Mover para Carta e recuperar via método que retorna string
+// ? Validar se será usado em outros pontos do código
 void FreeCellGui::imprimeCarta(Carta* cartas, int i){
-    if(static_cast<int>(cartas[i].getValor()) > 9){
-        std::cout << " [" << static_cast<char>(cartas[i].getNaipe()) << static_cast<int>(cartas[i].getValor()) << static_cast<char>(cartas[i].getNaipe()) << "] ";
-    }else
-        std::cout << " [" << static_cast<char>(cartas[i].getNaipe()) << ' ' << static_cast<int>(cartas[i].getValor()) << static_cast<char>(cartas[i].getNaipe()) << "] ";
+    std::cout << cartas[i].toString();
 }
 
+// ? Validar leitura via arquivo de texto
 void FreeCellGui::imprimeRegras(){
     std::cout << "O jogador fará quantos movimentos quiser, entre as pilhas que quiser, respeitando as seguintes regras: " << std::endl
               << "Para uma free cell desocupada: qualquer carta do topo de uma pilha de jogo; " << std::endl

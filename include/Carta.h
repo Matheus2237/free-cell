@@ -43,8 +43,12 @@ public:
      */
     ~Carta() = default;
 
-    [[deprecated("Método deve ser melhorado")]]
-    void imprimeCarta() const;
+    /**
+     * @brief Formata o objeto Carta para impressão.
+     * 
+     * @return std::string Carta formatada para impressão.
+     */
+    std::string toString() const;
 
     /**
      * @brief Recupera o atributo coluna.
@@ -59,6 +63,11 @@ public:
      * @param coluna Valor a ser atribuido.
      */
     void setColuna(unsigned int coluna);
+
+private:
+
+    [[deprecated("Implementar formatação dos valores das cartas")]]
+    std::string formataValor(const int valor) const;
 };
 
 #endif
