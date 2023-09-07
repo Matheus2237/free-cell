@@ -23,6 +23,38 @@ void FreeCellGui::imprimeColunas(Carta* cartas) {
     std::cout << std::endl;
 }
 
+// ? Validar se será usado em outros pontos do código
+void FreeCellGui::imprimeCarta(Carta* cartas, int i){
+    std::cout << cartas[i].toString();
+}
+
+int FreeCellGui::maiorColuna(Carta* cartas){
+    int maiorColl = 0;
+    for(int coluna = 1; coluna <= 8; coluna++){
+        int countColl = 0;
+        for(int i = TAMANHO_BARALHO-1; i >= 0; i--){
+            if(cartas[i].getColuna() == coluna)
+                countColl++;
+        }
+        if(countColl > maiorColl)
+            maiorColl = countColl;
+    }
+    return maiorColl;
+}
+
+int FreeCellGui::buscaCarta(Carta* cartas, int pos, int col){
+    int p = 0;
+    for (int i = 0; i < TAMANHO_BARALHO; i++) {
+        if (cartas[i].getColuna() == col) {
+            if(p == pos)
+                return i;
+            else
+                p++;    
+        }
+    }
+    return COLUNA_VAZIA;
+}
+
 unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura,
         bool limpaErroPrimeiraLeitura) {
     const std::string mensagemLeitura = "Entre o valor da coluna inicial: ";
@@ -95,36 +127,10 @@ void FreeCellGui::exibeEntrada(const std::string mensagemExibicao, const unsigne
     std::cout << mensagemExibicao << coluna << std::endl;
 }
 
-int FreeCellGui::buscaCarta(Carta* cartas, int pos, int col){
-    int p = 0;
-    for (int i = 0; i < TAMANHO_BARALHO; i++) {
-        if (cartas[i].getColuna() == col) {
-            if(p == pos)
-                return i;
-            else
-                p++;    
-        }
-    }
-    return COLUNA_VAZIA;
-}
-
-int FreeCellGui::maiorColuna(Carta* cartas){
-    int maiorColl = 0;
-    for(int coluna = 1; coluna <= 8; coluna++){
-        int countColl = 0;
-        for(int i = TAMANHO_BARALHO-1; i >= 0; i--){
-            if(cartas[i].getColuna() == coluna)
-                countColl++;
-        }
-        if(countColl > maiorColl)
-            maiorColl = countColl;
-    }
-    return maiorColl;
-}
-
-// ? Validar se será usado em outros pontos do código
-void FreeCellGui::imprimeCarta(Carta* cartas, int i){
-    std::cout << cartas[i].toString();
+void FreeCellGui::trataMovimentacaoProibida(std::string mensagemErro) const {
+    CLEAR_LINE;
+    CLEAR_LINE;
+    std::cout << mensagemErro << std::endl;
 }
 
 // ? Validar leitura via arquivo de texto
@@ -140,10 +146,4 @@ void FreeCellGui::imprimeRegras(){
               << "O fim do jogo é alcançado quando todas as cartas forem movidas para as pilhas de saída ou quando não há movimento que permita mais alguma " << std::endl
               << "carta ser movida para uma das pilhas de saída." << std::endl;
     std::cout << std::endl;
-}
-
-void FreeCellGui::trataMovimentacaoProibida(std::string mensagemErro) const {
-    CLEAR_LINE;
-    CLEAR_LINE;
-    std::cout << mensagemErro << std::endl;
 }
