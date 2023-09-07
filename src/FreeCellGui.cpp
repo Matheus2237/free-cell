@@ -21,7 +21,6 @@ void FreeCellGui::imprimeCartas(Carta* cartas) {
     std::cout << std::endl;
 }
 
-// TODO: Melhorar leitura
 unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura,
         bool limpaErroPrimeiraLeitura) {
     const std::string mensagemLeitura = "Entre o valor da coluna inicial: ";
@@ -31,15 +30,20 @@ unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura,
         colunaInicial = this->leColuna(mensagemLeitura);
         if (limpaErroPrimeiraLeitura)
             CLEAR_LINE;
-        if (colunaInicial == 0)
-            this->trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
-        else if (estrutura.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)
-            this->trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
-        else
-            colunaValida = true;
+        this->trataErrosLeituraColunaInicial(colunaInicial, estrutura, colunaValida);
     }
     this->exibeEntrada("Coluna incial: ", colunaInicial);
     return colunaInicial;
+}
+
+void FreeCellGui::trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
+        const Estrutura& estrutura, bool& colunaValida) {
+    if (colunaInicial == 0)
+        this->trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
+    else if (estrutura.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)
+        this->trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
+    else
+        colunaValida = true;
 }
 
 unsigned short int FreeCellGui::leColunaFinal(unsigned short int colunaInicial) {
@@ -48,36 +52,27 @@ unsigned short int FreeCellGui::leColunaFinal(unsigned short int colunaInicial) 
     bool colunaValida = false;
     while (!colunaValida) {
         colunaFinal = this->leColuna(mensagemLeitura);
-        if (colunaFinal == colunaInicial) {
+        colunaValida = colunaFinal != colunaInicial;
+        if (!colunaValida)
             this->trataLinhaErro("Não pode mover a carta para a mesma coluna, tente novamente. ");
-            continue;
-        }
-        colunaValida = true;
     }
     this->exibeEntrada("Coluna final: ", colunaFinal);
     return colunaFinal;
 }
 
 unsigned short int FreeCellGui::leColuna(const std::string mensagemLeitura) {
-    unsigned short int coluna;
-    std::string colunaString;
+    std::string coluna;
     const std::string mensagemErro = "Coluna invalida, tente novamente. ";
     bool colunaValida = false;
     while(!colunaValida) {
         std::cout << mensagemLeitura;
-        std::getline(std::cin, colunaString);
-        if (colunaString.empty() || !this->somenteNumeros(colunaString)) {
+        std::getline(std::cin, coluna);
+        colunaValida = !coluna.empty() && this->somenteNumeros(coluna) &&
+            std::stoi(coluna) >=0 && std::stoi(coluna) <= 12;
+        if (!colunaValida)
             this->trataLinhaErro(mensagemErro);
-            continue;
-        }
-        coluna = std::stoi(colunaString);
-        if (coluna < 0 || coluna > 12) {
-            this->trataLinhaErro(mensagemErro);
-            continue;
-        }
-        colunaValida = true;
     }
-    return coluna;
+    return std::stoi(coluna);
 }
 
 bool FreeCellGui::somenteNumeros(std::string colunaString) {

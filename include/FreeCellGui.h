@@ -124,6 +124,9 @@ private:
      * @return int Coluna que possui a maior quantidade de cartas.
      */
     int maiorColuna(Carta* cartas);
+
+    void trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
+        const Estrutura& estrutura, bool& colunaValida);
 };
 
 #endif
