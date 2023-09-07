@@ -1,11 +1,17 @@
 #include "../include/FreeCellGui.h"
 #include <iostream>
 
-// TODO: Implementar imprimeCabecalho e chama lo na engine
-
-// TODO: Imprimir free cells e saídas e alterar nome para imprimeColunas
 void FreeCellGui::imprimeCartas(Carta* cartas) {
     CLEAR_ALL;
+    this->imprimeCabecalho(cartas);
+    this->imprimeColunas(cartas);
+}
+
+void FreeCellGui::imprimeCabecalho(Carta* cartas) {
+    // TODO: Implement me :)
+}
+
+void FreeCellGui::imprimeColunas(Carta* cartas) {
     for(int linha = maiorColuna(cartas); linha >= 0; linha--){
         for(int coluna = 1; coluna <= 8; coluna++){
             if(buscaCarta(cartas, linha, coluna) != COLUNA_VAZIA)

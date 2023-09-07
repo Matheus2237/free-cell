@@ -70,6 +70,20 @@ public:
 private:
     
     /**
+     * @brief Imprime o cabeçalho da mesa de jogo. O cabeçalho contém as free cells e as saídas.
+     * 
+     * @param cartas Vetor que contém as cartas do jogo.
+     */
+    void imprimeCabecalho(Carta* cartas);
+
+    /**
+     * @brief Imprime as colunas do jogo que deve ter suas cartas movidas para a saída.
+     * 
+     * @param cartas Vetor que contém as cartas do jogo.
+     */
+    void imprimeColunas(Carta* cartas);
+
+    /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna válida,
      *  ou seja, um valor numérico inteiro que compreende de 0 a 12.
      * 
