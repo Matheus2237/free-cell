@@ -1,10 +1,10 @@
-Implementar impressao crescente para baixo
-Implementar saída (4 variáveis guardando os últimos valores)
 Método de conversão de valor de inteiro pra char
-Validacao free cells - Verificar se estão vazias
-
 
 
 Após terminar:
+Implementar fim de jogo.
+Implementar Tela inicial.
+Fazer a classe gui ter apenas métodos estáticos.
+Sobrecarregar o operador de fluxo para receber uma carta.
 Encoding UTF-8 - Testar a configuração
 Usar simbolos dos naipes - Testar configuração para exibição
