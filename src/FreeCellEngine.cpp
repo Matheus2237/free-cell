@@ -32,8 +32,14 @@ void FreeCellEngine::jogaProximaRodada() {
         }
         delete verificacao;
     }
-    estrutura.movimenta(colunaInicial, colunaFinal);
-    this->verificaSeGanhou(); // * Se ganhar, alterar o estado de jogoGanho para true 
+    this->estrutura.movimenta(colunaInicial, colunaFinal);
+    this->verificaSeGanhou(); 
 }
 
-void FreeCellEngine::verificaSeGanhou() {}
+void FreeCellEngine::verificaSeGanhou() {
+    for (int naipe = 0; naipe < QTDE_NAIPES; naipe++)
+        if (this->estrutura.getCartas()[this->estrutura.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe])]
+                .getValor() != Simbolo::Valor::REI)
+            return;
+    this->jogoGanho = true;
+}

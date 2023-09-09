@@ -46,10 +46,9 @@ private:
 
     /**
      * @brief Realiza uma busca nas pilhas de saída verificando se todas as cartas do
-     *  topo são reis (K). Caso todas sejam, o jogo acabou e o atributo jogoGanho é alterado para true.
+     *  topo são reis (K). Caso todas sejam, o atributo jogoGanho é alterado para true.
      * 
      */
-    [[deprecated("Método não implementado")]]
     void verificaSeGanhou();
 };
 
