@@ -5,6 +5,8 @@
 class VerificacaoSaidaStrategy : public Verificacao {
 private:
     const std::string mensagemErro = ""; // TODO: Escrever mensagem de erro a ser exibida no terminal
+    
+    bool valorImediatamenteMaior(const Carta cartaMovimentacao, const Carta cartaComparacao);
 
 public:
 
@@ -31,6 +33,7 @@ public:
      * @return true Se for possível realizar a movimentação.
      * @return false Se não for possível realizar a movimentação.
      */
+    [[deprecated("Metodo pode ser melhorado com a implementacao de outro metodo")]]
     bool podeMovimentar(unsigned short int colunaInicial,
         unsigned short int colunaFinal, const Estrutura& estrutura) override;
 
