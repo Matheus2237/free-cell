@@ -66,6 +66,9 @@ public:
      * @param mensagemErro Mensagem de erro a ser impressa.
      */
     void trataMovimentacaoProibida(const std::string mensagemErro) const;
+    
+    // TODO: Documentar e implementar na main
+    static void exibeTrofeu();
 
 private:
     

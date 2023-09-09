@@ -1,5 +1,7 @@
 #include "../include/FreeCellGui.h"
 #include <iostream>
+#include <thread>
+#include <chrono>
 
 void FreeCellGui::imprimeCartas(Carta* cartas) {
     CLEAR_ALL;
@@ -146,4 +148,24 @@ void FreeCellGui::imprimeRegras(){
               << "O fim do jogo é alcançado quando todas as cartas forem movidas para as pilhas de saída ou quando não há movimento que permita mais alguma " << std::endl
               << "carta ser movida para uma das pilhas de saída." << std::endl;
     std::cout << std::endl;
+}
+
+// ! Ajustar formataçãos
+void FreeCellGui::exibeTrofeu() {
+    CLEAR_ALL;
+    std::cout 
+        << "                                            " << std::endl
+        << "            '._==_==_=_.'                   " << std::endl
+        << "            .-\\:      /-.                  " << std::endl
+        << "           | (|:.     |) |                  " << std::endl
+        << "            '-|:.     |-'                   " << std::endl
+        << "              \\::.    /                    " << std::endl
+        << "               '::. .'                      " << std::endl
+        << "                 ) (                        " << std::endl
+        << "               _.' '._                      " << std::endl
+        << "              `\"\"\"\"\"\"\"`              " << std::endl
+        << "                                            " << std::endl
+        << "        Parabens! Voce ganhou!              " << std::endl
+        << "                                            " << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(700));
 }

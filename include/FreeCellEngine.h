@@ -42,6 +42,12 @@ public:
      */
     void jogaProximaRodada();
 
+    /**
+     * @brief Finaliza o jogo exibindo na tela o troféu ao vencedor.
+     * 
+     */
+    void finalizaJogo();
+
 private:
 
     /**
