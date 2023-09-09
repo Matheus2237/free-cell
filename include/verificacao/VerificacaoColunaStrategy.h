@@ -4,7 +4,7 @@
 
 class VerificacaoColunaStrategy : public Verificacao {
 private:
-    const std::string mensagemErro = ""; // TODO: Escrever mensagem de erro a ser exibida no terminal
+    const std::string mensagemErro = "Carta não pode ser movimentada entre as pilhas! Tente novamente.";
 
 public:
 
@@ -34,6 +34,11 @@ public:
     bool podeMovimentar(unsigned short int colunaInicial,
         unsigned short int colunaFinal, const Estrutura& estrutura) override;
 
+    /**
+     * @brief Recupera a mensagem de erro.
+     * 
+     * @return std::string Mensagem de erro.
+     */
     std::string getMensagemErro() const override;
 
 private:

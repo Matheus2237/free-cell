@@ -34,6 +34,11 @@ public:
     bool podeMovimentar(unsigned short int colunaInicial,
         unsigned short int colunaFinal, const Estrutura& estrutura) override;
 
+    /**
+     * @brief Recupera a mensagem de erro.
+     * 
+     * @return std::string Mensagem de erro.
+     */
     std::string getMensagemErro() const override;
 };
 

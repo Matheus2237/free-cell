@@ -34,6 +34,11 @@ public:
     virtual bool podeMovimentar(unsigned short int colunaInicial,
         unsigned short int colunaFinal, const Estrutura& estrutura) = 0;
 
+    /**
+     * @brief Recupera a mensagem de erro.
+     * 
+     * @return std::string Mensagem de erro.
+     */
     virtual std::string getMensagemErro() const = 0;
 };
 
