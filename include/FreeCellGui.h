@@ -128,7 +128,7 @@ private:
      */
     int buscaCarta(Carta* cartas, int pos, int col);
 
-    // TODO: Ajustar método
+    // TODO: Ajustar método para operator overload
     void imprimeCarta(Carta* cartas, int i);
 
     /**

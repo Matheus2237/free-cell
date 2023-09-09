@@ -4,7 +4,6 @@
 
 #include <iostream>
 
-// TODO: melhorar instanciacao do jogo
 FreeCellEngine::FreeCellEngine(const Estrutura& estrutura):
     jogoGanho(false),
     interfaceGrafica(FreeCellGui()),

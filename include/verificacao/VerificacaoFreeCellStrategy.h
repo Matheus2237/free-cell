@@ -4,7 +4,7 @@
 
 class VerificacaoFreeCellStrategy : public Verificacao {
 private:
-    const std::string mensagemErro = "Free cell já está cheia! Tente novamente."; // TODO: Reescrever mensagem de erro a ser exibido no terminal
+    const std::string mensagemErro = "Free cell já está cheia! Tente novamente.";
 
 public:
 
