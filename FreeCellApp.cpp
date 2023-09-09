@@ -3,9 +3,7 @@
 #include "include/Estrutura.h"
 
 int main() {
-    Baralho baralho;
-    baralho.embaralhar();
-    FreeCellEngine engine(Estrutura(baralho.getCartas()));
+    FreeCellEngine engine(Estrutura(Baralho().embaralhar().getCartas()));
     while(!engine.ganhou())
         engine.jogaProximaRodada();
 }

@@ -11,8 +11,9 @@ Baralho::Baralho() {
     }
 }
 
-void Baralho::embaralhar() {
+Baralho& Baralho::embaralhar() {
     std::shuffle(std::begin(this->cartas), std::end(this->cartas), std::mt19937(std::random_device()()));
+    return *this;
 }
 
 Carta* Baralho::getCartas() {

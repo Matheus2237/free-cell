@@ -25,8 +25,9 @@ public:
     /**
      * @brief Embaralha as cartas.
      * 
+     * @return Baralho& A instância da própria classe.
      */
-    void embaralhar();
+    Baralho& embaralhar();
 
     /**
      * @brief Recupera o ponteiro para o vetor de cartas.
