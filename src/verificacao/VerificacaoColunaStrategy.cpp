@@ -5,7 +5,8 @@ bool VerificacaoColunaStrategy::podeMovimentar(unsigned short int colunaInicial,
     Carta* cartas = estrutura.getCartas();
     Carta cartaMovimentacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaInicial)];
     Carta cartaComparacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaFinal)];
-    return this->corDiferente(cartaMovimentacao, cartaComparacao) &&
+    return estrutura.encontraUltimaCartaDaColuna(colunaFinal) == COLUNA_VAZIA ||
+        this->corDiferente(cartaMovimentacao, cartaComparacao) &&
         this->valorImediatamenteMenor(cartaMovimentacao, cartaComparacao);
 }
 
