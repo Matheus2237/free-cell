@@ -32,4 +32,5 @@ int main() {
     while (!engine.ganhou()) {
         engine.jogaProximaRodada();
     }
+    std::cout << "Acabou!" << std::endl;
 }
