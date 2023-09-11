@@ -1,6 +1,6 @@
 #ifndef BARALHO_H
 #define BARALHO_H
-#define TAMANHO_BARALHO 52
+#define TAMANHO_BARALHO 52 // Total de cartas de um baralho convencional.
 #include "Carta.h"
 
 class Baralho {

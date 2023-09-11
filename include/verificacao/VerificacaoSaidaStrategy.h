@@ -4,9 +4,9 @@
 
 class VerificacaoSaidaStrategy : public Verificacao {
 private:
+
+    /// Mensagem a ser exibida em caso de não permissão de movimentação para a saída.
     const std::string mensagemErro = "Carta não pode ser movimentada para saída! Tente novamente.";
-    
-    bool valorImediatamenteMaior(const Carta cartaMovimentacao, const Carta cartaComparacao);
 
 public:
 
@@ -41,6 +41,19 @@ public:
      * @return std::string Mensagem de erro.
      */
     std::string getMensagemErro() const override;
+
+private:
+
+    /**
+     * @brief Verifica se o valor da carta a ser movimentada é imediatamente maior
+     *  do que o valor da maior carta da pilha de saída.
+     * 
+     * @param cartaMovimentacao Carta a ser movimentadao.
+     * @param cartaComparacao Maior carta da pilha de saída;
+     * @return true Caso a carta a ser movimentada seja imediatamente maior.
+     * @return false Caso a carta a ser movimentada não seja imediatamente maior.
+     */
+    bool valorImediatamenteMaior(const Carta cartaMovimentacao, const Carta cartaComparacao);
 };
 
 #endif

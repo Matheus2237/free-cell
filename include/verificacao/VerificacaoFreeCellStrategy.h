@@ -4,6 +4,8 @@
 
 class VerificacaoFreeCellStrategy : public Verificacao {
 private:
+
+    /// Mensagem a ser exibida em caso de não permissão de movimentação para a free cell.
     const std::string mensagemErro = "Free cell já está cheia! Tente novamente.";
 
 public:
@@ -27,7 +29,6 @@ public:
      * @param colunaInicial Coluna de onde a carta sairia.
      * @param colunaFinal Coluna para onde a carta iria.
      * @param estrutura Estrutura que contém as cartas do jogo.
-     * @param gui Mecanismo de operações com o iterminal.
      * @return true Se for possível realizar a movimentação.
      * @return false Se não for possível realizar a movimentação.
      */

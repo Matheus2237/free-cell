@@ -25,6 +25,19 @@ public:
     Carta(Simbolo::Valor valor, Simbolo::Naipe naipe);   
 
     /**
+     * @brief Destrói o objeto carta.
+     * 
+     */
+    ~Carta() = default;
+
+    /**
+     * @brief Formata o objeto Carta para impressão.
+     * 
+     * @return std::string Carta formatada para impressão.
+     */
+    std::string toString() const;
+
+    /**
     *@brief Recupera o atributo naipe.
     * 
     *@return Simbolo::Naipe.
@@ -37,18 +50,6 @@ public:
      * @return Simbolo::Valor.
     */
     Simbolo::Valor getValor() const;
-    /**
-     * @brief Destrói o objeto carta.
-     * 
-     */
-    ~Carta() = default;
-
-    /**
-     * @brief Formata o objeto Carta para impressão.
-     * 
-     * @return std::string Carta formatada para impressão.
-     */
-    std::string toString() const;
 
     /**
      * @brief Recupera o atributo coluna.

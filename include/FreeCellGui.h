@@ -1,9 +1,9 @@
 #ifndef FREE_CELL_GUI_H
 #define FREE_CELL_GUI_H
-#define TAMANHO_BARALHO 52
-#define CLEAR_ALL std::cout << "\x1B[2J\x1B[H"
-#define CLEAR_LINE std::cout << "\x1b[1A\x1b[K"
-#define CARTA_VAZIA "        "
+#define TAMANHO_BARALHO 52 /// TAMANHO TOTAL DO BARALHO
+#define CLEAR_ALL std::cout << "\x1B[2J\x1B[H" /// Comando ANSI para limpar todo o terminal.
+#define CLEAR_LINE std::cout << "\x1b[1A\x1b[K" /// Comando ANSI para limpar a linha acima da posição do cursor.
+#define CARTA_VAZIA "        " /// Representa a formatação do texto de carta vazia para impressão.
 #include "Carta.h"
 #include "Estrutura.h"
 #include <string>
@@ -131,6 +131,11 @@ private:
      */
     int buscaCarta(Carta* cartas, int pos, int col);
 
+    /**
+     * @brief 
+     * 
+     * @overload
+     */
     // TODO: Ajustar método para operator overload
     void imprimeCarta(Carta* cartas, int i);
 

@@ -1,6 +1,6 @@
 #ifndef ESTRUTURA_H
 #define ESTRUTURA_H
-#define COLUNA_VAZIA -1
+#define COLUNA_VAZIA -1 /// Retornado quando não se encontra nenhuma carta referente a coluna indicada.
 #include "Baralho.h"
 #include "Carta.h"
 
