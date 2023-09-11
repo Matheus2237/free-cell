@@ -15,7 +15,16 @@
 #define VERIFICACAO_SAIDA_STRATEGY_H
 #include "Verificacao.h"
 
-// TODO: Implementar @brief da classe.
+/**
+ * @brief Classe que implementa a estratégia de verificação de movimentação definida na 
+ * interface da classe base puramente virtual "Verificacao".
+ * 
+ * Implementa a regra de verificação de movimentação de uma coluna para a
+ * coluna de saida. Sobrescreve os métodos podeMovimentar - responsável por verificar a 
+ * movimentação - e getMensagemErro - retorna a mensagem de erro a ser utilizada caso a movimentação
+ * não seja permitida.
+ * 
+*/
 class VerificacaoSaidaStrategy : public Verificacao {
 private:
 

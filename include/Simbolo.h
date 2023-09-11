@@ -18,6 +18,10 @@
 #include <iostream>
 
 // TODO: Implementar @brief do namespace.
+/**
+ * @brief Namespace que contém os símbolos das cartas do baralho.
+ * 
+*/
 namespace Simbolo {
 
     /**

@@ -15,7 +15,12 @@
 #define CARTA_H
 #include "Simbolo.h"
 
-// TODO: Implementar @brief da classe.
+/**
+ * @brief Classe que implementa as cartas do baralho.
+ * 
+ * Implementa as cartas do baralho, com seus respectivos valores e naipes.
+ * 
+*/
 class Carta {
 private:
     Simbolo::Valor valor;
