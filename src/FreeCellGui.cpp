@@ -148,13 +148,60 @@ void FreeCellGui::imprimeRegras(){
               << "O fim do jogo é alcançado quando todas as cartas forem movidas para as pilhas de saída ou quando não há movimento que permita mais alguma " << std::endl
               << "carta ser movida para uma das pilhas de saída." << std::endl;
     std::cout << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(2500));
 }
 
-// ! Ajustar formataçãos
+// ! Ajustar formatação
+void FreeCellGui::exibeTitulo() {
+    CLEAR_ALL;
+    std::cout
+        << std::endl
+        << std::endl
+        << std::endl
+        << "           ______                _____     _ _              " << std::endl
+        << "          |  ____|              / ____|   | | |             " << std::endl
+        << "          | |__ _ __ ___  ___  | |     ___| | |             " << std::endl
+        << "          |  __| '__/ _ \\/ _ \\ | |    / _ \\ | |          " << std::endl
+        << "          | |  | | |  __/  __/ | |___|  __/ | |             " << std::endl
+        << "          |_|  |_|  \\___|\\___|  \\_____\\___|_|_|         " << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+}
+
+// ! Ajustar formatação
+void FreeCellGui::exibeDevs() {
+    CLEAR_ALL;
+    std::cout
+        << std::endl
+        << std::endl
+        << std::endl
+        << "          Desenvolvido por:                         " << std::endl
+        << "            Carlos Sérgio Fernandes Júnior          " << std::endl
+        << "            Matheus Paulino Ribeiro                 " << std::endl
+        << "            Nicolas Fagundes Scarpa                 " << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+}
+
+// ! Ajustar formatação
+void FreeCellGui::exibeRegras() {
+    CLEAR_ALL;
+    char le;
+    std::cout << std::endl
+        << std::endl
+        << std::endl
+        << "    Deseja consultar as regras do jogo? [S/n] ";
+    std::cin >> le;
+    if (le == 'S') {
+        CLEAR_ALL;
+        FreeCellGui::imprimeRegras();
+    }
+    std::cin.ignore();
+}
+
+// ! Ajustar formatação
 void FreeCellGui::exibeTrofeu() {
     CLEAR_ALL;
     std::cout 
-        << "                                            " << std::endl
+        << std::endl
         << "            '._==_==_=_.'                   " << std::endl
         << "            .-\\:      /-.                  " << std::endl
         << "           | (|:.     |) |                  " << std::endl

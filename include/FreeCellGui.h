@@ -25,12 +25,6 @@ public:
     ~FreeCellGui() = default;
 
     /**
-     * @brief Imprime as regras no início do jogo se o usuário desejar.
-     * 
-     */
-    void imprimeRegras();
-
-    /**
      * @brief Imprime a estrutura de cartas do jogo.
      * 
      * @param cartas Ponteiro para vetor de cartas da estrutura.
@@ -67,11 +61,38 @@ public:
      */
     void trataMovimentacaoProibida(const std::string mensagemErro) const;
     
-    // TODO: Documentar e implementar na main
+    /**
+     * @brief Imprime o título do jogo e aguarda um tempo para visualização.
+     * 
+     */
+    static void exibeTitulo();
+
+    /**
+     * @brief Imprime os créditos aos desenvolvedores e aguarda um tempo para visualização.
+     * 
+     */
+    static void exibeDevs();
+
+    /**
+     * @brief Imprime as regras na tela se o usuário desejar e aguarda que o usuário pare a exibição.
+     * 
+     */
+    static void exibeRegras();
+
+    /**
+     * @brief Imprime o troféu quando o usuário ganhar o jogo :)
+     * 
+     */
     static void exibeTrofeu();
 
 private:
     
+    /**
+     * @brief Imprime as regras no início do jogo se o usuário desejar.
+     * 
+     */
+    static void imprimeRegras();
+
     /**
      * @brief Imprime o cabeçalho da mesa de jogo. O cabeçalho contém as free cells e as saídas.
      * 

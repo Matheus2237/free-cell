@@ -43,9 +43,17 @@ public:
     void jogaProximaRodada();
 
     /**
+     * @brief Inicia o jogo exibindo o título e o nome da equipe de desenvolvimento.
+     * 
+     */
+    [[deprecated("Implementar na main")]]
+    void iniciaJogo();
+
+    /**
      * @brief Finaliza o jogo exibindo na tela o troféu ao vencedor.
      * 
      */
+    [[deprecated("Implementar na main")]]
     void finalizaJogo();
 
 private:

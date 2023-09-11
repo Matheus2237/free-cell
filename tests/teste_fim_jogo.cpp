@@ -29,6 +29,8 @@ int main() {
     Estrutura estrutura(baralho.getCartas());
     setUp(estrutura);
     FreeCellEngine engine(estrutura);
+
+    engine.iniciaJogo();
     while (!engine.ganhou()) {
         engine.jogaProximaRodada();
     }

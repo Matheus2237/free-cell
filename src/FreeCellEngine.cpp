@@ -43,6 +43,13 @@ void FreeCellEngine::verificaSeGanhou() {
     this->jogoGanho = true;
 }
 
+
+void FreeCellEngine::iniciaJogo() {
+    FreeCellGui::exibeTitulo();
+    FreeCellGui::exibeDevs();
+    FreeCellGui::exibeRegras();
+}
+
 void FreeCellEngine::finalizaJogo() {
     FreeCellGui::exibeTrofeu();
 }
