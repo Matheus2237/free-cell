@@ -1,7 +1,30 @@
+/**
+ * @file VerificacaoColunaStrategy.h
+ * 
+ * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
+ * @author Matheus Paulino Ribeiro - 2143432 <mathpaulinor@gmail.com>
+ * @author Nicolas Fagundes Scarpa - 2093087 <bkscarpa@gmail.com>
+ * 
+ * @date 2023-09-17
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #ifndef VERIFICACAO_COLUNA_STRATEGY_H
 #define VERIFICACAO_COLUNA_STRATEGY_H
 #include "Verificacao.h"
 
+/**
+ * @brief Classe que implementa a estratégia de verificação de movimentação definida na 
+ * interface da classe base puramente virtual "Verificacao".
+ * 
+ * Implementa a regra de verificação de movimentação de uma coluna ou free cell para uma outra
+ * coluna do jogo. Sobrescreve os métodos podeMovimentar - responsável por verificar a 
+ * movimentação - e getMensagemErro - retorna a mensagem de erro a ser utilizada caso a movimentação
+ * não seja permitida.
+ * 
+ */
 class VerificacaoColunaStrategy : public Verificacao {
 private:
 

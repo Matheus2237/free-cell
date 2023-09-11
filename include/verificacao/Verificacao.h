@@ -1,3 +1,16 @@
+/**
+ * @file Verificacao.h
+ * 
+ * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
+ * @author Matheus Paulino Ribeiro - 2143432 <mathpaulinor@gmail.com>
+ * @author Nicolas Fagundes Scarpa - 2093087 <bkscarpa@gmail.com>
+ * 
+ * @date 2023-09-17
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #ifndef VERIFICACAO_H
 #define VERIFICACAO_H
 #include "../Carta.h"
@@ -5,6 +18,16 @@
 #include "../FreeCellGui.h"
 #include <string>
 
+/**
+ * @brief Interface abstrata para verificar se movimentações ocorrentes no jogo
+ *  são ações permitidas de serem tomadas.
+ * 
+ * Abstrai o design pattern Strategy. O método podeMovimentar() deve ser sobrescrito
+ * nas classes filhas para implementar a regra de validação de movimentação. Possui também o
+ * método getMensagemErro para recuperar a mensagem de erro a ser exibida caso a movimentação
+ * seja ilegal.
+ * 
+ */
 class Verificacao {
 public:
 

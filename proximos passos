@@ -1,12 +1,12 @@
 Método de conversão de valor de inteiro pra char
+Validar apresentações de entrada e término de jogo.
 
-
-Implementar fim de jogo.
-Implementar Tela inicial.
 Fazer a classe gui ter apenas métodos estáticos.
 Usar static const ao invés de #define para constantes ?
+Sobrecarregar o operador de fluxo para receber uma carta.
+
+TESTAR!!!!
 
 Após terminar:
-Sobrecarregar o operador de fluxo para receber uma carta.
 Encoding UTF-8 - Testar a configuração
 Usar simbolos dos naipes - Testar configuração para exibição

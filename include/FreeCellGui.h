@@ -1,3 +1,16 @@
+/**
+ * @file FreeCellGui.h
+ * 
+ * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
+ * @author Matheus Paulino Ribeiro - 2143432 <mathpaulinor@gmail.com>
+ * @author Nicolas Fagundes Scarpa - 2093087 <bkscarpa@gmail.com>
+ * 
+ * @date 2023-09-17
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #ifndef FREE_CELL_GUI_H
 #define FREE_CELL_GUI_H
 #define TAMANHO_BARALHO 52 /// TAMANHO TOTAL DO BARALHO
@@ -8,6 +21,7 @@
 #include "Estrutura.h"
 #include <string>
 
+// TODO: Implementar @brief da classe.
 class FreeCellGui {
 
 public:
