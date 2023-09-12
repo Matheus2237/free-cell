@@ -17,7 +17,6 @@
 
 FreeCellEngine::FreeCellEngine(const Estrutura& estrutura):
     jogoGanho(false),
-    interfaceGrafica(FreeCellGui()),
     estrutura(estrutura)
 {}
 
@@ -26,18 +25,18 @@ bool FreeCellEngine::ganhou() const {
 }
 
 void FreeCellEngine::jogaProximaRodada() {
-    interfaceGrafica.imprimeCartas(estrutura);
+    FreeCellGui::imprimeCartas(estrutura);
     unsigned short int colunaInicial;
     unsigned short int colunaFinal;
     bool limpaErroPrimeiraLeitura = false;
     bool movimentacaoValida = false;
     while (!movimentacaoValida) {
-        colunaInicial = interfaceGrafica.leColunaInicial(this->estrutura, limpaErroPrimeiraLeitura);
-        colunaFinal = interfaceGrafica.leColunaFinal(colunaInicial);
+        colunaInicial = FreeCellGui::leColunaInicial(this->estrutura, limpaErroPrimeiraLeitura);
+        colunaFinal = FreeCellGui::leColunaFinal(colunaInicial);
         Verificacao* verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
         movimentacaoValida = verificacao->podeMovimentar(colunaInicial, colunaFinal, this->estrutura);
         if (!movimentacaoValida) {
-            interfaceGrafica.trataMovimentacaoProibida(verificacao->getMensagemErro());
+            FreeCellGui::trataMovimentacaoProibida(verificacao->getMensagemErro());
             limpaErroPrimeiraLeitura = true;
         }
         delete verificacao;

@@ -28,23 +28,23 @@ class FreeCellGui {
 public:
 
     /**
-     * @brief Constrói um novo objeto Free Cell Graphical User Interface.
+     * @deprecated Construtor padrão removido.
      * 
      */
-    FreeCellGui() = default;
+    FreeCellGui() = delete;
 
     /**
-     * @brief Destrói o objeto Free Cell Graphical User Interface.
+     * @brief Destrutor removido.
      * 
      */
-    ~FreeCellGui() = default;
+    ~FreeCellGui() = delete;
 
     /**
      * @brief Imprime a estrutura de cartas do jogo.
      * 
      * @param cartas Ponteiro para vetor de cartas da estrutura.
      */
-    void imprimeCartas(Estrutura &estrutura);
+    static void imprimeCartas(Estrutura &estrutura);
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna inicial válida.
@@ -55,7 +55,7 @@ public:
      * @param limpaErroPrimeiraLeitura Determina se deve limpar a linha de erro acima da linha de leitura.
      * @return unsigned short int Valor da coluna inicial.
      */
-    unsigned short int leColunaInicial(const Estrutura& estrutura,
+    static unsigned short int leColunaInicial(const Estrutura& estrutura,
         bool limpaErroPrimeiraLeitura);
 
     /**
@@ -66,7 +66,7 @@ public:
      * @param colunaInicial Valor da coluna inicial para ser usada na verificação de movimentação.
      * @return unsigned short int Valor da coluna final.
      */
-    unsigned short int leColunaFinal(unsigned short int colunaInicial);
+    static unsigned short int leColunaFinal(unsigned short int colunaInicial);
 
     /**
      * @brief Limpa as linhas de entrada para exibir a mensagem de erro quando uma
@@ -74,7 +74,7 @@ public:
      * 
      * @param mensagemErro Mensagem de erro a ser impressa.
      */
-    void trataMovimentacaoProibida(const std::string mensagemErro) const;
+    static void trataMovimentacaoProibida(const std::string mensagemErro);
 
     /**
      * @brief Imprime o título do jogo e aguarda um tempo para visualização.
@@ -113,14 +113,14 @@ private:
      * 
      * @param cartas Vetor que contém as cartas do jogo.
      */
-    void imprimeCabecalho(Estrutura &estrutura);
+    static void imprimeCabecalho(Estrutura &estrutura);
 
     /**
      * @brief Imprime as colunas do jogo que deve ter suas cartas movidas para a saída.
      * 
      * @param cartas Vetor que contém as cartas do jogo.
      */
-    void imprimeColunas(Estrutura &estrutura);
+    static void imprimeColunas(Estrutura &estrutura);
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna válida,
@@ -129,7 +129,7 @@ private:
      * @param mensagemLeitura Mensagem a ser exibida para solicitar a entrada de dados.
      * @return unsigned short int Valor da coluna desejada pelo usuário.
      */
-    unsigned short int leColuna(const std::string mensagemLeitura);
+    static unsigned short int leColuna(const std::string mensagemLeitura);
 
     /**
      * @brief Verifica se dada string contém apenas caracteres numéricos.
@@ -138,14 +138,14 @@ private:
      * @return true se tiver apenas caracteres numéricos.
      * @return false se tiver no mínimo um caracter não numérico.
      */
-    bool somenteNumeros(std::string colunaString);
+    static bool somenteNumeros(std::string colunaString);
 
     /**
      * @brief Limpa a última linha escrita do terminal e imprime a mensagem de erro.
      * 
      * @param mensagemErro Mensagem informando erro a ser exibida no terminal.
      */
-    void trataLinhaErro(const std::string mensagemErro);
+    static void trataLinhaErro(const std::string mensagemErro);
 
     /**
      * @brief Reformula a linha onde é solicitada a entrada pelo usuário. Após  
@@ -154,7 +154,7 @@ private:
      * @param mensagemExibicao Mensagem a ser exibida após limpeza. 
      * @param coluna Coluna digitada pelo usuŕio a ser exibida.
      */
-    void exibeEntrada(const std::string mensagemExibicao, const unsigned short int coluna);
+    static void exibeEntrada(const std::string mensagemExibicao, const unsigned short int coluna);
 
     /**
      * @brief Busca dentro da estrutura uma carta em uma determinada posição da 
@@ -165,7 +165,7 @@ private:
      * @param col Coluna que a carta se encontra.
      * @return int Posição no vetor da determinada carta.
      */
-    int buscaCarta(Carta* cartas, int pos, int col);
+    static int buscaCarta(Carta* cartas, int pos, int col);
 
     /**
      * @brief Encontra qual coluna do jogo tem a maior quantidade de cartas.
@@ -173,7 +173,7 @@ private:
      * @param cartas Vetor de cartas.
      * @return int Coluna que possui a maior quantidade de cartas.
      */
-    int maiorColuna(Carta* cartas);
+    static int maiorColuna(Carta* cartas);
 
     /**
      * @brief Trata os possíveis erros de lógica que podem acontecer na leitura da coluna inicial.
@@ -184,7 +184,7 @@ private:
      * @param estrutura Estrutura que guarda as cartas durante o jogo.
      * @param colunaValida Flag que determina quando a movimentação parte de uma coluna inicial válida.
      */
-    void trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
+    static void trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
         const Estrutura& estrutura, bool& colunaValida);
 };
 

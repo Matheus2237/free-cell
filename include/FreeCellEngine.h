@@ -22,7 +22,6 @@ class FreeCellEngine {
 private:
     bool jogoGanho;
     Estrutura estrutura;
-    FreeCellGui interfaceGrafica;
 
 public:
 

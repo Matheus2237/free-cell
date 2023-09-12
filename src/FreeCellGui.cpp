@@ -19,8 +19,8 @@
 
 void FreeCellGui::imprimeCartas(Estrutura &estrutura) {
     CLEAR_ALL;
-    this->imprimeCabecalho(estrutura);
-    this->imprimeColunas(estrutura);
+    FreeCellGui::imprimeCabecalho(estrutura);
+    FreeCellGui::imprimeColunas(estrutura);
 }
 
 void FreeCellGui::imprimeCabecalho(Estrutura &estrutura){
@@ -84,21 +84,21 @@ unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura,
     unsigned short int colunaInicial;
     bool colunaValida = false;
     while (!colunaValida) {
-        colunaInicial = this->leColuna(mensagemLeitura);
+        colunaInicial = FreeCellGui::leColuna(mensagemLeitura);
         if (limpaErroPrimeiraLeitura)
             CLEAR_LINE;
-        this->trataErrosLeituraColunaInicial(colunaInicial, estrutura, colunaValida);
+        FreeCellGui::trataErrosLeituraColunaInicial(colunaInicial, estrutura, colunaValida);
     }
-    this->exibeEntrada("Coluna incial: ", colunaInicial);
+    FreeCellGui::exibeEntrada("Coluna incial: ", colunaInicial);
     return colunaInicial;
 }
 
 void FreeCellGui::trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
         const Estrutura& estrutura, bool& colunaValida) {
     if (colunaInicial == 0)
-        this->trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
+        FreeCellGui::trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
     else if (estrutura.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)
-        this->trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
+        FreeCellGui::trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
     else
         colunaValida = true;
 }
@@ -108,12 +108,12 @@ unsigned short int FreeCellGui::leColunaFinal(unsigned short int colunaInicial) 
     unsigned short int colunaFinal;
     bool colunaValida = false;
     while (!colunaValida) {
-        colunaFinal = this->leColuna(mensagemLeitura);
+        colunaFinal = FreeCellGui::leColuna(mensagemLeitura);
         colunaValida = colunaFinal != colunaInicial;
         if (!colunaValida)
-            this->trataLinhaErro("Não pode mover a carta para a mesma coluna, tente novamente. ");
+            FreeCellGui::trataLinhaErro("Não pode mover a carta para a mesma coluna, tente novamente. ");
     }
-    this->exibeEntrada("Coluna final: ", colunaFinal);
+    FreeCellGui::exibeEntrada("Coluna final: ", colunaFinal);
     return colunaFinal;
 }
 
@@ -124,10 +124,10 @@ unsigned short int FreeCellGui::leColuna(const std::string mensagemLeitura) {
     while(!colunaValida) {
         std::cout << mensagemLeitura;
         std::getline(std::cin, coluna);
-        colunaValida = !coluna.empty() && this->somenteNumeros(coluna) &&
+        colunaValida = !coluna.empty() && FreeCellGui::somenteNumeros(coluna) &&
             std::stoi(coluna) >=0 && std::stoi(coluna) <= 12;
         if (!colunaValida)
-            this->trataLinhaErro(mensagemErro);
+            FreeCellGui::trataLinhaErro(mensagemErro);
     }
     return std::stoi(coluna);
 }
@@ -150,7 +150,7 @@ void FreeCellGui::exibeEntrada(const std::string mensagemExibicao, const unsigne
     std::cout << mensagemExibicao << coluna << std::endl;
 }
 
-void FreeCellGui::trataMovimentacaoProibida(std::string mensagemErro) const {
+void FreeCellGui::trataMovimentacaoProibida(std::string mensagemErro) {
     CLEAR_LINE;
     CLEAR_LINE;
     std::cout << mensagemErro << std::endl;
