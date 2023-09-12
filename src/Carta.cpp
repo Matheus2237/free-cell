@@ -21,7 +21,7 @@ Carta::Carta(Simbolo::Valor valor, Simbolo::Naipe naipe):
 
 std::ostream& operator<<(std::ostream& cout, const Carta& carta) {
     std::string espacoCondicional = carta.valor != Simbolo::Valor::DEZ ? " " : "";
-    std::cout << " [" << static_cast<char>(carta.naipe) << espacoCondicional
+    std::cout << " [" << espacoCondicional
         << carta.formataValor()
         << static_cast<char>(carta.naipe) << "] ";
     return std::cout;

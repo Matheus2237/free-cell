@@ -15,6 +15,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include "../include/Simbolo.h"
 
 
 void FreeCellGui::imprimeCartas(Mesa &estrutura) {
@@ -25,15 +26,33 @@ void FreeCellGui::imprimeCartas(Mesa &estrutura) {
 
 void FreeCellGui::imprimeCabecalho(Mesa &estrutura){
     for(int FreeCell = 9; FreeCell <= 12; FreeCell++){
-        //if(FreeCell == 1) std::cout << "";
         if(estrutura.encontraUltimaCartaDaColuna(FreeCell) == COLUNA_VAZIA)
             FREECELL_VAZIA;
         else
             std::cout << estrutura.getCartas()[estrutura.encontraUltimaCartaDaColuna(FreeCell)];
     }
-    std::cout << "       ";
-    std::cout << " [ C ] [ P ] [ O ] [ E ] " << std::endl;
-    std::cout << "   1      2      3      4                      0" << std::endl;
+    for(int naipe = QTDE_NAIPES - 1; naipe >= 0; naipe--){
+        if(estrutura.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe]) == COLUNA_VAZIA){
+            switch (naipe)
+            {
+            case 3:
+                SAIDA_COPAS_VAZIA
+            break;
+            case 2:
+                SAIDA_PAUS_VAZIA
+            break;
+            case 1:
+                SAIDA_OUROS_VAZIA
+            break;
+            case 0:
+                SAIDA_ESPADAS_VAZIA
+            break;
+            }
+        } 
+        else
+        std::cout << estrutura.getCartas()[estrutura.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe])];
+    }
+    std::cout << std::endl << "   9      10     11     12                0" << std::endl;
 }
 
 void FreeCellGui::imprimeColunas(Mesa &estrutura) {
@@ -47,7 +66,7 @@ void FreeCellGui::imprimeColunas(Mesa &estrutura) {
         }
         std::cout << std::endl;        
     }
-    std::cout << "    1       2       3       4       5       6       7       8" << std::endl;
+    std::cout << "   1      2      3      4      5      6      7      8" << std::endl;
     std::cout << std::endl;
 }
 
