@@ -1,7 +1,6 @@
 Formatar visual do jogo.
 Formatar apresentações de entrada e término de jogo.
 
-Fazer a classe gui ter apenas métodos estáticos.
 Usar static const ao invés de #define para constantes ?
 
 TESTAR!!!!

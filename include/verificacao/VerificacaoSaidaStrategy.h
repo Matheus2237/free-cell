@@ -21,7 +21,7 @@
  * 
  * Implementa a regra de verificação de movimentação de uma coluna para a
  * coluna de saida. Sobrescreve os métodos podeMovimentar - responsável por verificar a 
- * movimentação - e getMensagemErro - retorna a mensagem de erro a ser utilizada caso a movimentação
+ * movimentação - e getMensagemErro - o qual retorna a mensagem de erro a ser utilizada caso a movimentação
  * não seja permitida.
  * 
 */
