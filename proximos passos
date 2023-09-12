@@ -1,10 +1,14 @@
 Formatar visual do jogo.
 Formatar apresentações de entrada e término de jogo.
-
-Usar static const ao invés de #define para constantes ?
+Validar nome dos componentes
+Validar o que está deprecated
+Corrigir erros de warnings
 
 TESTAR!!!!
 
+Dúvidas:
+    Usar static const ao invés de #define para constantes ?
+
 Após terminar:
-Encoding UTF-8 - Testar a configuração
-Usar simbolos dos naipes - Testar configuração para exibição
+    Encoding UTF-8 - Testar a configuração
+    Usar simbolos dos naipes - Testar configuração para exibição
