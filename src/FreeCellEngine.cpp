@@ -28,7 +28,7 @@ bool FreeCellEngine::ganhou() const {
 }
 
 void FreeCellEngine::jogaProximaRodada() {
-    interfaceGrafica.imprimeCartas(estrutura.getCartas());
+    interfaceGrafica.imprimeCartas(estrutura);
     unsigned short int colunaInicial;
     unsigned short int colunaFinal;
     bool limpaErroPrimeiraLeitura = false;

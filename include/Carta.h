@@ -14,6 +14,7 @@
 #ifndef CARTA_H
 #define CARTA_H
 #include "Simbolo.h"
+#include <string>
 
 /**
  * @brief Classe que implementa as cartas do baralho.
@@ -84,10 +85,11 @@ public:
      */
     void setColuna(unsigned int coluna);
 
+    [[deprecated("Implementar formatação dos valores das cartas")]]
+    std::string formataValor() const;
 private:
 
-    [[deprecated("Implementar formatação dos valores das cartas")]]
-    std::string formataValor(const int valor) const;
+    
 };
 
 #endif

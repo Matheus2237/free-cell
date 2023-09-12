@@ -17,6 +17,7 @@
 #define CLEAR_ALL std::cout << "\x1B[2J\x1B[H" /// Comando ANSI para limpar todo o terminal.
 #define CLEAR_LINE std::cout << "\x1b[1A\x1b[K" /// Comando ANSI para limpar a linha acima da posição do cursor.
 #define CARTA_VAZIA "        " /// Representa a formatação do texto de carta vazia para impressão.
+#define FREECELL_VAZIA std::cout << " [   ] " 
 #include "Carta.h"
 #include "Estrutura.h"
 #include <string>
@@ -43,7 +44,7 @@ public:
      * 
      * @param cartas Ponteiro para vetor de cartas da estrutura.
      */
-    void imprimeCartas(Carta* cartas);
+    void imprimeCartas(Estrutura &estrutura);
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna inicial válida.
@@ -74,7 +75,7 @@ public:
      * @param mensagemErro Mensagem de erro a ser impressa.
      */
     void trataMovimentacaoProibida(const std::string mensagemErro) const;
-    
+
     /**
      * @brief Imprime o título do jogo e aguarda um tempo para visualização.
      * 
@@ -112,14 +113,14 @@ private:
      * 
      * @param cartas Vetor que contém as cartas do jogo.
      */
-    void imprimeCabecalho(Carta* cartas);
+    void imprimeCabecalho(Estrutura &estrutura);
 
     /**
      * @brief Imprime as colunas do jogo que deve ter suas cartas movidas para a saída.
      * 
      * @param cartas Vetor que contém as cartas do jogo.
      */
-    void imprimeColunas(Carta* cartas);
+    void imprimeColunas(Estrutura &estrutura);
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna válida,

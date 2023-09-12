@@ -16,21 +16,31 @@
 #include <thread>
 #include <chrono>
 
-void FreeCellGui::imprimeCartas(Carta* cartas) {
+
+void FreeCellGui::imprimeCartas(Estrutura &estrutura) {
     CLEAR_ALL;
-    this->imprimeCabecalho(cartas);
-    this->imprimeColunas(cartas);
+    this->imprimeCabecalho(estrutura);
+    this->imprimeColunas(estrutura);
 }
 
-void FreeCellGui::imprimeCabecalho(Carta* cartas) {
-    // TODO: Implement me :)
+void FreeCellGui::imprimeCabecalho(Estrutura &estrutura){
+    for(int FreeCell = 9; FreeCell <= 12; FreeCell++){
+        //if(FreeCell == 1) std::cout << "";
+        if(estrutura.encontraUltimaCartaDaColuna(FreeCell) == COLUNA_VAZIA)
+            FREECELL_VAZIA;
+        else
+            imprimeCarta(estrutura.getCartas(), estrutura.encontraUltimaCartaDaColuna(FreeCell));
+    }
+    std::cout << "       ";
+    std::cout << " [ C ] [ P ] [ O ] [ E ] " << std::endl;
+    std::cout << "   1      2      3      4                      0" << std::endl;
 }
 
-void FreeCellGui::imprimeColunas(Carta* cartas) {
-    for(int linha = 0; linha <= maiorColuna(cartas); linha++){
+void FreeCellGui::imprimeColunas(Estrutura &estrutura) {
+    for(int linha = 0; linha <= maiorColuna(estrutura.getCartas()); linha++){
         for(int coluna = 1; coluna <= 8; coluna++){
-            int posicaoCarta = buscaCarta(cartas, linha, coluna);
-            std::cout << (posicaoCarta != COLUNA_VAZIA ? cartas[posicaoCarta].toString() : CARTA_VAZIA);
+            int posicaoCarta = buscaCarta(estrutura.getCartas(), linha, coluna);
+            std::cout << (posicaoCarta != COLUNA_VAZIA ? estrutura.getCartas()[posicaoCarta].toString() : CARTA_VAZIA);
         }
         std::cout << std::endl;        
     }
@@ -147,6 +157,16 @@ void FreeCellGui::trataMovimentacaoProibida(std::string mensagemErro) const {
     CLEAR_LINE;
     std::cout << mensagemErro << std::endl;
 }
+
+// TODO: Mover para Carta e recuperar via método que retorna string
+/*
+void FreeCellGui::imprimeCarta(Carta* cartas, int i){
+    if(static_cast<int>(cartas[i].getValor()) == 10){
+        std::cout << " [" << cartas[i].formataValor() << static_cast<char>(cartas[i].getNaipe()) << "] ";
+    }else
+        std::cout << " [" << ' ' << cartas[i].formataValor() << static_cast<char>(cartas[i].getNaipe()) << "] ";
+}
+*/
 
 // ? Validar leitura via arquivo de texto
 void FreeCellGui::imprimeRegras(){
