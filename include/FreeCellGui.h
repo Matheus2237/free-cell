@@ -168,14 +168,6 @@ private:
     int buscaCarta(Carta* cartas, int pos, int col);
 
     /**
-     * @brief 
-     * 
-     * @overload
-     */
-    // TODO: Ajustar método para operator overload
-    void imprimeCarta(Carta* cartas, int i);
-
-    /**
      * @brief Encontra qual coluna do jogo tem a maior quantidade de cartas.
      * 
      * @param cartas Vetor de cartas.

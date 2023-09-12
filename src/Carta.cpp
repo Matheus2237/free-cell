@@ -12,21 +12,19 @@
  */
 
 #include "../include/Carta.h"
-#include <sstream>
-
+#include <iostream>
 
 Carta::Carta(Simbolo::Valor valor, Simbolo::Naipe naipe):
     valor(valor),
     naipe(naipe)
 {}
 
-std::string Carta::toString() const {
-    std::stringstream carta;
-    std::string espacoCondicional = this->valor != Simbolo::Valor::DEZ ? " " : "";
-    carta << " [" << static_cast<char>(this->naipe) << espacoCondicional
-        << this->formataValor()
-        << static_cast<char>(this->naipe) << "] ";
-    return carta.str();
+std::ostream& operator<<(std::ostream& cout, const Carta& carta) {
+    std::string espacoCondicional = carta.valor != Simbolo::Valor::DEZ ? " " : "";
+    std::cout << " [" << static_cast<char>(carta.naipe) << espacoCondicional
+        << carta.formataValor()
+        << static_cast<char>(carta.naipe) << "] ";
+    return std::cout;
 }
 
 unsigned int Carta::getColuna() const {

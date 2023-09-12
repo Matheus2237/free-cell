@@ -29,7 +29,7 @@ void FreeCellGui::imprimeCabecalho(Estrutura &estrutura){
         if(estrutura.encontraUltimaCartaDaColuna(FreeCell) == COLUNA_VAZIA)
             FREECELL_VAZIA;
         else
-            imprimeCarta(estrutura.getCartas(), estrutura.encontraUltimaCartaDaColuna(FreeCell));
+            std::cout << estrutura.getCartas()[estrutura.encontraUltimaCartaDaColuna(FreeCell)];
     }
     std::cout << "       ";
     std::cout << " [ C ] [ P ] [ O ] [ E ] " << std::endl;
@@ -40,17 +40,15 @@ void FreeCellGui::imprimeColunas(Estrutura &estrutura) {
     for(int linha = 0; linha <= maiorColuna(estrutura.getCartas()); linha++){
         for(int coluna = 1; coluna <= 8; coluna++){
             int posicaoCarta = buscaCarta(estrutura.getCartas(), linha, coluna);
-            std::cout << (posicaoCarta != COLUNA_VAZIA ? estrutura.getCartas()[posicaoCarta].toString() : CARTA_VAZIA);
+            if (posicaoCarta == COLUNA_VAZIA)
+                std::cout << CARTA_VAZIA;
+            else
+                std::cout << estrutura.getCartas()[posicaoCarta];
         }
         std::cout << std::endl;        
     }
     std::cout << "    1       2       3       4       5       6       7       8" << std::endl;
     std::cout << std::endl;
-}
-
-// ? Validar se será usado em outros pontos do código
-void FreeCellGui::imprimeCarta(Carta* cartas, int i){
-    std::cout << cartas[i].toString();
 }
 
 int FreeCellGui::maiorColuna(Carta* cartas){

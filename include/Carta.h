@@ -51,11 +51,12 @@ public:
     ~Carta() = default;
 
     /**
-     * @brief Formata o objeto Carta para impressão.
+     * @brief Sobrecarga do operador de fluxo << para que o cout possa receber um
+     *  objeto do tipo Carta para imprimi-lo.
      * 
-     * @return std::string Carta formatada para impressão.
+     * @overload
      */
-    std::string toString() const;
+    friend std::ostream& operator<<(std::ostream& cout, const Carta& carta);
 
     /**
     * @brief Recupera o atributo naipe.
@@ -85,11 +86,10 @@ public:
      */
     void setColuna(unsigned int coluna);
 
-    [[deprecated("Implementar formatação dos valores das cartas")]]
-    std::string formataValor() const;
 private:
 
-    
+    [[deprecated("Implementar formatação dos valores das cartas")]]
+    std::string formataValor() const;
 };
 
 #endif
