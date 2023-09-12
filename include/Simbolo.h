@@ -16,7 +16,6 @@
 #define QTDE_NAIPES 4 /// Quantidade total de naipes em um baralho convencional.
 #define QTDE_VALORES 13 /// Quantidade total de valores em um baralho convecional.
 
-// TODO: Implementar @brief do namespace.
 /**
  * @brief Namespace que contém os símbolos das cartas do baralho.
  * 
