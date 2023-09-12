@@ -12,10 +12,10 @@
  */
 
 #include "../include/FreeCellGui.h"
+#include "../include/Simbolo.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include "../include/Simbolo.h"
 
 
 void FreeCellGui::imprimeCartas(Mesa &estrutura) {
@@ -175,17 +175,7 @@ void FreeCellGui::trataMovimentacaoProibida(std::string mensagemErro) {
     std::cout << mensagemErro << std::endl;
 }
 
-// TODO: Mover para Carta e recuperar via método que retorna string
-/*
-void FreeCellGui::imprimeCarta(Carta* cartas, int i){
-    if(static_cast<int>(cartas[i].getValor()) == 10){
-        std::cout << " [" << cartas[i].formataValor() << static_cast<char>(cartas[i].getNaipe()) << "] ";
-    }else
-        std::cout << " [" << ' ' << cartas[i].formataValor() << static_cast<char>(cartas[i].getNaipe()) << "] ";
-}
-*/
-
-// ? Validar leitura via arquivo de texto
+// TODO: Formatar texto da regra
 void FreeCellGui::imprimeRegras(){
     std::cout << "O jogador fará quantos movimentos quiser, entre as pilhas que quiser, respeitando as seguintes regras: " << std::endl
               << "Para uma free cell desocupada: qualquer carta do topo de uma pilha de jogo; " << std::endl
