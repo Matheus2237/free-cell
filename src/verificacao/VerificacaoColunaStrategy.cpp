@@ -14,7 +14,7 @@
 #include "../../include/verificacao/VerificacaoColunaStrategy.h"
 
 bool VerificacaoColunaStrategy::podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Estrutura& estrutura) {    
+        unsigned short int colunaFinal, const Mesa& estrutura) {    
     Carta* cartas = estrutura.getCartas();
     if (estrutura.encontraUltimaCartaDaColuna(colunaFinal) == COLUNA_VAZIA)
         return true;

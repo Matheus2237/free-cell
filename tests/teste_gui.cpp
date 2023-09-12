@@ -6,7 +6,7 @@
 int main(){
     Baralho bar;
     bar.embaralhar();
-    Estrutura estr(bar.getCartas());
+    Mesa estr(bar.getCartas());
     FreeCellGui gui;
 
     gui.imprimeRegras();

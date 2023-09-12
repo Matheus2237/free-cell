@@ -17,13 +17,13 @@
 #include <chrono>
 
 
-void FreeCellGui::imprimeCartas(Estrutura &estrutura) {
+void FreeCellGui::imprimeCartas(Mesa &estrutura) {
     CLEAR_ALL;
     FreeCellGui::imprimeCabecalho(estrutura);
     FreeCellGui::imprimeColunas(estrutura);
 }
 
-void FreeCellGui::imprimeCabecalho(Estrutura &estrutura){
+void FreeCellGui::imprimeCabecalho(Mesa &estrutura){
     for(int FreeCell = 9; FreeCell <= 12; FreeCell++){
         //if(FreeCell == 1) std::cout << "";
         if(estrutura.encontraUltimaCartaDaColuna(FreeCell) == COLUNA_VAZIA)
@@ -36,7 +36,7 @@ void FreeCellGui::imprimeCabecalho(Estrutura &estrutura){
     std::cout << "   1      2      3      4                      0" << std::endl;
 }
 
-void FreeCellGui::imprimeColunas(Estrutura &estrutura) {
+void FreeCellGui::imprimeColunas(Mesa &estrutura) {
     for(int linha = 0; linha <= maiorColuna(estrutura.getCartas()); linha++){
         for(int coluna = 1; coluna <= 8; coluna++){
             int posicaoCarta = buscaCarta(estrutura.getCartas(), linha, coluna);
@@ -78,7 +78,7 @@ int FreeCellGui::buscaCarta(Carta* cartas, int pos, unsigned int col){
     return COLUNA_VAZIA;
 }
 
-unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura,
+unsigned short int FreeCellGui::leColunaInicial(const Mesa& estrutura,
         bool limpaErroPrimeiraLeitura) {
     const std::string mensagemLeitura = "Entre o valor da coluna inicial: ";
     unsigned short int colunaInicial;
@@ -94,7 +94,7 @@ unsigned short int FreeCellGui::leColunaInicial(const Estrutura& estrutura,
 }
 
 void FreeCellGui::trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
-        const Estrutura& estrutura, bool& colunaValida) {
+        const Mesa& estrutura, bool& colunaValida) {
     if (colunaInicial == 0)
         FreeCellGui::trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
     else if (estrutura.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)

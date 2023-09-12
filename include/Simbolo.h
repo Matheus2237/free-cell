@@ -19,6 +19,7 @@
 /**
  * @brief Namespace que contém os símbolos das cartas do baralho.
  * 
+ * Implementa os símbolos nas cartas do baralho, como naipes e valores.
 */
 namespace Simbolo {
 

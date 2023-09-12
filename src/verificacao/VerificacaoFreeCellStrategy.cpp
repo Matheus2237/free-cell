@@ -14,7 +14,7 @@
 #include "../../include/verificacao/VerificacaoFreeCellStrategy.h"
 
 bool VerificacaoFreeCellStrategy::podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Estrutura& estrutura){
+        unsigned short int colunaFinal, const Mesa& estrutura){
 
     return estrutura.encontraUltimaCartaDaColuna(colunaFinal) == COLUNA_VAZIA;
 }

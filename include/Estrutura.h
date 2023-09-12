@@ -1,5 +1,5 @@
 /**
- * @file Estrutura.h
+ * @file Mesa.h
  * 
  * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
  * @author Matheus Paulino Ribeiro - 2143432 <mathpaulinor@gmail.com>
@@ -17,9 +17,13 @@
 #include "Baralho.h"
 #include "Carta.h"
 
-// TODO: Encontrar um melhor nome para a classe
-// TODO: Implementar @brief da classe.
-class Estrutura {
+/**
+ * @brief Classe que implementa a mesa do jogo.
+ * 
+ * Implementa a mesa do jogo, com metodos de movimentação de cartas e busca de cartas.
+ * 
+*/
+class Mesa {
 private:
 
     /**
@@ -31,23 +35,23 @@ private:
 public:
 
     /**
-     * @brief Constrói um novo objeto Estrutura.
+     * @brief Constrói um novo objeto Mesa.
      * 
      */
-    Estrutura() = default;
+    Mesa() = default;
 
     /**
-     * @brief Constrói um novo objeto Estrutura.
+     * @brief Constrói um novo objeto Mesa.
      * 
      * @param cartas Ponteiro para o vetor de cartas a comporem o jogo.
      */
-    Estrutura(Carta* cartas);
+    Mesa(Carta* cartas);
 
     /**
-     * @brief Destrói o objeto Estrutura.
+     * @brief Destrói o objeto Mesa.
      * 
      */
-    ~Estrutura() = default;
+    ~Mesa() = default;
 
     /**
      * @brief Movimenta uma carta de uma coluna para outra.
@@ -85,7 +89,6 @@ private:
      * @brief Atribui os valores iniciais das colunas nas cartas.
      * 
      */
-    [[deprecated("Método deverá ser refeito de maneira melhor")]]
     void distribuiEmColunas();
 };
 

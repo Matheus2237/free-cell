@@ -106,7 +106,11 @@ public:
 
 private:
 
-    // TODO: Documentar
+    /**
+     * @brief metodo que formata o valor da carta.
+     * 
+     * @return std::string.
+    */
     std::string formataValor() const;
 };
 

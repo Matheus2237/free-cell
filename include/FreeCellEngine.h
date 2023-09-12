@@ -16,8 +16,12 @@
 #include "Estrutura.h"
 #include "FreeCellGui.h"
 
-// TODO: Encontrar um melhor nome para a classe
-// TODO: Implementar @brief da classe.
+/**
+ * @brief Classe que implementa a engine do jogo.
+ * 
+ * Implementa a engine do jogo, que consiste em executar as jogadas do usuário e realizar verificação
+ * de vitoria ou derrota.
+*/
 class FreeCellEngine {
 private:
 
@@ -35,16 +39,16 @@ private:
      *  a posição das cartas na mesa.
      * 
      */
-    Estrutura estrutura;
+    Mesa estrutura;
 
 public:
 
     /**
      * @brief Constrói um novo objeto Free Cell Engine.
      * 
-     * @param estrutura Estrutura que contém as cartas do jogo.
+     * @param estrutura Mesa que contém as cartas do jogo.
      */
-    FreeCellEngine(const Estrutura& estrutura);
+    FreeCellEngine(const Mesa& estrutura);
 
     /**
      * @brief Destrói o objeto Free Cell Engine.

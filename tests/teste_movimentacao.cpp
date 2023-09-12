@@ -5,7 +5,7 @@
 int main() {
     Baralho baralho;
     baralho.embaralhar();
-    Estrutura estrutura(baralho.getCartas());
+    Mesa estrutura(baralho.getCartas());
     FreeCellGui freeCellGui;
     freeCellGui.imprimeCartas(estrutura.getCartas());
     

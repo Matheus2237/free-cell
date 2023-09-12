@@ -14,7 +14,7 @@
 #include "../../include/verificacao/VerificacaoSaidaStrategy.h"
 
 bool VerificacaoSaidaStrategy::podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Estrutura& estrutura) {
+        unsigned short int colunaFinal, const Mesa& estrutura) {
     
     Carta* cartas = estrutura.getCartas();
     Carta cartaMovimentacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaInicial)];

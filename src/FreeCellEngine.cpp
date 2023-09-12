@@ -15,7 +15,7 @@
 #include "../include/verificacao/Verificacao.h"
 #include "../include/verificacao/VerificacaoFactory.h"
 
-FreeCellEngine::FreeCellEngine(const Estrutura& estrutura):
+FreeCellEngine::FreeCellEngine(const Mesa& estrutura):
     jogoGanho(false),
     estrutura(estrutura)
 {}

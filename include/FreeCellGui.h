@@ -22,7 +22,13 @@
 #include "Estrutura.h"
 #include <string>
 
-// TODO: Implementar @brief da classe.
+/**
+ * @brief Classe que implementa a interface gráfica do jogo.
+ * 
+ * Implementa a interface gráfica do jogo, com métodos para impressão da estrutura
+ * de cartas e leitura de entrada do usuário.
+ * 
+ */
 class FreeCellGui {
 public:
 
@@ -43,18 +49,18 @@ public:
      * 
      * @param cartas Ponteiro para vetor de cartas da estrutura.
      */
-    static void imprimeCartas(Estrutura &estrutura);
+    static void imprimeCartas(Mesa &estrutura);
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna inicial válida.
      *  Para que seja válida, ela deve ser um número inteiro entre 1 a 12 e não deve
      *  ser o valor de uma coluna vazia.
      * 
-     * @param estrutura Estrutura que contém as cartas do jogo.
+     * @param estrutura Mesa que contém as cartas do jogo.
      * @param limpaErroPrimeiraLeitura Determina se deve limpar a linha de erro acima da linha de leitura.
      * @return unsigned short int Valor da coluna inicial.
      */
-    static unsigned short int leColunaInicial(const Estrutura& estrutura,
+    static unsigned short int leColunaInicial(const Mesa& estrutura,
         bool limpaErroPrimeiraLeitura);
 
     /**
@@ -112,14 +118,14 @@ private:
      * 
      * @param cartas Vetor que contém as cartas do jogo.
      */
-    static void imprimeCabecalho(Estrutura &estrutura);
+    static void imprimeCabecalho(Mesa &estrutura);
 
     /**
      * @brief Imprime as colunas do jogo que deve ter suas cartas movidas para a saída.
      * 
      * @param cartas Vetor que contém as cartas do jogo.
      */
-    static void imprimeColunas(Estrutura &estrutura);
+    static void imprimeColunas(Mesa &estrutura);
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna válida,
@@ -184,7 +190,7 @@ private:
      * @param colunaValida Flag que determina quando a movimentação parte de uma coluna inicial válida.
      */
     static void trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
-        const Estrutura& estrutura, bool& colunaValida);
+        const Mesa& estrutura, bool& colunaValida);
 };
 
 #endif

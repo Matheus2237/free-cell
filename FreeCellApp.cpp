@@ -18,7 +18,7 @@
 
 int main() {
     // * Iniciar jogo
-    FreeCellEngine engine(Estrutura(Baralho().embaralhar().getCartas()));
+    FreeCellEngine engine(Mesa(Baralho().embaralhar().getCartas()));
     while(!engine.ganhou())
         engine.jogaProximaRodada();
     // * Finalizar jogo

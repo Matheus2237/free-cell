@@ -2,7 +2,7 @@
 #include "../include/Estrutura.h"
 #include "../include/FreeCellEngine.h"
 
-void setUp(Estrutura& estrutura) {
+void setUp(Mesa& estrutura) {
     for (int i = 0; i < TAMANHO_BARALHO; i++) {
         if (estrutura.getCartas()[i].getValor() != Simbolo::Valor::REI) {
             estrutura.getCartas()[i].setColuna(0);
@@ -26,7 +26,7 @@ void setUp(Estrutura& estrutura) {
 
 int main() {
     Baralho baralho;
-    Estrutura estrutura(baralho.getCartas());
+    Mesa estrutura(baralho.getCartas());
     setUp(estrutura);
     FreeCellEngine engine(estrutura);
 

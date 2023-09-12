@@ -6,7 +6,7 @@
 int main() {
     Baralho baralho;
     baralho.embaralhar();
-    Estrutura estrutura(baralho.getCartas());
+    Mesa estrutura(baralho.getCartas());
     Verificacao* verificacao;
     
     verificacao = VerificacaoFactory::criaVerificacao(0);
