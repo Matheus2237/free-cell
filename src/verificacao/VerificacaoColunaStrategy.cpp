@@ -24,17 +24,18 @@ bool VerificacaoColunaStrategy::podeMovimentar(unsigned short int colunaInicial,
 }
 
 bool VerificacaoColunaStrategy::corDiferente(const Carta cartaMovimentacao, const Carta cartaComparacao){
-
+    bool corDiferente;
     switch(cartaMovimentacao.getNaipe()){
         case Simbolo::Naipe::ESPADAS:
         case Simbolo::Naipe::PAUS:
-            return cartaComparacao.getNaipe() == Simbolo::Naipe::COPAS || 
+            corDiferente = cartaComparacao.getNaipe() == Simbolo::Naipe::COPAS || 
                 cartaComparacao.getNaipe() == Simbolo::Naipe::OUROS;
         case Simbolo::Naipe::COPAS:
         case Simbolo::Naipe::OUROS:
-            return cartaComparacao.getNaipe() == Simbolo::Naipe::ESPADAS ||
+            corDiferente = cartaComparacao.getNaipe() == Simbolo::Naipe::ESPADAS ||
                 cartaComparacao.getNaipe() == Simbolo::Naipe::PAUS;
     }
+    return corDiferente;
 }
 
 bool VerificacaoColunaStrategy::valorImediatamenteMenor(const Carta cartaMovimentacao, const Carta cartaComparacao){
