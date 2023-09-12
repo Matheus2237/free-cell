@@ -11,3 +11,4 @@ git push origin main
 # build
 g++ -Wall -o build/FreeCellApp FreeCellApp.cpp src/*.cpp src/verificacao/*.cpp
 g++ -Wall -o build/FreeCellApp.exe FreeCellApp.cpp src/*.cpp src/verificacao/*.cpp
+g++ -Wall -Wextra -pedantic -o build/FreeCell FreeCellApp.cpp src/*.cpp src/verificacao/*.cpp
