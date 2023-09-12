@@ -17,9 +17,9 @@
 #include "include/FreeCellEngine.h"
 
 int main() {
-    // * Iniciar jogo
     FreeCellEngine engine(Mesa(Baralho().embaralhar().getCartas()));
+    engine.iniciaJogo();
     while(!engine.ganhou())
         engine.jogaProximaRodada();
-    // * Finalizar jogo
+    engine.finalizaJogo();
 }
