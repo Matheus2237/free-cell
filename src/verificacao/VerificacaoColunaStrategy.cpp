@@ -16,10 +16,11 @@
 bool VerificacaoColunaStrategy::podeMovimentar(unsigned short int colunaInicial,
         unsigned short int colunaFinal, const Estrutura& estrutura) {    
     Carta* cartas = estrutura.getCartas();
+    if (estrutura.encontraUltimaCartaDaColuna(colunaFinal) == COLUNA_VAZIA)
+        return true;
     Carta cartaMovimentacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaInicial)];
     Carta cartaComparacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaFinal)];
-    return estrutura.encontraUltimaCartaDaColuna(colunaFinal) == COLUNA_VAZIA ||
-        this->corDiferente(cartaMovimentacao, cartaComparacao) &&
+    return this->corDiferente(cartaMovimentacao, cartaComparacao) &&
         this->valorImediatamenteMenor(cartaMovimentacao, cartaComparacao);
 }
 

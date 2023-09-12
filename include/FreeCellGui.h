@@ -164,7 +164,7 @@ private:
      * @param col Coluna que a carta se encontra.
      * @return int Posição no vetor da determinada carta.
      */
-    static int buscaCarta(Carta* cartas, int pos, int col);
+    static int buscaCarta(Carta* cartas, int pos, unsigned int col);
 
     /**
      * @brief Encontra qual coluna do jogo tem a maior quantidade de cartas.

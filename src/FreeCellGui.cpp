@@ -53,7 +53,7 @@ void FreeCellGui::imprimeColunas(Estrutura &estrutura) {
 
 int FreeCellGui::maiorColuna(Carta* cartas){
     int maiorColl = 0;
-    for(int coluna = 1; coluna <= 8; coluna++){
+    for(unsigned int coluna = 1; coluna <= 8; coluna++){
         int countColl = 0;
         for(int i = TAMANHO_BARALHO-1; i >= 0; i--){
             if(cartas[i].getColuna() == coluna)
@@ -65,7 +65,7 @@ int FreeCellGui::maiorColuna(Carta* cartas){
     return maiorColl;
 }
 
-int FreeCellGui::buscaCarta(Carta* cartas, int pos, int col){
+int FreeCellGui::buscaCarta(Carta* cartas, int pos, unsigned int col){
     int p = 0;
     for (int i = 0; i < TAMANHO_BARALHO; i++) {
         if (cartas[i].getColuna() == col) {
