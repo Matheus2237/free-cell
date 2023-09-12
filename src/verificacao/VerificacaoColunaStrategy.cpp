@@ -30,10 +30,12 @@ bool VerificacaoColunaStrategy::corDiferente(const Carta cartaMovimentacao, cons
         case Simbolo::Naipe::PAUS:
             corDiferente = cartaComparacao.getNaipe() == Simbolo::Naipe::COPAS || 
                 cartaComparacao.getNaipe() == Simbolo::Naipe::OUROS;
+            break;
         case Simbolo::Naipe::COPAS:
         case Simbolo::Naipe::OUROS:
             corDiferente = cartaComparacao.getNaipe() == Simbolo::Naipe::ESPADAS ||
                 cartaComparacao.getNaipe() == Simbolo::Naipe::PAUS;
+            break;
     }
     return corDiferente;
 }
