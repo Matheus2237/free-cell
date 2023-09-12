@@ -12,7 +12,6 @@
  */
 
 #include "../include/Estrutura.h"
-#include <iostream>
 
 Estrutura::Estrutura(Carta* cartas):
     cartas(cartas)

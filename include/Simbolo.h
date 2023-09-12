@@ -15,7 +15,6 @@
 #define SIMBOLO_H
 #define QTDE_NAIPES 4 /// Quantidade total de naipes em um baralho convencional.
 #define QTDE_VALORES 13 /// Quantidade total de valores em um baralho convecional.
-#include <iostream>
 
 // TODO: Implementar @brief do namespace.
 /**

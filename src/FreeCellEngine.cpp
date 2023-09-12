@@ -15,8 +15,6 @@
 #include "../include/verificacao/Verificacao.h"
 #include "../include/verificacao/VerificacaoFactory.h"
 
-#include <iostream>
-
 FreeCellEngine::FreeCellEngine(const Estrutura& estrutura):
     jogoGanho(false),
     interfaceGrafica(FreeCellGui()),
