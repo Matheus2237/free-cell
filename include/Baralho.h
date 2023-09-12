@@ -13,18 +13,23 @@
 
 #ifndef BARALHO_H
 #define BARALHO_H
-#define TAMANHO_BARALHO 52 // Total de cartas de um baralho convencional.
+#define TAMANHO_BARALHO 52 /// Total de cartas de um baralho convencional.
 #include "Carta.h"
 
 /**
  * @brief Uma classe que representa um baralho.
  * 
- * A classe baralho é usada para instanciar as 52 cartas que compoem um baralho convencional
- * e possibilita que esse baralho seja embaralhado inúmeras vezes.
+ * A classe baralho é usada para instanciar as 52 cartas que compoem um baralho 
+ * convencional. Possibilita que esse baralho seja embaralhado inúmeras vezes.
  * 
  */
 class Baralho {
 private:
+
+    /**
+     * @brief Vetor de cartas que contém as cartas referentes ao baralho.
+     * 
+     */
     Carta cartas[TAMANHO_BARALHO];
 
 public:

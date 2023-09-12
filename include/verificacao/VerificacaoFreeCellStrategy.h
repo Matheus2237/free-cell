@@ -21,14 +21,17 @@
  * 
  * Implementa a regra de verificação de movimentação de uma coluna ou free cell para uma 
  * free cell. Sobrescreve os métodos podeMovimentar - responsável por verificar a 
- * movimentação - e getMensagemErro - retorna a mensagem de erro a ser utilizada caso a movimentação
+ * movimentação - e getMensagemErro - o qual retorna a mensagem de erro a ser utilizada caso a movimentação
  * não seja permitida.
  * 
 */
 class VerificacaoFreeCellStrategy : public Verificacao {
 private:
 
-    /// Mensagem a ser exibida em caso de não permissão de movimentação para a free cell.
+    /**
+     * @brief Mensagem a ser exibida em caso de não permissão de movimentação para a free cell.
+     * 
+     */
     const std::string mensagemErro = "Free cell já está cheia! Tente novamente.";
 
 public:

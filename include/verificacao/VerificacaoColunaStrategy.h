@@ -28,7 +28,10 @@
 class VerificacaoColunaStrategy : public Verificacao {
 private:
 
-    /// Mensagem a ser exibida em caso de não permissão de movimentação para uma coluna do jogo.
+    /**
+     * @brief Mensagem a ser exibida em caso de não permissão de movimentação para uma coluna do jogo.
+     * 
+     */
     const std::string mensagemErro = "Carta não pode ser movimentada entre as pilhas! Tente novamente.";
 
 public:

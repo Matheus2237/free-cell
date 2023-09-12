@@ -28,7 +28,10 @@
 class VerificacaoSaidaStrategy : public Verificacao {
 private:
 
-    /// Mensagem a ser exibida em caso de não permissão de movimentação para a saída.
+    /**
+     * @brief Mensagem a ser exibida em caso de não permissão de movimentação para a saída.
+     * 
+     */
     const std::string mensagemErro = "Carta não pode ser movimentada para saída! Tente novamente.";
 
 public:

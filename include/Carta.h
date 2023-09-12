@@ -24,8 +24,26 @@
 */
 class Carta {
 private:
+
+    /**
+     * @brief Valor da carta. Varia de Ás a Rei.
+     * 
+     */
     Simbolo::Valor valor;
+
+    /**
+     * @brief Naipe da carta. Varia entre Espadas, Ouro, Paus e Copas.
+     * 
+     */
     Simbolo::Naipe naipe;
+
+    /**
+     * @brief Valor da coluna que a carta ocupa no jogo. Para o valor 0, a carta
+     *  se encontra na saída. Para os valores de 1 a 8, a carta se encontra nas 
+     *  pilhas do jogo e, para os valores de 9 a 12, a carta se encontra na
+     *  respectiva free cell.
+     * 
+     */
     unsigned int coluna;
 
 public:
@@ -88,7 +106,7 @@ public:
 
 private:
 
-    [[deprecated("Implementar formatação dos valores das cartas")]]
+    // TODO: Documentar
     std::string formataValor() const;
 };
 

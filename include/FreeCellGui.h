@@ -24,7 +24,6 @@
 
 // TODO: Implementar @brief da classe.
 class FreeCellGui {
-
 public:
 
     /**

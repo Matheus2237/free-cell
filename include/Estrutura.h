@@ -21,6 +21,11 @@
 // TODO: Implementar @brief da classe.
 class Estrutura {
 private:
+
+    /**
+     * @brief Ponteiro para o vetor de cartas.
+     * 
+     */
     Carta* cartas;
 
 public:

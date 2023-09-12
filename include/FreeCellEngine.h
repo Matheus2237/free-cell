@@ -20,7 +20,21 @@
 // TODO: Implementar @brief da classe.
 class FreeCellEngine {
 private:
+
+    /**
+     * @brief Flag que determina se o jogo está ganho ou não. Por padrão é falsa,
+     *  significando que o jogo ainda não está terminado. Quando o valor true for
+     *  atribuido, então o jogo passa a ter o estado de finalizado.
+     * 
+     */
     bool jogoGanho;
+
+    /**
+     * @brief Estrutura de dados abstrata que armazena as cartas da partida, bem
+     *  bem como sua posição na mesa. Também fornece métodos para interagir com
+     *  a posição das cartas na mesa.
+     * 
+     */
     Estrutura estrutura;
 
 public:
