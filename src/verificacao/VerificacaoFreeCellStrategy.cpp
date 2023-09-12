@@ -14,9 +14,9 @@
 #include "../../include/verificacao/VerificacaoFreeCellStrategy.h"
 
 bool VerificacaoFreeCellStrategy::podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Mesa& estrutura){
+        unsigned short int colunaFinal, const Mesa& mesa){
 
-    return estrutura.encontraUltimaCartaDaColuna(colunaFinal) == COLUNA_VAZIA;
+    return mesa.encontraUltimaCartaDaColuna(colunaFinal) == COLUNA_VAZIA;
 }
 
 std::string VerificacaoFreeCellStrategy::getMensagemErro() const {

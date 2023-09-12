@@ -13,7 +13,7 @@
 
 #ifndef FREE_CELL_ENGINE_H
 #define FREE_CELL_ENGINE_H
-#include "Estrutura.h"
+#include "Mesa.h"
 #include "FreeCellGui.h"
 
 /**
@@ -34,21 +34,21 @@ private:
     bool jogoGanho;
 
     /**
-     * @brief Estrutura de dados abstrata que armazena as cartas da partida, bem
+     * @brief Mesa de dados abstrata que armazena as cartas da partida, bem
      *  bem como sua posição na mesa. Também fornece métodos para interagir com
      *  a posição das cartas na mesa.
      * 
      */
-    Mesa estrutura;
+    Mesa mesa;
 
 public:
 
     /**
      * @brief Constrói um novo objeto Free Cell Engine.
      * 
-     * @param estrutura Mesa que contém as cartas do jogo.
+     * @param mesa Mesa que contém as cartas do jogo.
      */
-    FreeCellEngine(const Mesa& estrutura);
+    FreeCellEngine(const Mesa& mesa);
 
     /**
      * @brief Destrói o objeto Free Cell Engine.

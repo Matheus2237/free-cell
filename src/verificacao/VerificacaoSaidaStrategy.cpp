@@ -14,11 +14,11 @@
 #include "../../include/verificacao/VerificacaoSaidaStrategy.h"
 
 bool VerificacaoSaidaStrategy::podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Mesa& estrutura) {
+        unsigned short int colunaFinal, const Mesa& mesa) {
     
-    Carta* cartas = estrutura.getCartas();
-    Carta cartaMovimentacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaInicial)];
-    Carta cartaComparacao = cartas[estrutura.encontraUltimaCartaSaida(cartaMovimentacao.getNaipe())];
+    Carta* cartas = mesa.getCartas();
+    Carta cartaMovimentacao = cartas[mesa.encontraUltimaCartaDaColuna(colunaInicial)];
+    Carta cartaComparacao = cartas[mesa.encontraUltimaCartaSaida(cartaMovimentacao.getNaipe())];
 
     return cartaMovimentacao.getValor() == Simbolo::Valor::AS ||
         this->valorImediatamenteMaior(cartaMovimentacao, cartaComparacao);

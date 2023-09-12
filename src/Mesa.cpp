@@ -11,7 +11,7 @@
  * 
  */
 
-#include "../include/Estrutura.h"
+#include "../include/Mesa.h"
 
 Mesa::Mesa(Carta* cartas):
     cartas(cartas)

@@ -14,12 +14,12 @@
 #include "../../include/verificacao/VerificacaoColunaStrategy.h"
 
 bool VerificacaoColunaStrategy::podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Mesa& estrutura) {    
-    Carta* cartas = estrutura.getCartas();
-    if (estrutura.encontraUltimaCartaDaColuna(colunaFinal) == COLUNA_VAZIA)
+        unsigned short int colunaFinal, const Mesa& mesa) {    
+    Carta* cartas = mesa.getCartas();
+    if (mesa.encontraUltimaCartaDaColuna(colunaFinal) == COLUNA_VAZIA)
         return true;
-    Carta cartaMovimentacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaInicial)];
-    Carta cartaComparacao = cartas[estrutura.encontraUltimaCartaDaColuna(colunaFinal)];
+    Carta cartaMovimentacao = cartas[mesa.encontraUltimaCartaDaColuna(colunaInicial)];
+    Carta cartaComparacao = cartas[mesa.encontraUltimaCartaDaColuna(colunaFinal)];
     return this->corDiferente(cartaMovimentacao, cartaComparacao) &&
         this->valorImediatamenteMenor(cartaMovimentacao, cartaComparacao);
 }

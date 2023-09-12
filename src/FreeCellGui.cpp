@@ -18,21 +18,21 @@
 #include <chrono>
 
 
-void FreeCellGui::imprimeCartas(Mesa &estrutura) {
+void FreeCellGui::imprimeCartas(Mesa &mesa) {
     CLEAR_ALL;
-    FreeCellGui::imprimeCabecalho(estrutura);
-    FreeCellGui::imprimeColunas(estrutura);
+    FreeCellGui::imprimeCabecalho(mesa);
+    FreeCellGui::imprimeColunas(mesa);
 }
 
-void FreeCellGui::imprimeCabecalho(Mesa &estrutura){
+void FreeCellGui::imprimeCabecalho(Mesa &mesa){
     for(int FreeCell = 9; FreeCell <= 12; FreeCell++){
-        if(estrutura.encontraUltimaCartaDaColuna(FreeCell) == COLUNA_VAZIA)
+        if(mesa.encontraUltimaCartaDaColuna(FreeCell) == COLUNA_VAZIA)
             FREECELL_VAZIA;
         else
-            std::cout << estrutura.getCartas()[estrutura.encontraUltimaCartaDaColuna(FreeCell)];
+            std::cout << mesa.getCartas()[mesa.encontraUltimaCartaDaColuna(FreeCell)];
     }
     for(int naipe = QTDE_NAIPES - 1; naipe >= 0; naipe--){
-        if(estrutura.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe]) == COLUNA_VAZIA){
+        if(mesa.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe]) == COLUNA_VAZIA){
             switch (naipe)
             {
             case 3:
@@ -50,19 +50,19 @@ void FreeCellGui::imprimeCabecalho(Mesa &estrutura){
             }
         } 
         else
-        std::cout << estrutura.getCartas()[estrutura.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe])];
+        std::cout << mesa.getCartas()[mesa.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe])];
     }
     std::cout << std::endl << "   9      10     11     12                0" << std::endl;
 }
 
-void FreeCellGui::imprimeColunas(Mesa &estrutura) {
-    for(int linha = 0; linha <= maiorColuna(estrutura.getCartas()); linha++){
+void FreeCellGui::imprimeColunas(Mesa &mesa) {
+    for(int linha = 0; linha <= maiorColuna(mesa.getCartas()); linha++){
         for(int coluna = 1; coluna <= 8; coluna++){
-            int posicaoCarta = buscaCarta(estrutura.getCartas(), linha, coluna);
+            int posicaoCarta = buscaCarta(mesa.getCartas(), linha, coluna);
             if (posicaoCarta == COLUNA_VAZIA)
                 std::cout << CARTA_VAZIA;
             else
-                std::cout << estrutura.getCartas()[posicaoCarta];
+                std::cout << mesa.getCartas()[posicaoCarta];
         }
         std::cout << std::endl;        
     }
@@ -97,7 +97,7 @@ int FreeCellGui::buscaCarta(Carta* cartas, int pos, unsigned int col){
     return COLUNA_VAZIA;
 }
 
-unsigned short int FreeCellGui::leColunaInicial(const Mesa& estrutura,
+unsigned short int FreeCellGui::leColunaInicial(const Mesa& mesa,
         bool limpaErroPrimeiraLeitura) {
     const std::string mensagemLeitura = "Entre o valor da coluna inicial: ";
     unsigned short int colunaInicial;
@@ -106,17 +106,17 @@ unsigned short int FreeCellGui::leColunaInicial(const Mesa& estrutura,
         colunaInicial = FreeCellGui::leColuna(mensagemLeitura);
         if (limpaErroPrimeiraLeitura)
             CLEAR_LINE;
-        FreeCellGui::trataErrosLeituraColunaInicial(colunaInicial, estrutura, colunaValida);
+        FreeCellGui::trataErrosLeituraColunaInicial(colunaInicial, mesa, colunaValida);
     }
     FreeCellGui::exibeEntrada("Coluna incial: ", colunaInicial);
     return colunaInicial;
 }
 
 void FreeCellGui::trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
-        const Mesa& estrutura, bool& colunaValida) {
+        const Mesa& mesa, bool& colunaValida) {
     if (colunaInicial == 0)
         FreeCellGui::trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
-    else if (estrutura.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)
+    else if (mesa.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)
         FreeCellGui::trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
     else
         colunaValida = true;

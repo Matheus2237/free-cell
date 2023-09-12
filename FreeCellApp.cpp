@@ -13,7 +13,7 @@
  */
 
 #include "include/Baralho.h"
-#include "include/Estrutura.h"
+#include "include/Mesa.h"
 #include "include/FreeCellEngine.h"
 
 int main() {

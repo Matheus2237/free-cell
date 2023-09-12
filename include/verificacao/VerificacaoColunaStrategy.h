@@ -54,12 +54,12 @@ public:
      * 
      * @param colunaInicial Coluna de onde a carta sairia.
      * @param colunaFinal Coluna para onde a carta iria.
-     * @param estrutura Mesa que contém as cartas do jogo.
+     * @param mesa Mesa que contém as cartas do jogo.
      * @return true Se for possível realizar a movimentação.
      * @return false Se não for possível realizar a movimentação.
      */
     bool podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Mesa& estrutura) override;
+        unsigned short int colunaFinal, const Mesa& mesa) override;
 
     /**
      * @brief Recupera a mensagem de erro.
