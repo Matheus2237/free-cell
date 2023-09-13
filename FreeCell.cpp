@@ -1,6 +1,8 @@
 /**
  * @file FreeCell.cpp
- * @brief // TODO: escrever brief do projeto
+ * 
+ * @brief Trabalho de Estrutura De Dados - 4º Bimestre
+ *  Implementação do jogo Free Cell em C++.
  * 
  * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
  * @author Matheus Paulino Ribeiro - 2143432 <mathpaulinor@gmail.com>
