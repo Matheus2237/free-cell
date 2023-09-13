@@ -1,5 +1,5 @@
 /**
- * @file FreeCellApp.cpp
+ * @file FreeCell.cpp
  * @brief // TODO: escrever brief do projeto
  * 
  * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
