@@ -19,12 +19,12 @@ Carta::Carta(Simbolo::Valor valor, Simbolo::Naipe naipe):
     naipe(naipe)
 {}
 
-std::ostream& operator<<(std::ostream& cout, const Carta& carta) {
+std::ostream& operator<<(std::ostream& os, const Carta& carta) {
     std::string espacoCondicional = carta.valor != Simbolo::Valor::DEZ ? " " : "";
-    std::cout << " [" << espacoCondicional
+    os << " [" << espacoCondicional
         << carta.formataValor()
         << static_cast<char>(carta.naipe) << "] ";
-    return std::cout;
+    return os;
 }
 
 unsigned int Carta::getColuna() const {
