@@ -191,44 +191,43 @@ void InterfaceDeUsuario::imprimeRegras(){
     std::this_thread::sleep_for(std::chrono::milliseconds(2500));
 }
 
-// ! Ajustar formatação
 void InterfaceDeUsuario::exibeTitulo() {
     CLEAR_ALL;
     std::cout
         << std::endl
         << std::endl
-        << std::endl
-        << "           ______                _____     _ _              " << std::endl
-        << "          |  ____|              / ____|   | | |             " << std::endl
-        << "          | |__ _ __ ___  ___  | |     ___| | |             " << std::endl
-        << "          |  __| '__/ _ \\/ _ \\ | |    / _ \\ | |          " << std::endl
-        << "          | |  | | |  __/  __/ | |___|  __/ | |             " << std::endl
-        << "          |_|  |_|  \\___|\\___|  \\_____\\___|_|_|         " << std::endl;
+        << "          ______                _____     _ _              " << std::endl
+        << "         |  ____|              / ____|   | | |             " << std::endl
+        << "         | |__ _ __ ___  ___  | |     ___| | |             " << std::endl
+        << "         |  __| '__/ _ \\/ _ \\ | |    / _ \\ | |          " << std::endl
+        << "         | |  | | |  __/  __/ | |___|  __/ | |             " << std::endl
+        << "         |_|  |_|  \\___|\\___|  \\_____\\___|_|_|         " << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1500));
 }
 
-// ! Ajustar formatação
 void InterfaceDeUsuario::exibeDevs() {
     CLEAR_ALL;
     std::cout
         << std::endl
         << std::endl
         << std::endl
-        << "          Desenvolvido por:                         " << std::endl
-        << "            Carlos Sérgio Fernandes Júnior          " << std::endl
-        << "            Matheus Paulino Ribeiro                 " << std::endl
-        << "            Nicolas Fagundes Scarpa                 " << std::endl;
+        << std::endl
+        << "              Desenvolvido por:                       " << std::endl
+        << "              Carlos Sérgio Fernandes Júnior          " << std::endl
+        << "              Matheus Paulino Ribeiro                 " << std::endl
+        << "              Nicolas Fagundes Scarpa                 " << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1500));
 }
 
-// ! Ajustar formatação
 void InterfaceDeUsuario::exibeRegras() {
     CLEAR_ALL;
     char le;
     std::cout << std::endl
         << std::endl
         << std::endl
-        << "    Deseja consultar as regras do jogo? [S/n] ";
+        << std::endl
+        << std::endl
+        << "         Deseja consultar as regras do jogo? [S/n] ";
     std::cin >> le;
     if (le == 'S') {
         CLEAR_ALL;
@@ -237,22 +236,20 @@ void InterfaceDeUsuario::exibeRegras() {
     std::cin.ignore();
 }
 
-// ! Ajustar formatação
 void InterfaceDeUsuario::exibeTrofeu() {
     CLEAR_ALL;
     std::cout 
-        << std::endl
-        << "            '._==_==_=_.'                   " << std::endl
-        << "            .-\\:      /-.                  " << std::endl
-        << "           | (|:.     |) |                  " << std::endl
-        << "            '-|:.     |-'                   " << std::endl
-        << "              \\::.    /                    " << std::endl
-        << "               '::. .'                      " << std::endl
-        << "                 ) (                        " << std::endl
-        << "               _.' '._                      " << std::endl
-        << "              `\"\"\"\"\"\"\"`              " << std::endl
+        << "                     '._==_==_=_.'          " << std::endl
+        << "                     .-\\:      /-.         " << std::endl
+        << "                    | (|:.     |) |         " << std::endl
+        << "                     '-|:.     |-'          " << std::endl
+        << "                       \\::.    /           " << std::endl
+        << "                        '::. .'             " << std::endl
+        << "                          ) (               " << std::endl
+        << "                        _.' '._             " << std::endl
+        << "                       `\"\"\"\"\"\"\"`     " << std::endl
         << "                                            " << std::endl
-        << "        Parabens! Voce ganhou!              " << std::endl
+        << "                 Parabens! Você ganhou!      " << std::endl
         << "                                            " << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(700));
 }
