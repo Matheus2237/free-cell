@@ -31,7 +31,7 @@ void InterfaceDeUsuario::imprimeCabecalho(Mesa &mesa){
         else
             std::cout << mesa.getCartas()[mesa.encontraUltimaCartaDaColuna(FreeCell)];
     }
-    for(int naipe = QTDE_NAIPES - 1; naipe >= 0; naipe--){
+    for(int naipe = Simbolo::QTDE_NAIPES - 1; naipe >= 0; naipe--){
         if(mesa.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe]) == COLUNA_VAZIA){
             switch (naipe)
             {

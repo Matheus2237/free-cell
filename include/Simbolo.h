@@ -13,8 +13,6 @@
 
 #ifndef SIMBOLO_H
 #define SIMBOLO_H
-#define QTDE_NAIPES 4 /// Quantidade total de naipes em um baralho convencional.
-#define QTDE_VALORES 13 /// Quantidade total de valores em um baralho convecional.
 
 /**
  * @brief Namespace que contém os símbolos das cartas do baralho.
@@ -22,6 +20,9 @@
  * Implementa os símbolos nas cartas do baralho, como naipes e valores.
 */
 namespace Simbolo {
+
+    const int QTDE_NAIPES = 4; /// Quantidade total de naipes em um baralho convencional.
+    const int QTDE_VALORES = 13; /// Quantidade total de valores em um baralho convecional.
 
     /**
      * 

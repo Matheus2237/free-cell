@@ -13,9 +13,10 @@
 
 #ifndef MESA_H
 #define MESA_H
-#define COLUNA_VAZIA -1 /// Retornado quando não se encontra nenhuma carta referente a coluna indicada.
 #include "Baralho.h"
 #include "Carta.h"
+
+const int COLUNA_VAZIA = -1; /// Retornado quando não se encontra nenhuma carta referente a coluna indicada.
 
 /**
  * @brief Classe que implementa a mesa do jogo.

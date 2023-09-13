@@ -13,18 +13,19 @@
 
 #ifndef INTERFACE_DE_USUARIO_H
 #define INTERFACE_DE_USUARIO_H
-#define TAMANHO_BARALHO 52 /// TAMANHO TOTAL DO BARALHO
 #define CLEAR_ALL std::cout << "\x1B[2J\x1B[H" /// Comando ANSI para limpar todo o terminal.
 #define CLEAR_LINE std::cout << "\x1b[1A\x1b[K" /// Comando ANSI para limpar a linha acima da posição do cursor.
-#define CARTA_VAZIA "       " /// Representa a formatação do texto de carta vazia para impressão.
-#define FREECELL_VAZIA std::cout << " [   ] " 
-#define SAIDA_COPAS_VAZIA std::cout << " [ C ] ";
-#define SAIDA_PAUS_VAZIA std::cout << " [ P ] ";
-#define SAIDA_OUROS_VAZIA std::cout << " [ O ] ";
-#define SAIDA_ESPADAS_VAZIA std::cout << " [ E ] ";
+#define FREECELL_VAZIA std::cout << " [   ] " /// Comando para impressão de um template de free cell vazia
+#define SAIDA_COPAS_VAZIA std::cout << " [ C ] "; /// Comando para impressão do placeholder da saída do naipe Copas.
+#define SAIDA_PAUS_VAZIA std::cout << " [ P ] "; /// Comando para impressão do placeholder da saída do naipe Paus.
+#define SAIDA_OUROS_VAZIA std::cout << " [ O ] "; /// Comando para impressão do placeholder da saída do naipe Ouros.
+#define SAIDA_ESPADAS_VAZIA std::cout << " [ E ] "; /// Comando para impressão do placeholder da saída do naipe Espadas.
+
 #include "Carta.h"
 #include "Mesa.h"
 #include <string>
+
+const std::string CARTA_VAZIA = "       "; /// Representa a formatação do texto de carta vazia para impressão.
 
 /**
  * @brief Classe que implementa a interface gráfica do jogo.

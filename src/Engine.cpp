@@ -47,7 +47,7 @@ void Engine::jogaProximaRodada() {
 }
 
 void Engine::verificaSeGanhou() {
-    for (int naipe = 0; naipe < QTDE_NAIPES; naipe++)
+    for (int naipe = 0; naipe < Simbolo::QTDE_NAIPES; naipe++)
         if (this->mesa.getCartas()[this->mesa.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe])]
                 .getValor() != Simbolo::Valor::REI)
             return;
