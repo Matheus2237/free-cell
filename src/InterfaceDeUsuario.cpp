@@ -152,7 +152,7 @@ unsigned short int InterfaceDeUsuario::leColuna(const std::string mensagemLeitur
 }
 
 bool InterfaceDeUsuario::somenteNumeros(std::string colunaString) {
-    for (int i = 0; i < colunaString.length(); i++)
+    for (size_t i = 0; i < colunaString.length(); i++)
         if(!isdigit(colunaString[i]))
             return false;
     return true;
