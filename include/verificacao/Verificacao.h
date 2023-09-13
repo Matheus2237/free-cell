@@ -40,7 +40,7 @@ public:
      * @brief Destrutor padrão para o objeto verificação.
      * 
      */
-    ~Verificacao() = default;
+    virtual ~Verificacao() = default;
 
     /**
      * @brief Verifica se a carta de uma coluna pode ser movimentada para uma
