@@ -3,9 +3,6 @@ Corrigir erros de warnings
 
 TESTAR!!!!
 
-Dúvidas:
-    Usar static const ao invés de #define para constantes ?
-
 Após terminar:
     Encoding UTF-8 - Testar a configuração
     Usar simbolos dos naipes - Testar configuração para exibição
