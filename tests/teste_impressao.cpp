@@ -1,11 +1,10 @@
 #include "../include/Baralho.h"
-#include "../include/Estrutura.h"
-#include "../include/FreeCellGui.h"
+#include "../include/Mesa.h"
+#include "../include/InterfaceDeUsuario.h"
 
 int main() {
     Baralho baralho;
     baralho.embaralhar();
-    Mesa estrutura(baralho.getCartas());
-    InterfaceDeUsuario freeCellGui;
-    freeCellGui.imprimeCartas(estrutura.getCartas());
+    Mesa mesa(baralho.getCartas());
+    InterfaceDeUsuario::imprimeCartas(mesa);
 }

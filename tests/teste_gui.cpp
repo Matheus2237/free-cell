@@ -1,25 +1,20 @@
 #include <iostream>
 #include "../include/Baralho.h"
-#include "../include/Estrutura.h"
-#include "../include/FreeCellGui.h"
+#include "../include/Mesa.h"
+#include "../include/InterfaceDeUsuario.h"
 
 int main(){
     Baralho bar;
     bar.embaralhar();
     Mesa estr(bar.getCartas());
-    InterfaceDeUsuario gui;
 
-    gui.imprimeRegras();
-    gui.imprimeCabecalho(estr);
-    gui.imprimeCartas(estr.getCartas());
+    InterfaceDeUsuario::imprimeCartas(estr);
     estr.movimenta(5, 12);
     estr.movimenta(5, 12);
     estr.movimenta(5, 12);
     estr.movimenta(12, 1);
-    gui.imprimeCabecalho(estr);
-    gui.imprimeCartas(estr.getCartas());
+    InterfaceDeUsuario::imprimeCartas(estr);
     estr.movimenta(1, 5);
-    gui.imprimeCabecalho(estr);
-    gui.imprimeCartas(estr.getCartas());
+    InterfaceDeUsuario::imprimeCartas(estr);
     
 }
