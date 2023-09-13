@@ -66,8 +66,8 @@ public:
 
     /**
      * @brief Executa mais uma rodada do jogo. Em uma rodada, é exibido na tela o estado atual
-     *  das cartas na mesa, lida a póxima jogada do usuário e, se for válida, realizada a
-     *  movimentação desejada.s
+     *  das cartas na mesa, lida a póxima jogada do usuário e, se for válida, realiza a
+     *  movimentação desejada.
      * 
      */
     void jogaProximaRodada();

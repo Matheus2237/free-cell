@@ -51,7 +51,7 @@ public:
     /**
      * @brief Imprime a mesa de cartas do jogo.
      * 
-     * @param cartas Ponteiro para vetor de cartas da mesa.
+     * @param mesa Mesa que guarda as cartas durante o jogo.
      */
     static void imprimeCartas(Mesa &mesa);
 
@@ -120,14 +120,14 @@ private:
     /**
      * @brief Imprime o cabeçalho da mesa de jogo. O cabeçalho contém as free cells e as saídas.
      * 
-     * @param cartas Vetor que contém as cartas do jogo.
+     * @param mesa Mesa que guarda as cartas durante o jogo.
      */
     static void imprimeCabecalho(Mesa &mesa);
 
     /**
      * @brief Imprime as colunas do jogo que deve ter suas cartas movidas para a saída.
      * 
-     * @param cartas Vetor que contém as cartas do jogo.
+     * @param mesa Mesa que guarda as cartas durante o jogo.
      */
     static void imprimeColunas(Mesa &mesa);
 
