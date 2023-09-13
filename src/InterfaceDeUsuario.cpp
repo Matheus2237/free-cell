@@ -177,16 +177,43 @@ void InterfaceDeUsuario::trataMovimentacaoProibida(std::string mensagemErro) {
 
 // TODO: Formatar texto da regra
 void InterfaceDeUsuario::imprimeRegras(){
-    std::cout << "O jogador fará quantos movimentos quiser, entre as pilhas que quiser, respeitando as seguintes regras: " << std::endl
-              << "Para uma free cell desocupada: qualquer carta do topo de uma pilha de jogo; " << std::endl
-              << "Para uma das pilhas de saída: qualquer carta de uma free cell ou do topo de uma pilha de jogo. Movimentos para uma pilha de saída " << std::endl
-              << "devem ser feitos em ordem do menor para o maior, sempre de mesmo naipe. Assim, temos uma pilha de saída para cada um dos 4 " << std::endl
-              << "naipes. Ases sempre podem ser movidos para uma pilha de saída vazia; " << std::endl
-              << "Para o topo de uma pilha de jogo: qualquer carta de uma das free cells ou do topo de uma outra pilha de jogo. Movimentos para uma " << std::endl
-              << "pilha de jogo devem ser feitos em ordem do maior para o menor, alternando a cor do naipe. Por exemplo: se o topo de uma pilha de " << std::endl
-              << "jogo contém um 4 de paus (que é preto), podemos mover para o topo dessa pilha um 3 de copas ou de ouro (que são vermelhos). " << std::endl
-              << "O fim do jogo é alcançado quando todas as cartas forem movidas para as pilhas de saída ou quando não há movimento que permita mais alguma " << std::endl
-              << "carta ser movida para uma das pilhas de saída." << std::endl;
+    std::cout << "                            ********************" << std::endl
+              << "                            *                  * " << std::endl
+              << "                            * *REGRAS DO JOGO* * " << std::endl 
+              << "                            *                  * " << std::endl
+              << "                            ********************" << std::endl
+              << "  _______________________________________________________________________" << std::endl
+              << " / Visão geral do jogo:                                                 \\ " << std::endl  
+              << " |* No canto superior esquerdo terá 4 espaços vazios(chamados também de |" << std::endl
+              << " |FreeCells), onde você poderá armazenar temporariamente durante o jogo.|" << std::endl
+              << " |                                                                      |" << std::endl
+              << " |* No canto superior DIREITO também há 4 espaços vazios, mas neles     |" << std::endl
+              << " |é onde você fará as pilhas de saida.                                  |" << std::endl
+              << " |                                                                      |" << std::endl
+              << " |Objetivo do jogo:                                                     |" << std::endl
+              << " |* Fazer 4 pilhas de 13 cartas cada. Cada pilha deve ser feita na      |" << std::endl
+              << " |ordem crescente do ás até o rei.                                      |" << std::endl
+              << " |                                                                      |" << std::endl
+              << " |Como jogar:                                                           |" << std::endl
+              << " |Retire cartas da parte inferior de cada coluna e mova-as da seguinte  |" << std::endl
+              << " |maneira:                                                              |" << std::endl
+              << " |                                                                      |" << std::endl
+              << " |* De uma coluna para uma célula vazia. As células vazias só podem     |" << std::endl
+              << " |conter uma carta de cada vez.                                         |" << std::endl
+              << " |                                                                      |" << std::endl
+              << " |* De uma coluna para outra (ou de uma célula vazia para uma coluna).  |" << std::endl
+              << " |As cartas devem ser colocadas na coluna em ordem sequencial           |" << std::endl
+              << " |decrescente, e é necessário alternar naipes vermelhos e pretos.       |" << std::endl
+              << " |                                                                      |" << std::endl
+              << " |* De uma coluna para uma célula inicial. Cada pilha deve consistir de |" << std::endl
+              << " \\um único naipe e começar por um ás.                                  /" << std::endl
+              << "  ----------------------------------------------------------------------" << std::endl
+              << "             \\    ,-^-." << std::endl
+              << "              \\   !oYo!" << std::endl
+              << "               \\ /./=\\.\\______" << std::endl
+              << "                    ##        )\\/\\" << std::endl
+              << "                     ||-----w||" << std::endl
+              << "                     ||      ||" << std::endl;
     std::cout << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(2500));
 }
@@ -222,6 +249,7 @@ void InterfaceDeUsuario::exibeDevs() {
 void InterfaceDeUsuario::exibeRegras() {
     CLEAR_ALL;
     char le;
+    std::string verif;
     std::cout << std::endl
         << std::endl
         << std::endl
@@ -229,9 +257,13 @@ void InterfaceDeUsuario::exibeRegras() {
         << std::endl
         << "         Deseja consultar as regras do jogo? [S/n] ";
     std::cin >> le;
-    if (le == 'S') {
+    if (le == 'S' || le == 's') {
         CLEAR_ALL;
         InterfaceDeUsuario::imprimeRegras();
+        std::cout << "Aperte enter para continuar...";
+        getline(std::cin, verif);
+        std::cin.ignore();
+        std::cin.clear();
     }
     std::cin.ignore();
 }
