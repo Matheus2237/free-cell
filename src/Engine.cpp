@@ -14,6 +14,7 @@
 #include "../include/Engine.h"
 #include "../include/verificacao/Verificacao.h"
 #include "../include/verificacao/VerificacaoFactory.h"
+#include "../include/InterfaceDeUsuario.h"
 
 Engine::Engine(const Mesa& mesa):
     jogoGanho(false),
@@ -25,18 +26,18 @@ bool Engine::ganhou() const {
 }
 
 void Engine::jogaProximaRodada() {
-    FreeCellGui::imprimeCartas(mesa);
+    InterfaceDeUsuario::imprimeCartas(mesa);
     unsigned short int colunaInicial;
     unsigned short int colunaFinal;
     bool limpaErroPrimeiraLeitura = false;
     bool movimentacaoValida = false;
     while (!movimentacaoValida) {
-        colunaInicial = FreeCellGui::leColunaInicial(this->mesa, limpaErroPrimeiraLeitura);
-        colunaFinal = FreeCellGui::leColunaFinal(colunaInicial);
+        colunaInicial = InterfaceDeUsuario::leColunaInicial(this->mesa, limpaErroPrimeiraLeitura);
+        colunaFinal = InterfaceDeUsuario::leColunaFinal(colunaInicial);
         Verificacao* verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
         movimentacaoValida = verificacao->podeMovimentar(colunaInicial, colunaFinal, this->mesa);
         if (!movimentacaoValida) {
-            FreeCellGui::trataMovimentacaoProibida(verificacao->getMensagemErro());
+            InterfaceDeUsuario::trataMovimentacaoProibida(verificacao->getMensagemErro());
             limpaErroPrimeiraLeitura = true;
         }
         delete verificacao;
@@ -55,11 +56,11 @@ void Engine::verificaSeGanhou() {
 
 
 void Engine::iniciaJogo() {
-    FreeCellGui::exibeTitulo();
-    FreeCellGui::exibeDevs();
-    FreeCellGui::exibeRegras();
+    InterfaceDeUsuario::exibeTitulo();
+    InterfaceDeUsuario::exibeDevs();
+    InterfaceDeUsuario::exibeRegras();
 }
 
 void Engine::finalizaJogo() {
-    FreeCellGui::exibeTrofeu();
+    InterfaceDeUsuario::exibeTrofeu();
 }

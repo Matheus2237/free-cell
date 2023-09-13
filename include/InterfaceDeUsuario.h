@@ -1,5 +1,5 @@
 /**
- * @file FreeCellGui.h
+ * @file InterfaceDeUsuario.h
  * 
  * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
  * @author Matheus Paulino Ribeiro - 2143432 <mathpaulinor@gmail.com>
@@ -11,8 +11,8 @@
  * 
  */
 
-#ifndef FREE_CELL_GUI_H
-#define FREE_CELL_GUI_H
+#ifndef INTERFACE_DE_USUARIO_H
+#define INTERFACE_DE_USUARIO_H
 #define TAMANHO_BARALHO 52 /// TAMANHO TOTAL DO BARALHO
 #define CLEAR_ALL std::cout << "\x1B[2J\x1B[H" /// Comando ANSI para limpar todo o terminal.
 #define CLEAR_LINE std::cout << "\x1b[1A\x1b[K" /// Comando ANSI para limpar a linha acima da posição do cursor.
@@ -33,20 +33,20 @@
  * de cartas e leitura de entrada do usuário.
  * 
  */
-class FreeCellGui {
+class InterfaceDeUsuario {
 public:
 
     /**
      * @deprecated Construtor padrão removido.
      * 
      */
-    FreeCellGui() = delete;
+    InterfaceDeUsuario() = delete;
 
     /**
      * @brief Destrutor removido.
      * 
      */
-    ~FreeCellGui() = delete;
+    ~InterfaceDeUsuario() = delete;
 
     /**
      * @brief Imprime a mesa de cartas do jogo.

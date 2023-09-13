@@ -15,7 +15,6 @@
 #define VERIFICACAO_H
 #include "../Carta.h"
 #include "../Mesa.h"
-#include "../FreeCellGui.h"
 #include <string>
 
 /**

@@ -14,7 +14,6 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 #include "Mesa.h"
-#include "FreeCellGui.h"
 
 /**
  * @brief Classe que implementa a engine do jogo.

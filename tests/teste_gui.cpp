@@ -7,7 +7,7 @@ int main(){
     Baralho bar;
     bar.embaralhar();
     Mesa estr(bar.getCartas());
-    FreeCellGui gui;
+    InterfaceDeUsuario gui;
 
     gui.imprimeRegras();
     gui.imprimeCabecalho(estr);

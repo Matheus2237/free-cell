@@ -1,5 +1,5 @@
 /**
- * @file FreeCellGui.cpp
+ * @file InterfaceDeUsuario.cpp
  * 
  * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
  * @author Matheus Paulino Ribeiro - 2143432 <mathpaulinor@gmail.com>
@@ -11,20 +11,20 @@
  * 
  */
 
-#include "../include/FreeCellGui.h"
+#include "../include/InterfaceDeUsuario.h"
 #include "../include/Simbolo.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
 
 
-void FreeCellGui::imprimeCartas(Mesa &mesa) {
+void InterfaceDeUsuario::imprimeCartas(Mesa &mesa) {
     CLEAR_ALL;
-    FreeCellGui::imprimeCabecalho(mesa);
-    FreeCellGui::imprimeColunas(mesa);
+    InterfaceDeUsuario::imprimeCabecalho(mesa);
+    InterfaceDeUsuario::imprimeColunas(mesa);
 }
 
-void FreeCellGui::imprimeCabecalho(Mesa &mesa){
+void InterfaceDeUsuario::imprimeCabecalho(Mesa &mesa){
     for(int FreeCell = 9; FreeCell <= 12; FreeCell++){
         if(mesa.encontraUltimaCartaDaColuna(FreeCell) == COLUNA_VAZIA)
             FREECELL_VAZIA;
@@ -55,7 +55,7 @@ void FreeCellGui::imprimeCabecalho(Mesa &mesa){
     std::cout << std::endl << "   9      10     11     12                0" << std::endl;
 }
 
-void FreeCellGui::imprimeColunas(Mesa &mesa) {
+void InterfaceDeUsuario::imprimeColunas(Mesa &mesa) {
     for(int linha = 0; linha <= maiorColuna(mesa.getCartas()); linha++){
         for(int coluna = 1; coluna <= 8; coluna++){
             int posicaoCarta = buscaCarta(mesa.getCartas(), linha, coluna);
@@ -70,7 +70,7 @@ void FreeCellGui::imprimeColunas(Mesa &mesa) {
     std::cout << std::endl;
 }
 
-int FreeCellGui::maiorColuna(Carta* cartas){
+int InterfaceDeUsuario::maiorColuna(Carta* cartas){
     int maiorColl = 0;
     for(unsigned int coluna = 1; coluna <= 8; coluna++){
         int countColl = 0;
@@ -84,7 +84,7 @@ int FreeCellGui::maiorColuna(Carta* cartas){
     return maiorColl;
 }
 
-int FreeCellGui::buscaCarta(Carta* cartas, int pos, unsigned int col){
+int InterfaceDeUsuario::buscaCarta(Carta* cartas, int pos, unsigned int col){
     int p = 0;
     for (int i = 0; i < TAMANHO_BARALHO; i++) {
         if (cartas[i].getColuna() == col) {
@@ -97,61 +97,61 @@ int FreeCellGui::buscaCarta(Carta* cartas, int pos, unsigned int col){
     return COLUNA_VAZIA;
 }
 
-unsigned short int FreeCellGui::leColunaInicial(const Mesa& mesa,
+unsigned short int InterfaceDeUsuario::leColunaInicial(const Mesa& mesa,
         bool limpaErroPrimeiraLeitura) {
     const std::string mensagemLeitura = "Entre o valor da coluna inicial: ";
     unsigned short int colunaInicial;
     bool colunaValida = false;
     while (!colunaValida) {
-        colunaInicial = FreeCellGui::leColuna(mensagemLeitura);
+        colunaInicial = InterfaceDeUsuario::leColuna(mensagemLeitura);
         if (limpaErroPrimeiraLeitura)
             CLEAR_LINE;
-        FreeCellGui::trataErrosLeituraColunaInicial(colunaInicial, mesa, colunaValida);
+        InterfaceDeUsuario::trataErrosLeituraColunaInicial(colunaInicial, mesa, colunaValida);
     }
-    FreeCellGui::exibeEntrada("Coluna incial: ", colunaInicial);
+    InterfaceDeUsuario::exibeEntrada("Coluna incial: ", colunaInicial);
     return colunaInicial;
 }
 
-void FreeCellGui::trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
+void InterfaceDeUsuario::trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
         const Mesa& mesa, bool& colunaValida) {
     if (colunaInicial == 0)
-        FreeCellGui::trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
+        InterfaceDeUsuario::trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
     else if (mesa.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)
-        FreeCellGui::trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
+        InterfaceDeUsuario::trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
     else
         colunaValida = true;
 }
 
-unsigned short int FreeCellGui::leColunaFinal(unsigned short int colunaInicial) {
+unsigned short int InterfaceDeUsuario::leColunaFinal(unsigned short int colunaInicial) {
     const std::string mensagemLeitura = "Entre o valor da coluna final: ";
     unsigned short int colunaFinal;
     bool colunaValida = false;
     while (!colunaValida) {
-        colunaFinal = FreeCellGui::leColuna(mensagemLeitura);
+        colunaFinal = InterfaceDeUsuario::leColuna(mensagemLeitura);
         colunaValida = colunaFinal != colunaInicial;
         if (!colunaValida)
-            FreeCellGui::trataLinhaErro("Não pode mover a carta para a mesma coluna, tente novamente. ");
+            InterfaceDeUsuario::trataLinhaErro("Não pode mover a carta para a mesma coluna, tente novamente. ");
     }
-    FreeCellGui::exibeEntrada("Coluna final: ", colunaFinal);
+    InterfaceDeUsuario::exibeEntrada("Coluna final: ", colunaFinal);
     return colunaFinal;
 }
 
-unsigned short int FreeCellGui::leColuna(const std::string mensagemLeitura) {
+unsigned short int InterfaceDeUsuario::leColuna(const std::string mensagemLeitura) {
     std::string coluna;
     const std::string mensagemErro = "Coluna invalida, tente novamente. ";
     bool colunaValida = false;
     while(!colunaValida) {
         std::cout << mensagemLeitura;
         std::getline(std::cin, coluna);
-        colunaValida = !coluna.empty() && FreeCellGui::somenteNumeros(coluna) &&
+        colunaValida = !coluna.empty() && InterfaceDeUsuario::somenteNumeros(coluna) &&
             std::stoi(coluna) >=0 && std::stoi(coluna) <= 12;
         if (!colunaValida)
-            FreeCellGui::trataLinhaErro(mensagemErro);
+            InterfaceDeUsuario::trataLinhaErro(mensagemErro);
     }
     return std::stoi(coluna);
 }
 
-bool FreeCellGui::somenteNumeros(std::string colunaString) {
+bool InterfaceDeUsuario::somenteNumeros(std::string colunaString) {
     for (int i = 0; i < colunaString.length(); i++)
         if(!isdigit(colunaString[i]))
             return false;
@@ -159,24 +159,24 @@ bool FreeCellGui::somenteNumeros(std::string colunaString) {
 }
 
 
-void FreeCellGui::trataLinhaErro(const std::string mensagemErro) {
+void InterfaceDeUsuario::trataLinhaErro(const std::string mensagemErro) {
     CLEAR_LINE;
     std::cout << mensagemErro;
 }
 
-void FreeCellGui::exibeEntrada(const std::string mensagemExibicao, const unsigned short int coluna) {
+void InterfaceDeUsuario::exibeEntrada(const std::string mensagemExibicao, const unsigned short int coluna) {
     CLEAR_LINE;
     std::cout << mensagemExibicao << coluna << std::endl;
 }
 
-void FreeCellGui::trataMovimentacaoProibida(std::string mensagemErro) {
+void InterfaceDeUsuario::trataMovimentacaoProibida(std::string mensagemErro) {
     CLEAR_LINE;
     CLEAR_LINE;
     std::cout << mensagemErro << std::endl;
 }
 
 // TODO: Formatar texto da regra
-void FreeCellGui::imprimeRegras(){
+void InterfaceDeUsuario::imprimeRegras(){
     std::cout << "O jogador fará quantos movimentos quiser, entre as pilhas que quiser, respeitando as seguintes regras: " << std::endl
               << "Para uma free cell desocupada: qualquer carta do topo de uma pilha de jogo; " << std::endl
               << "Para uma das pilhas de saída: qualquer carta de uma free cell ou do topo de uma pilha de jogo. Movimentos para uma pilha de saída " << std::endl
@@ -192,7 +192,7 @@ void FreeCellGui::imprimeRegras(){
 }
 
 // ! Ajustar formatação
-void FreeCellGui::exibeTitulo() {
+void InterfaceDeUsuario::exibeTitulo() {
     CLEAR_ALL;
     std::cout
         << std::endl
@@ -208,7 +208,7 @@ void FreeCellGui::exibeTitulo() {
 }
 
 // ! Ajustar formatação
-void FreeCellGui::exibeDevs() {
+void InterfaceDeUsuario::exibeDevs() {
     CLEAR_ALL;
     std::cout
         << std::endl
@@ -222,7 +222,7 @@ void FreeCellGui::exibeDevs() {
 }
 
 // ! Ajustar formatação
-void FreeCellGui::exibeRegras() {
+void InterfaceDeUsuario::exibeRegras() {
     CLEAR_ALL;
     char le;
     std::cout << std::endl
@@ -232,13 +232,13 @@ void FreeCellGui::exibeRegras() {
     std::cin >> le;
     if (le == 'S') {
         CLEAR_ALL;
-        FreeCellGui::imprimeRegras();
+        InterfaceDeUsuario::imprimeRegras();
     }
     std::cin.ignore();
 }
 
 // ! Ajustar formatação
-void FreeCellGui::exibeTrofeu() {
+void InterfaceDeUsuario::exibeTrofeu() {
     CLEAR_ALL;
     std::cout 
         << std::endl
