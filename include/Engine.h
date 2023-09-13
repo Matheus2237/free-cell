@@ -1,5 +1,5 @@
 /**
- * @file FreeCellEngine.h
+ * @file Engine.h
  * 
  * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
  * @author Matheus Paulino Ribeiro - 2143432 <mathpaulinor@gmail.com>
@@ -11,8 +11,8 @@
  * 
  */
 
-#ifndef FREE_CELL_ENGINE_H
-#define FREE_CELL_ENGINE_H
+#ifndef ENGINE_H
+#define ENGINE_H
 #include "Mesa.h"
 #include "FreeCellGui.h"
 
@@ -22,7 +22,7 @@
  * Implementa a engine do jogo, que consiste em executar as jogadas do usuário e realizar verificação
  * de vitoria ou derrota.
 */
-class FreeCellEngine {
+class Engine {
 private:
 
     /**
@@ -44,17 +44,17 @@ private:
 public:
 
     /**
-     * @brief Constrói um novo objeto Free Cell Engine.
+     * @brief Constrói um novo objeto Engine.
      * 
      * @param mesa Mesa que contém as cartas do jogo.
      */
-    FreeCellEngine(const Mesa& mesa);
+    Engine(const Mesa& mesa);
 
     /**
-     * @brief Destrói o objeto Free Cell Engine.
+     * @brief Destrói o objeto Engine.
      * 
      */
-    ~FreeCellEngine() = default;
+    ~Engine() = default;
     
     /**
      * @brief Verifica se o jogo foi ganho. O jogo só é ganho quando a carta do topo

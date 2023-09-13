@@ -1,5 +1,5 @@
 /**
- * @file FreeCellEngine.cpp
+ * @file Engine.cpp
  * 
  * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
  * @author Matheus Paulino Ribeiro - 2143432 <mathpaulinor@gmail.com>
@@ -11,20 +11,20 @@
  * 
  */
 
-#include "../include/FreeCellEngine.h"
+#include "../include/Engine.h"
 #include "../include/verificacao/Verificacao.h"
 #include "../include/verificacao/VerificacaoFactory.h"
 
-FreeCellEngine::FreeCellEngine(const Mesa& mesa):
+Engine::Engine(const Mesa& mesa):
     jogoGanho(false),
     mesa(mesa)
 {}
 
-bool FreeCellEngine::ganhou() const {
+bool Engine::ganhou() const {
     return this->jogoGanho;
 }
 
-void FreeCellEngine::jogaProximaRodada() {
+void Engine::jogaProximaRodada() {
     FreeCellGui::imprimeCartas(mesa);
     unsigned short int colunaInicial;
     unsigned short int colunaFinal;
@@ -45,7 +45,7 @@ void FreeCellEngine::jogaProximaRodada() {
     this->verificaSeGanhou(); 
 }
 
-void FreeCellEngine::verificaSeGanhou() {
+void Engine::verificaSeGanhou() {
     for (int naipe = 0; naipe < QTDE_NAIPES; naipe++)
         if (this->mesa.getCartas()[this->mesa.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe])]
                 .getValor() != Simbolo::Valor::REI)
@@ -54,12 +54,12 @@ void FreeCellEngine::verificaSeGanhou() {
 }
 
 
-void FreeCellEngine::iniciaJogo() {
+void Engine::iniciaJogo() {
     FreeCellGui::exibeTitulo();
     FreeCellGui::exibeDevs();
     FreeCellGui::exibeRegras();
 }
 
-void FreeCellEngine::finalizaJogo() {
+void Engine::finalizaJogo() {
     FreeCellGui::exibeTrofeu();
 }

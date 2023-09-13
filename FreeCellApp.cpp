@@ -14,10 +14,10 @@
 
 #include "include/Baralho.h"
 #include "include/Mesa.h"
-#include "include/FreeCellEngine.h"
+#include "include/Engine.h"
 
 int main() {
-    FreeCellEngine engine(Mesa(Baralho().embaralhar().getCartas()));
+    Engine engine(Mesa(Baralho().embaralhar().getCartas()));
     engine.iniciaJogo();
     while(!engine.ganhou())
         engine.jogaProximaRodada();

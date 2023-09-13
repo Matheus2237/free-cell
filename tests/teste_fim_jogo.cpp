@@ -28,7 +28,7 @@ int main() {
     Baralho baralho;
     Mesa estrutura(baralho.getCartas());
     setUp(estrutura);
-    FreeCellEngine engine(estrutura);
+    Engine engine(estrutura);
 
     engine.iniciaJogo();
     while (!engine.ganhou()) {
