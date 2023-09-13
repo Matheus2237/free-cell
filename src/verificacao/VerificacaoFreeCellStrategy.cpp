@@ -13,7 +13,7 @@
 
 #include "../../include/verificacao/VerificacaoFreeCellStrategy.h"
 
-bool VerificacaoFreeCellStrategy::podeMovimentar(unsigned short int colunaInicial,
+bool VerificacaoFreeCellStrategy::podeMovimentar(unsigned short int colunaInicial __attribute__((unused)),
         unsigned short int colunaFinal, const Mesa& mesa){
 
     return mesa.encontraUltimaCartaDaColuna(colunaFinal) == COLUNA_VAZIA;

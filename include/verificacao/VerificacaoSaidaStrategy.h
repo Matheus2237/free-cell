@@ -53,13 +53,15 @@ public:
      *  vazia.
      * 
      * @param colunaInicial Coluna de onde a carta sairia.
-     * @param colunaFinal Coluna para onde a carta iria.
+     * @param colunaFinal Coluna para onde a carta iria. (Variável em desuso,
+     *  pois a coluna final será sempre 0)
      * @param Mesa Mesa que contém as cartas do jogo.
      * @return true Se for possível realizar a movimentação.
      * @return false Se não for possível realizar a movimentação.
      */
     bool podeMovimentar(unsigned short int colunaInicial,
-        unsigned short int colunaFinal, const Mesa& mesa) override;
+        unsigned short int colunaFinal __attribute__((unused)), 
+        const Mesa& mesa) override;
 
     /**
      * @brief Recupera a mensagem de erro.

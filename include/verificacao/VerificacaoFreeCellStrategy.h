@@ -52,13 +52,14 @@ public:
      * @brief Verifica se a free cell na posição desejada está
      *  vazia.
      * 
-     * @param colunaInicial Coluna de onde a carta sairia.
+     * @param colunaInicial Coluna de onde a carta sairia. (Variável em desuso, 
+     *  pois basta apenas checar se a free cell está cheia ou não)
      * @param colunaFinal Coluna para onde a carta iria.
      * @param mesa Mesa que contém as cartas do jogo.
      * @return true Se for possível realizar a movimentação.
      * @return false Se não for possível realizar a movimentação.
      */
-    bool podeMovimentar(unsigned short int colunaInicial,
+    bool podeMovimentar(unsigned short int colunaInicial __attribute__((unused)),
         unsigned short int colunaFinal, const Mesa& mesa) override;
 
     /**
