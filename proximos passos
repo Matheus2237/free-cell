@@ -2,6 +2,16 @@ Documentar main
 Ler se usuário deseja ler manual (função pronta).
 Ler qualquer valor do terminal para fechar manual.
 
+Dúvidas:
+    Jogar quantas partidas quiser.
+    Mnesagem do movimento que o usuário realizou ainda que seja um movimento válido.
+
 Após terminar:
+    Validar se não há mais jogadas.
     Encoding UTF-8 - Testar a configuração
     Usar simbolos dos naipes - Testar configuração para exibição
+
+Entrega:
+    Montar pacote de Entrega
+    Revisar todas documentações
+    Revisar README e manual do jogo.
