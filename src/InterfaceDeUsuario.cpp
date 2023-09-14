@@ -261,8 +261,7 @@ void InterfaceDeUsuario::exibeRegras() {
         CLEAR_ALL;
         InterfaceDeUsuario::imprimeRegras();
         std::cout << "Aperte enter para continuar...";
-        std::cin >> verif;
-        // getline(std::cin, verif, '\n');
+        getline(std::cin, verif);
         std::cin.ignore();
         std::cin.clear();
     }
