@@ -77,6 +77,12 @@ public:
      */
     static unsigned short int leColunaFinal(unsigned short int colunaInicial);
 
+    /**
+     * @brief Imprime o motive de um dado entrado pelo usuário não ser aceito para
+     *  aquela jogada.
+     * 
+     * @param mensagemDeErro Mensagem a ser impressa para imformar o usuário. 
+     */
     static void imprimeMotivoErro(const char* mensagemDeErro);
 
     /**

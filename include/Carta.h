@@ -1,5 +1,5 @@
 /**
- * @file Carta.h *
+ * @file Carta.h
  * 
  * @author Carlos Sérgio Fernandes Júnior - 2157633 <carlos_fernandes.1@hotmail.com>
  * @author Matheus Paulino Ribeiro - 2143432 <mathpaulinor@gmail.com>
