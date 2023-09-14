@@ -98,48 +98,33 @@ int InterfaceDeUsuario::buscaCarta(Carta* cartas, int pos, unsigned int col){
     return COLUNA_VAZIA;
 }
 
-unsigned short int InterfaceDeUsuario::leColunaInicial(const Mesa& mesa,
-        bool limpaErroPrimeiraLeitura) {
+unsigned short int InterfaceDeUsuario::leColunaInicial(const Mesa& mesa) {
     const std::string mensagemLeitura = "Entre o valor da coluna inicial: ";
-    unsigned short int colunaInicial;
-    bool colunaValida = false;
-    while (!colunaValida) {
-        colunaInicial = InterfaceDeUsuario::leColuna(mensagemLeitura);
-        if (limpaErroPrimeiraLeitura)
-            CLEAR_LINE;
-        InterfaceDeUsuario::trataErrosLeituraColunaInicial(colunaInicial, mesa, colunaValida);
-    }
+    unsigned short int colunaInicial = InterfaceDeUsuario::leColuna(mensagemLeitura);
+    InterfaceDeUsuario::trataErrosLeituraColunaInicial(colunaInicial, mesa);
     InterfaceDeUsuario::exibeEntrada("Coluna incial: ", colunaInicial);
     return colunaInicial;
 }
 
 void InterfaceDeUsuario::trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
-        const Mesa& mesa, bool& colunaValida) {
+        const Mesa& mesa) {
     if (colunaInicial == 0)
-        InterfaceDeUsuario::trataLinhaErro("Não pode mover carta da saída, tente novamente. ");
+        throw MovimentacaoIndevidaException("Não pode mover carta da saída, tente novamente. ");
     else if (mesa.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)
-        InterfaceDeUsuario::trataLinhaErro("Não pode movar de uma coluna vazia, tente novamente. ");
-    else
-        colunaValida = true;
+        throw MovimentacaoIndevidaException("Não pode mover de uma coluna vazia, tente novamente. ");
 }
 
 unsigned short int InterfaceDeUsuario::leColunaFinal(unsigned short int colunaInicial) {
     const std::string mensagemLeitura = "Entre o valor da coluna final: ";
-    unsigned short int colunaFinal;
-    bool colunaValida = false;
-    while (!colunaValida) {
-        colunaFinal = InterfaceDeUsuario::leColuna(mensagemLeitura);
-        colunaValida = colunaFinal != colunaInicial;
-        if (!colunaValida)
-            InterfaceDeUsuario::trataLinhaErro("Não pode mover a carta para a mesma coluna, tente novamente. ");
-    }
+    unsigned short int colunaFinal = InterfaceDeUsuario::leColuna(mensagemLeitura);
+    if (colunaFinal == colunaInicial)
+        throw MovimentacaoIndevidaException("Não pode mover a carta para a mesma coluna, tente novamente. ");
     InterfaceDeUsuario::exibeEntrada("Coluna final: ", colunaFinal);
     return colunaFinal;
 }
 
 unsigned short int InterfaceDeUsuario::leColuna(const std::string mensagemLeitura) {
     std::string coluna;
-    const std::string mensagemErro = "Coluna invalida, tente novamente. ";
     bool colunaValida = false;
     while(!colunaValida) {
         std::cout << mensagemLeitura;
@@ -147,7 +132,7 @@ unsigned short int InterfaceDeUsuario::leColuna(const std::string mensagemLeitur
         colunaValida = !coluna.empty() && InterfaceDeUsuario::somenteNumeros(coluna) &&
             std::stoi(coluna) >=0 && std::stoi(coluna) <= 12;
         if (!colunaValida)
-            InterfaceDeUsuario::trataLinhaErro(mensagemErro);
+            CLEAR_LINE << "Coluna invalida, tente novamente. ";
     }
     return std::stoi(coluna);
 }
@@ -159,21 +144,15 @@ bool InterfaceDeUsuario::somenteNumeros(std::string colunaString) {
     return true;
 }
 
-
-void InterfaceDeUsuario::trataLinhaErro(const std::string mensagemErro) {
-    CLEAR_LINE;
-    std::cout << mensagemErro;
-}
-
 void InterfaceDeUsuario::exibeEntrada(const std::string mensagemExibicao, const unsigned short int coluna) {
     CLEAR_LINE;
     std::cout << mensagemExibicao << coluna << std::endl;
 }
 
-void InterfaceDeUsuario::trataMovimentacaoProibida(std::string mensagemErro) {
-    CLEAR_LINE;
-    CLEAR_LINE;
-    std::cout << mensagemErro << std::endl;
+void InterfaceDeUsuario::imprimeExcessao(const char* mensagemDeErro) {
+    std::cout << std::endl;
+    std::cerr << mensagemDeErro << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(1));
 }
 
 // TODO: Formatar texto da regra

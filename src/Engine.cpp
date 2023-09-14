@@ -15,6 +15,7 @@
 #include "../include/verificacao/Verificacao.h"
 #include "../include/verificacao/VerificacaoFactory.h"
 #include "../include/InterfaceDeUsuario.h"
+#include "../include/MovimentacaoIndevidaException.h"
 
 Engine::Engine(const Mesa& mesa):
     jogoGanho(false),
@@ -27,23 +28,19 @@ bool Engine::ganhou() const {
 
 void Engine::jogaProximaRodada() {
     InterfaceDeUsuario::imprimeCartas(mesa);
-    unsigned short int colunaInicial;
-    unsigned short int colunaFinal;
-    bool limpaErroPrimeiraLeitura = false;
-    bool movimentacaoValida = false;
-    while (!movimentacaoValida) {
-        colunaInicial = InterfaceDeUsuario::leColunaInicial(this->mesa, limpaErroPrimeiraLeitura);
-        colunaFinal = InterfaceDeUsuario::leColunaFinal(colunaInicial);
+    try {
+        unsigned short int colunaInicial = InterfaceDeUsuario::leColunaInicial(this->mesa);
+        unsigned short int colunaFinal = InterfaceDeUsuario::leColunaFinal(colunaInicial);
         Verificacao* verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
-        movimentacaoValida = verificacao->podeMovimentar(colunaInicial, colunaFinal, this->mesa);
-        if (!movimentacaoValida) {
-            InterfaceDeUsuario::trataMovimentacaoProibida(verificacao->getMensagemErro());
-            limpaErroPrimeiraLeitura = true;
-        }
+        if (verificacao->podeMovimentar(colunaInicial, colunaFinal, this->mesa)) {
+            this->mesa.movimenta(colunaInicial, colunaFinal);
+            this->verificaSeGanhou(); 
+        } else
+            InterfaceDeUsuario::imprimeExcessao(verificacao->getMensagemErro().c_str());
         delete verificacao;
+    } catch(MovimentacaoIndevidaException& mie) {
+        InterfaceDeUsuario::imprimeExcessao(mie.what());
     }
-    this->mesa.movimenta(colunaInicial, colunaFinal);
-    this->verificaSeGanhou(); 
 }
 
 void Engine::verificaSeGanhou() {

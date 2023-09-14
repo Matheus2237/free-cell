@@ -23,6 +23,7 @@
 
 #include "Carta.h"
 #include "Mesa.h"
+#include "MovimentacaoIndevidaException.h"
 #include <string>
 
 const std::string CARTA_VAZIA = "       "; /// Representa a formatação do texto de carta vazia para impressão.
@@ -62,11 +63,9 @@ public:
      *  ser o valor de uma coluna vazia.
      * 
      * @param mesa Mesa que contém as cartas do jogo.
-     * @param limpaErroPrimeiraLeitura Determina se deve limpar a linha de erro acima da linha de leitura.
      * @return unsigned short int Valor da coluna inicial.
      */
-    static unsigned short int leColunaInicial(const Mesa& mesa,
-        bool limpaErroPrimeiraLeitura);
+    static unsigned short int leColunaInicial(const Mesa& mesa);
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna final válida. 
@@ -78,13 +77,7 @@ public:
      */
     static unsigned short int leColunaFinal(unsigned short int colunaInicial);
 
-    /**
-     * @brief Limpa as linhas de entrada para exibir a mensagem de erro quando uma
-     *  movimentação é proibida pelas regras do jogo.
-     * 
-     * @param mensagemErro Mensagem de erro a ser impressa.
-     */
-    static void trataMovimentacaoProibida(const std::string mensagemErro);
+    static void imprimeExcessao(const char* mensagemDeErro);
 
     /**
      * @brief Imprime o título do jogo e aguarda um tempo para visualização.
@@ -151,13 +144,6 @@ private:
     static bool somenteNumeros(std::string colunaString);
 
     /**
-     * @brief Limpa a última linha escrita do terminal e imprime a mensagem de erro.
-     * 
-     * @param mensagemErro Mensagem informando erro a ser exibida no terminal.
-     */
-    static void trataLinhaErro(const std::string mensagemErro);
-
-    /**
      * @brief Reformula a linha onde é solicitada a entrada pelo usuário. Após  
      *  limpar a linha do terminal, é impresso na tela a coluna e seu valor digitado apenas.
      * 
@@ -188,14 +174,14 @@ private:
     /**
      * @brief Trata os possíveis erros de lógica que podem acontecer na leitura da coluna inicial.
      *  São estes os erros: tentar mover a partir da pilha de saídas e tentar mover de uma pilha vazia.
-     *  Em caso de falha, imprime o motivo de erro na saída padrão.
+     *  Em caso de falha, lança uma exceção a ser tratada contendo a mensagem de erro a ser impressa.
      * 
      * @param colunaInicial Coluna de onde o usuário deseja retirar a carta.
      * @param mesa Mesa que guarda as cartas durante o jogo.
-     * @param colunaValida Flag que determina quando a movimentação parte de uma coluna inicial válida.
+     * @throw MovimentacaoIndevidaException caso ocorra alguma entrada que possui falha de lógica. 
      */
     static void trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
-        const Mesa& mesa, bool& colunaValida);
+        const Mesa& mesa);
 
     /**
      * @brief Recebe do usuario a confirmacao de que deseja prosseguir ou nao com uma acao.
