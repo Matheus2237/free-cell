@@ -196,6 +196,15 @@ private:
      */
     static void trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
         const Mesa& mesa, bool& colunaValida);
+
+    /**
+     * @brief Recebe do usuario a confirmacao de que deseja prosseguir ou nao com uma acao.
+     * 
+     * @param std::string textoExibicao Texto a ser exibido ao solicitar a confirmação.
+     * @return True caso a entrada seja "S" ou  "s".
+     * @return False caso a entrada seja "N" ou "n".
+     */
+    static bool confirmaAcao(const std::string textoExibicao);
 };
 
 #endif

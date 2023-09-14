@@ -14,6 +14,7 @@
 #include "../include/InterfaceDeUsuario.h"
 #include "../include/Simbolo.h"
 #include <iostream>
+#include <sstream>
 #include <thread>
 #include <chrono>
 
@@ -248,24 +249,32 @@ void InterfaceDeUsuario::exibeDevs() {
 
 void InterfaceDeUsuario::exibeRegras() {
     CLEAR_ALL;
-    char le;
-    std::string verif;
-    std::cout << std::endl
-        << std::endl
-        << std::endl
-        << std::endl
-        << std::endl
+    std::stringstream textoExibicao;
+    textoExibicao << std::endl << std::endl << std::endl << std::endl << std::endl
         << "         Deseja consultar as regras do jogo? [S/n] ";
-    std::cin >> le;
-    if (le == 'S' || le == 's') {
+    if (InterfaceDeUsuario::confirmaAcao(textoExibicao.str())) {
         CLEAR_ALL;
         InterfaceDeUsuario::imprimeRegras();
+        std::string verif;
         std::cout << "Aperte enter para continuar...";
         getline(std::cin, verif);
         std::cin.ignore();
         std::cin.clear();
     }
-    std::cin.ignore();
+}
+
+bool InterfaceDeUsuario::confirmaAcao(const std::string textoExibicao) {
+    while(true) {
+        std::cout << textoExibicao;
+        std::string entrada;
+        getline(std::cin, entrada);
+        if(entrada == "S" || entrada == "s")
+            return true;
+        else if(entrada == "N" || entrada == "n")
+            return false;
+        else
+            CLEAR_ALL;
+    }
 }
 
 void InterfaceDeUsuario::exibeTrofeu() {
