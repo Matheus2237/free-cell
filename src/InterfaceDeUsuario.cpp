@@ -215,7 +215,7 @@ void InterfaceDeUsuario::imprimeRegras(){
               << "                     ||-----w||" << std::endl
               << "                     ||      ||" << std::endl;
     std::cout << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(2500));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1200));
 }
 
 void InterfaceDeUsuario::exibeTitulo() {
@@ -261,7 +261,8 @@ void InterfaceDeUsuario::exibeRegras() {
         CLEAR_ALL;
         InterfaceDeUsuario::imprimeRegras();
         std::cout << "Aperte enter para continuar...";
-        getline(std::cin, verif);
+        std::cin >> verif;
+        // getline(std::cin, verif, '\n');
         std::cin.ignore();
         std::cin.clear();
     }
