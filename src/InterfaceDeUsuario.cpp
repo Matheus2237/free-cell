@@ -17,6 +17,7 @@
 #include <sstream>
 #include <thread>
 #include <chrono>
+#include <limits>
 
 
 void InterfaceDeUsuario::imprimeCartas(Mesa &mesa) {
@@ -155,7 +156,6 @@ void InterfaceDeUsuario::imprimeExcessao(const char* mensagemDeErro) {
     std::this_thread::sleep_for(std::chrono::seconds(1));
 }
 
-// TODO: Formatar texto da regra
 void InterfaceDeUsuario::imprimeRegras(){
     std::cout << "                            ********************" << std::endl
               << "                            *                  * " << std::endl
