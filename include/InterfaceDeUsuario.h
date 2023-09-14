@@ -77,7 +77,7 @@ public:
      */
     static unsigned short int leColunaFinal(unsigned short int colunaInicial);
 
-    static void imprimeExcessao(const char* mensagemDeErro);
+    static void imprimeMotivoErro(const char* mensagemDeErro);
 
     /**
      * @brief Imprime o título do jogo e aguarda um tempo para visualização.

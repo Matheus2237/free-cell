@@ -150,7 +150,7 @@ void InterfaceDeUsuario::exibeEntrada(const std::string mensagemExibicao, const 
     std::cout << mensagemExibicao << coluna << std::endl;
 }
 
-void InterfaceDeUsuario::imprimeExcessao(const char* mensagemDeErro) {
+void InterfaceDeUsuario::imprimeMotivoErro(const char* mensagemDeErro) {
     std::cout << std::endl;
     std::cerr << mensagemDeErro << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(1));

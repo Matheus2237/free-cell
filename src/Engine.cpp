@@ -36,10 +36,10 @@ void Engine::jogaProximaRodada() {
             this->mesa.movimenta(colunaInicial, colunaFinal);
             this->verificaSeGanhou(); 
         } else
-            InterfaceDeUsuario::imprimeExcessao(verificacao->getMensagemErro().c_str());
+            InterfaceDeUsuario::imprimeMotivoErro(verificacao->getMensagemErro().c_str());
         delete verificacao;
     } catch(MovimentacaoIndevidaException& mie) {
-        InterfaceDeUsuario::imprimeExcessao(mie.what());
+        InterfaceDeUsuario::imprimeMotivoErro(mie.what());
     }
 }
 
