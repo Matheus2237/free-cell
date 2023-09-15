@@ -37,7 +37,7 @@ int main() {
             engine.jogaProximaRodada();
         }
 
-        InterfaceDeUsuario::finalizaJogo();
+        InterfaceDeUsuario::finalizaPartida();
     }
     while (InterfaceDeUsuario::questionaNovaPartida());
     InterfaceDeUsuario::encerraJogo();

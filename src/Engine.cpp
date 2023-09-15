@@ -26,7 +26,7 @@ void Engine::jogaPartida() {
     Engine engine(Mesa(Baralho().embaralhar().getCartas()));
     while(!engine.ganhou())
         engine.jogaProximaRodada();
-    InterfaceDeUsuario::finalizaJogo();
+    InterfaceDeUsuario::finalizaPartida();
 }
 
 bool Engine::ganhou() const {

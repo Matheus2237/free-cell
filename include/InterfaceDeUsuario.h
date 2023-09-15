@@ -51,7 +51,7 @@ public:
     ~InterfaceDeUsuario() = delete;
 
     /**
-     * @brief Inicia o jogo exibindo o título e o nome da equipe de desenvolvimento.
+     * @brief Inicia a partida exibindo o título e o nome da equipe de desenvolvimento.
      * 
      */
     static void iniciaJogo();
@@ -60,7 +60,7 @@ public:
      * @brief Finaliza o jogo exibindo na tela o troféu ao vencedor.
      * 
      */
-    static void finalizaJogo();
+    static void finalizaPartida();
 
     /**
      * @brief Questiona se o usuário deseja jogar mais uma partida.

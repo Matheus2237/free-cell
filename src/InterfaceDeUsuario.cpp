@@ -25,7 +25,7 @@ void InterfaceDeUsuario::iniciaJogo() {
     InterfaceDeUsuario::exibeRegras();
 }
 
-void InterfaceDeUsuario::finalizaJogo() {
+void InterfaceDeUsuario::finalizaPartida() {
     InterfaceDeUsuario::exibeTrofeu();
 }
 
