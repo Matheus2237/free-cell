@@ -1,4 +1,4 @@
-Jogar quantas partidas quiser.
+
 
 Após terminar:
     Validar se não há mais jogadas.
@@ -6,6 +6,7 @@ Após terminar:
     Usar simbolos dos naipes - Testar configuração para exibição
 
 Entrega:
+    Ajustar engine para que o método de jogar partida seja o unico publico.
     Montar pacote de Entrega
     Revisar todas documentações
     Revisar README e manual do jogo.
