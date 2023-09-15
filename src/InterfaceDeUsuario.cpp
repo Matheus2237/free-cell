@@ -229,6 +229,7 @@ void InterfaceDeUsuario::exibeDevs() {
 void InterfaceDeUsuario::exibeRegras() {
     CLEAR_ALL;
     std::stringstream textoExibicao;
+    std::string verifica;
     textoExibicao << std::endl << std::endl << std::endl << std::endl << std::endl
         << "         Deseja consultar as regras do jogo? [S/n] ";
     if (InterfaceDeUsuario::confirmaAcao(textoExibicao.str())) {
@@ -236,9 +237,9 @@ void InterfaceDeUsuario::exibeRegras() {
         InterfaceDeUsuario::imprimeRegras();
         std::string verif;
         std::cout << "Aperte enter para continuar...";
-        getline(std::cin, verif);
-        std::cin.ignore();
-        std::cin.clear();
+        getline(std::cin, verifica);
+        if(verifica == "")
+            return;
     }
 }
 
