@@ -19,6 +19,15 @@
 #include <chrono>
 #include <limits>
 
+void InterfaceDeUsuario::iniciaJogo() {
+    InterfaceDeUsuario::exibeTitulo();
+    InterfaceDeUsuario::exibeDevs();
+    InterfaceDeUsuario::exibeRegras();
+}
+
+void InterfaceDeUsuario::finalizaJogo() {
+    InterfaceDeUsuario::exibeTrofeu();
+}
 
 void InterfaceDeUsuario::imprimeCartas(Mesa &mesa) {
     CLEAR_ALL;
@@ -272,5 +281,20 @@ void InterfaceDeUsuario::exibeTrofeu() {
         << "                                            " << std::endl
         << "                 Parabens! Você ganhou!      " << std::endl
         << "                                            " << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(700));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1700));
+}
+
+bool InterfaceDeUsuario::questionaNovaPartida() {
+    CLEAR_ALL;
+    std::stringstream mensagemNovaPartida;
+    mensagemNovaPartida << std::endl << std::endl << std::endl << std::endl << std::endl
+        << "         Deseja jogar mais uma partida? [S/n] ";
+    return InterfaceDeUsuario::confirmaAcao(mensagemNovaPartida.str());
+}
+
+void InterfaceDeUsuario::encerraJogo() {
+    CLEAR_ALL;
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+        << "         Jogo encerrado..." 
+        << std::endl << std::endl << std::endl << std::endl << std::endl;
 }

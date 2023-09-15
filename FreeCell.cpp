@@ -17,11 +17,12 @@
 #include "include/Baralho.h"
 #include "include/Mesa.h"
 #include "include/Engine.h"
+#include "include/InterfaceDeUsuario.h"
 
 int main() {
-    Engine engine(Mesa(Baralho().embaralhar().getCartas()));
-    engine.iniciaJogo();
-    while(!engine.ganhou())
-        engine.jogaProximaRodada();
-    engine.finalizaJogo();
+    InterfaceDeUsuario::iniciaJogo();
+    do
+        Engine::jogaPartida();
+    while (InterfaceDeUsuario::questionaNovaPartida());
+    InterfaceDeUsuario::encerraJogo();
 }

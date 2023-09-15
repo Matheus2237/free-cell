@@ -26,14 +26,19 @@ void setUp(Mesa& mesa) {
 }
 
 int main() {
-    Baralho baralho;
-    Mesa mesa(baralho.getCartas());
-    setUp(mesa);
-    Engine engine(mesa);
+    InterfaceDeUsuario::iniciaJogo();
+    do {
+        Baralho baralho;
+        Mesa mesa(baralho.getCartas());
+        setUp(mesa);
+        Engine engine(mesa);
 
-    engine.iniciaJogo();
-    while (!engine.ganhou()) {
-        engine.jogaProximaRodada();
+        while (!engine.ganhou()) {
+            engine.jogaProximaRodada();
+        }
+
+        InterfaceDeUsuario::finalizaJogo();
     }
-    engine.finalizaJogo();
+    while (InterfaceDeUsuario::questionaNovaPartida());
+    InterfaceDeUsuario::encerraJogo();
 }

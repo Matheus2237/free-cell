@@ -40,6 +40,7 @@ private:
      */
     Mesa mesa;
 
+// TODO: Deixar apenas o metodo estatico publico
 public:
 
     /**
@@ -56,6 +57,13 @@ public:
     ~Engine() = default;
     
     /**
+     * @brief Cria uma nova partida de Free Cell. A partida acaba quando for 
+     *  vencida ou quando não houver mais movimentações possíveis.
+     * 
+     */
+    static void jogaPartida();
+
+    /**
      * @brief Verifica se o jogo foi ganho. O jogo só é ganho quando a carta do topo
      *  de todos os naipes for um rei (K).
      * 
@@ -71,18 +79,6 @@ public:
      * 
      */
     void jogaProximaRodada();
-
-    /**
-     * @brief Inicia o jogo exibindo o título e o nome da equipe de desenvolvimento.
-     * 
-     */
-    void iniciaJogo();
-
-    /**
-     * @brief Finaliza o jogo exibindo na tela o troféu ao vencedor.
-     * 
-     */
-    void finalizaJogo();
 
 private:
 

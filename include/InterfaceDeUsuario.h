@@ -51,6 +51,32 @@ public:
     ~InterfaceDeUsuario() = delete;
 
     /**
+     * @brief Inicia o jogo exibindo o título e o nome da equipe de desenvolvimento.
+     * 
+     */
+    static void iniciaJogo();
+
+    /**
+     * @brief Finaliza o jogo exibindo na tela o troféu ao vencedor.
+     * 
+     */
+    static void finalizaJogo();
+
+    /**
+     * @brief Questiona se o usuário deseja jogar mais uma partida.
+     * 
+     * @return true caso a entrada for igual a 'S' ou 's'.
+     * @return false caso a entrada for igual a 'N' ou 'n'.
+     */
+    static bool questionaNovaPartida();
+
+    /**
+     * @brief exibe na tela um texto sinalizando o encerramento da aplicação.
+     * 
+     */
+    static void encerraJogo();
+
+    /**
      * @brief Imprime a mesa de cartas do jogo.
      * 
      * @param mesa Mesa que guarda as cartas durante o jogo.

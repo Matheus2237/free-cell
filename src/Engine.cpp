@@ -22,6 +22,13 @@ Engine::Engine(const Mesa& mesa):
     mesa(mesa)
 {}
 
+void Engine::jogaPartida() {
+    Engine engine(Mesa(Baralho().embaralhar().getCartas()));
+    while(!engine.ganhou())
+        engine.jogaProximaRodada();
+    InterfaceDeUsuario::finalizaJogo();
+}
+
 bool Engine::ganhou() const {
     return this->jogoGanho;
 }
@@ -49,15 +56,4 @@ void Engine::verificaSeGanhou() {
                 .getValor() != Simbolo::Valor::REI)
             return;
     this->jogoGanho = true;
-}
-
-
-void Engine::iniciaJogo() {
-    InterfaceDeUsuario::exibeTitulo();
-    InterfaceDeUsuario::exibeDevs();
-    InterfaceDeUsuario::exibeRegras();
-}
-
-void Engine::finalizaJogo() {
-    InterfaceDeUsuario::exibeTrofeu();
 }
