@@ -26,11 +26,11 @@ namespace Simbolo {
 
     /**
      * 
-     * @brief Representa os naipes do baralho como wchars.
-     *    Espadas = ''                           
-     *    Ouros = ''                             
-     *    Paus = ''                              
-     *    Copas = ''                             
+     * @brief Representa os naipes do baralho como chars.
+     *    Espadas = E                           
+     *    Ouros = O                             
+     *    Paus = P                              
+     *    Copas = C                             
      */
     enum class Naipe : char {
         ESPADAS = 'E',
@@ -51,7 +51,7 @@ namespace Simbolo {
 
     /**
      * @brief Representa os valores do baralho como inteiros.
-     *      As cartas de Ás à rei são representadas pelos valores de 1 à 13 respectivamente.
+     *      As cartas de ás à rei são representadas pelos valores de 1 à 13 respectivamente.
      */
     enum class Valor : int {
         AS = 1,

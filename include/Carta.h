@@ -20,6 +20,7 @@
  * @brief Classe que implementa as cartas do baralho.
  * 
  * Implementa as cartas do baralho, com seus respectivos valores e naipes.
+ * Carrega também a pilha em que a carta se encontra no jogo.
  * 
 */
 class Carta {

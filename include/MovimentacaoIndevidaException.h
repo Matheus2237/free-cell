@@ -36,7 +36,7 @@ public:
     /**
      * @brief Constrói um novo objeto Movimentação Indevida Exception.
      * 
-     * @param mensagem Mensagem que carrega o motivo da exceção estar sendo lançada.
+     * @param mensagem Motivo da exceção estar sendo lançada.
      */
     MovimentacaoIndevidaException(std::string mensagem);
     
