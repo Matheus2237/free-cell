@@ -32,7 +32,8 @@ const std::string CARTA_VAZIA = "       "; /// Representa a formatação do text
  * @brief Classe que implementa a interface gráfica do jogo.
  * 
  * Implementa a interface gráfica do jogo, com métodos para impressão da mesa
- * de cartas e leitura de entrada do usuário.
+ * de cartas e leitura de entrada do usuário. Permite apenas chamadas estáticas
+ * para os seus métodos.
  * 
  */
 class InterfaceDeUsuario {
@@ -98,13 +99,27 @@ public:
     static unsigned short int leColunaFinal(unsigned short int colunaInicial);
 
     /**
-     * @brief Imprime o motive de um dado entrado pelo usuário não ser aceito para
+     * @brief Imprime o motivo de um valor entrado pelo usuário não ser aceito para
      *  aquela jogada.
      * 
-     * @param mensagemDeErro Mensagem a ser impressa para imformar o usuário. 
+     * @param mensagemDeErro Mensagem de erro a ser impressa. 
      */
     static void imprimeMotivoErro(const char* mensagemDeErro);
 
+    /**
+     * @brief Imprime o troféu quando o usuário ganhar a partida :)
+     * 
+     */
+    static void exibeTrofeu();
+
+    /**
+     * @brief Imprime a baleia "fail whale" indicando que não há mais jogadas para aquela partida :/
+     * 
+     */
+    static void exibeFailWhale();
+
+private:
+    
     /**
      * @brief Imprime o título do jogo e aguarda um tempo para visualização.
      * 
@@ -124,17 +139,6 @@ public:
     static void exibeRegras();
 
     /**
-     * @brief Imprime o troféu quando o usuário ganhar o jogo :)
-     * 
-     */
-    static void exibeTrofeu();
-
-    // TODO: documentar
-    static void exibeFailWhale();
-
-private:
-    
-    /**
      * @brief Imprime as regras no início do jogo se o usuário desejar.
      * 
      */
@@ -148,7 +152,7 @@ private:
     static void imprimeCabecalho(Mesa &mesa);
 
     /**
-     * @brief Imprime as colunas do jogo que deve ter suas cartas movidas para a saída.
+     * @brief Imprime as colunas do jogo que devem ter suas cartas movidas para a saída.
      * 
      * @param mesa Mesa que guarda as cartas durante o jogo.
      */
@@ -156,7 +160,8 @@ private:
 
     /**
      * @brief Lê do mecanismo de entrada padrão o valor de uma coluna válida,
-     *  ou seja, um valor numérico inteiro que compreende de 0 a 12.
+     *  ou seja, um valor numérico inteiro que compreende de 0 a 12. O mecanismod de leitura
+     *  insistirá solicitando um valor válido até que o usuário o digite.
      * 
      * @param mensagemLeitura Mensagem a ser exibida para solicitar a entrada de dados.
      * @return unsigned short int Valor da coluna desejada pelo usuário.
