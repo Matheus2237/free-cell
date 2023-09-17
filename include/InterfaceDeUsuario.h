@@ -57,12 +57,6 @@ public:
     static void iniciaJogo();
 
     /**
-     * @brief Finaliza o jogo exibindo na tela o troféu ao vencedor.
-     * 
-     */
-    static void finalizaPartida();
-
-    /**
      * @brief Questiona se o usuário deseja jogar mais uma partida.
      * 
      * @return true caso a entrada for igual a 'S' ou 's'.
@@ -134,6 +128,9 @@ public:
      * 
      */
     static void exibeTrofeu();
+
+    // TODO: documentar
+    static void exibeFailWhale();
 
 private:
     

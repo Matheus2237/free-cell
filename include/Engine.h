@@ -24,13 +24,19 @@
 class Engine {
 private:
 
+    // TODO: Documentar
+    enum class StatusPartida {
+        EM_ANDAMENTO, VITORIA, DERROTA
+    };
+
     /**
      * @brief Flag que determina se o jogo está ganho ou não. Por padrão é falsa,
      *  significando que o jogo ainda não está terminado. Quando o valor true for
      *  atribuido, então o jogo passa a ter o estado de finalizado.
      * 
      */
-    bool jogoGanho;
+    // TODO: Corrigir documentação
+    StatusPartida situacaoDaPartida;
 
     /**
      * @brief Mesa de dados abstrata que armazena as cartas da partida, bem
@@ -64,15 +70,6 @@ public:
     static void jogaPartida();
 
     /**
-     * @brief Verifica se o jogo foi ganho. O jogo só é ganho quando a carta do topo
-     *  de todos os naipes for um rei (K).
-     * 
-     * @return true Se o jogo tiver ganho.
-     * @return false Se o jogo não estiver ganho.
-     */
-    bool ganhou() const;
-
-    /**
      * @brief Executa mais uma rodada do jogo. Em uma rodada, é exibido na tela o estado atual
      *  das cartas na mesa, lida a póxima jogada do usuário e, se for válida, realiza a
      *  movimentação desejada.
@@ -80,16 +77,27 @@ public:
      */
     void jogaProximaRodada();
 
+    // TODO: Ajustar documentação.
+    Engine::StatusPartida verificaAndamentoJogo();
+
+    /**
+     * @brief Finaliza a partida exibindo na tela a mensagem indicada.
+     * 
+     */
+    void finalizaPartida();
+
 private:
+    
+    // TODO: Ajustar documentação.
+    bool verificaSePerdeu();
 
     /**
      * @brief Realiza uma busca nas pilhas de saída verificando se todas as cartas do
      *  topo são reis (K). Caso todas sejam, o atributo jogoGanho é alterado para true.
      * 
      */
-    void verificaSeGanhou();
-
-    void verificaSePerdeu();
+    // TODO: Ajustar documentação.
+    bool verificaSeGanhou();
 };
 
 #endif

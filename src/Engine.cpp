@@ -18,19 +18,15 @@
 #include "../include/MovimentacaoIndevidaException.h"
 
 Engine::Engine(const Mesa& mesa):
-    jogoGanho(false),
+    situacaoDaPartida(StatusPartida::EM_ANDAMENTO),
     mesa(mesa)
 {}
 
 void Engine::jogaPartida() {
     Engine engine(Mesa(Baralho().embaralhar().getCartas()));
-    while(!engine.ganhou())
+    while(engine.situacaoDaPartida == StatusPartida::EM_ANDAMENTO)
         engine.jogaProximaRodada();
-    InterfaceDeUsuario::finalizaPartida();
-}
-
-bool Engine::ganhou() const {
-    return this->jogoGanho;
+    engine.finalizaPartida();
 }
 
 void Engine::jogaProximaRodada() {
@@ -41,7 +37,7 @@ void Engine::jogaProximaRodada() {
         Verificacao* verificacao = VerificacaoFactory::criaVerificacao(colunaFinal);
         if (verificacao->podeMovimentar(colunaInicial, colunaFinal, this->mesa)) {
             this->mesa.movimenta(colunaInicial, colunaFinal);
-            this->verificaSeGanhou(); 
+            this->situacaoDaPartida = this->verificaAndamentoJogo(); 
         } else
             InterfaceDeUsuario::imprimeMotivoErro(verificacao->getMensagemErro().c_str());
         delete verificacao;
@@ -50,17 +46,30 @@ void Engine::jogaProximaRodada() {
     }
 }
 
-void Engine::verificaSeGanhou() {
+Engine::StatusPartida Engine::verificaAndamentoJogo() {
+    if (this->verificaSePerdeu())
+        return StatusPartida::DERROTA;
+    else if (this->verificaSeGanhou())
+        return StatusPartida::VITORIA;
+    else
+        return StatusPartida::EM_ANDAMENTO;
+}
+
+bool Engine::verificaSePerdeu() {
+    return mesa.checaMovimentacoesPossiveis() == 0;
+}
+
+bool Engine::verificaSeGanhou() {
     for (int naipe = 0; naipe < Simbolo::QTDE_NAIPES; naipe++)
         if (this->mesa.getCartas()[this->mesa.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe])]
                 .getValor() != Simbolo::Valor::REI)
-            return;
-    this->jogoGanho = true;
+            return false;
+    return true;
 }
 
-void Engine::verificaSePerdeu() {
-    if(mesa.checaMovimentacoesPossiveis() == 0){
-        
-    }
+void Engine::finalizaPartida() {
+    if (this->situacaoDaPartida == StatusPartida::VITORIA)
+        InterfaceDeUsuario::exibeTrofeu();
+    else if (this->situacaoDaPartida == StatusPartida::DERROTA)
+        InterfaceDeUsuario::exibeFailWhale();
 }
-

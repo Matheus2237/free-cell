@@ -25,10 +25,6 @@ void InterfaceDeUsuario::iniciaJogo() {
     InterfaceDeUsuario::exibeRegras();
 }
 
-void InterfaceDeUsuario::finalizaPartida() {
-    InterfaceDeUsuario::exibeTrofeu();
-}
-
 void InterfaceDeUsuario::imprimeCartas(Mesa &mesa) {
     CLEAR_ALL;
     InterfaceDeUsuario::imprimeCabecalho(mesa);
@@ -280,8 +276,26 @@ void InterfaceDeUsuario::exibeTrofeu() {
         << "                        _.' '._             " << std::endl
         << "                       `\"\"\"\"\"\"\"`     " << std::endl
         << "                                            " << std::endl
-        << "                 Parabens! Você ganhou!      " << std::endl
+        << "                 Parabens! Você ganhou!     " << std::endl
         << "                                            " << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1700));
+}
+
+void InterfaceDeUsuario::exibeFailWhale() {
+    CLEAR_ALL;
+    std::cout
+        << "                    W     W       W                     " << std::endl
+        << "                    W      W   W   W                    " << std::endl
+        << "                                   '.  W                " << std::endl
+        << "                      .-\"\"-._      \\ \\.--|          " << std::endl
+        << "                     /       \\\"-..__) .-'             " << std::endl
+        << "                    |     _         /                   " << std::endl
+        << "                    \\'-.__,   .__.,'                   " << std::endl
+        << "                     `'----'._\\--'                     " << std::endl
+        << "                    vvvvvvvvvvvvvvvvvvvvv               " << std::endl
+        << "                                                        " << std::endl
+        << "         Não há mais jogadas possíveis! Você perdeu! " << std::endl
+        << "                                                        " << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1700));
 }
 
