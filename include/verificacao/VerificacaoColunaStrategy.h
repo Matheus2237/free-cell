@@ -32,7 +32,7 @@ private:
      * @brief Mensagem a ser exibida em caso de não permissão de movimentação para uma coluna do jogo.
      * 
      */
-    const std::string mensagemErro = "Carta não pode ser movimentada entre as pilhas! Tente novamente.";
+    const std::string mensagemErro = "Carta nao pode ser movimentada entre as pilhas! Tente novamente.";
 
 public:
 

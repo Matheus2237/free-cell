@@ -32,7 +32,7 @@ private:
      * @brief Mensagem a ser exibida em caso de não permissão de movimentação para a free cell.
      * 
      */
-    const std::string mensagemErro = "Free cell já está cheia! Tente novamente.";
+    const std::string mensagemErro = "Free cell ja esta cheia! Tente novamente.";
 
 public:
 
