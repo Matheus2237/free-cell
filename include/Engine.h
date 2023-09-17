@@ -51,8 +51,16 @@ private:
      */
     Mesa mesa;
 
-// TODO: Deixar apenas o metodo estatico publico
 public:
+
+    /**
+     * @brief Cria uma nova partida de Free Cell. A partida acaba quando for 
+     *  vencida ou quando não houver mais movimentações possíveis.
+     * 
+     */
+    static void jogaPartida();
+
+private:
 
     /**
      * @brief Constrói um novo objeto Engine.
@@ -66,13 +74,6 @@ public:
      * 
      */
     ~Engine() = default;
-    
-    /**
-     * @brief Cria uma nova partida de Free Cell. A partida acaba quando for 
-     *  vencida ou quando não houver mais movimentações possíveis.
-     * 
-     */
-    static void jogaPartida();
 
     /**
      * @brief Executa mais uma rodada do jogo. Em uma rodada, é exibido na tela o estado atual
@@ -94,8 +95,6 @@ public:
      * 
      */
     void finalizaPartida();
-
-private:
     
     /**
      * @brief Verifica se o usuário não tem mais possíveis jogadas a serem realizadas.
