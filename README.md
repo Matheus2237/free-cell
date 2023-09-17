@@ -30,7 +30,7 @@ seguinte maneira:
 - Para realizar o build do projeto, execute o seguinte comando, seguindo a estrutura indicada:
     > Em ambientes baseado em Unix:
     >
-    >```g++ -std=c++17 -Wall -Wextra -pedantic -o FreeCell FreeCell.cpp src/*.cpp```
+    >```g++ -std=c++17 -Wall -Wextra -pedantic -o FreeCell FreeCell.cpp src/*.cpp src/verificacao/*.cpp```
     > 
     > Em ambientes baseados no Windows:
     >
