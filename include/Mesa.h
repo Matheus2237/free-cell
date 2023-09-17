@@ -83,6 +83,12 @@ public:
      * @brief Retorna o vetor de cartas.
     */
     Carta* getCartas() const;
+    
+    /**
+     * @brief Realiza a contagem de jogadas possiveis.
+     * 
+     * @return int Numero de jogadas possiveis
+     */
     int checaMovimentacoesPossiveis();
 
 private:
