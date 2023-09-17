@@ -197,7 +197,7 @@ void InterfaceDeUsuario::imprimeRegras(){
               << " |decrescente e e necessario alternar naipes vermelhos e pretos.        |" << std::endl
               << " |                                                                      |" << std::endl
               << " |* De uma coluna para uma celula inicial. Cada pilha deve consistir    |" << std::endl
-              << " \\de um unico naipe e comecar pelo as.                                 /" << std::endl
+              << " \\de um unico naipe e comecar pelo as.                                  /" << std::endl
               << "  ----------------------------------------------------------------------" << std::endl
               << "             \\    ,-^-." << std::endl
               << "              \\   !oYo!" << std::endl
