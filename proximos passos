@@ -1,10 +1,3 @@
-
-
-Após terminar:
-    Validar se não há mais jogadas.
-    Encoding UTF-8 - Testar a configuração
-    Usar simbolos dos naipes - Testar configuração para exibição
-
 Entrega:
     Ajustar engine para que o método de jogar partida seja o unico publico.
     Montar pacote de Entrega
