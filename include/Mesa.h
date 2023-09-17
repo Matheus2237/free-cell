@@ -67,22 +67,17 @@ public:
      * 
      * @param coluna Coluna onde será realizada a busca.
      * @return short int Posição no vetor de cartas da carta encontrada.
-     * @return short int -1 se a coluna estiver vazia.
+     * @return COLUNA_VAZIA (-1) Posição que representa quando a coluna não possui cartas.
     */
     short int encontraUltimaCartaDaColuna(unsigned int coluna) const;
 
     /**
      * @brief Encontra a última carta de um determinado naipe das saídas do jogo.
      * 
-     * @param naipe Naipe da carta a ser encontrada.
-     * @return short int Posição no vetor desta carta.
+     * @param naipe Naipe da carta a ser encontrado.
+     * @return short int Posição desta carta no vetor.
      */
     short int encontraUltimaCartaSaida(Simbolo::Naipe naipe) const;
-
-    /**
-     * @brief Retorna o vetor de cartas.
-    */
-    Carta* getCartas() const;
     
     /**
      * @brief Realiza a contagem de jogadas possiveis.
@@ -90,6 +85,11 @@ public:
      * @return int Numero de jogadas possiveis
      */
     int checaMovimentacoesPossiveis();
+
+    /**
+     * @brief Retorna o vetor de cartas.
+    */
+    Carta* getCartas() const;
 
 private:
 

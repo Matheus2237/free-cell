@@ -71,7 +71,7 @@ public:
 
     /**
      * @brief Sobrecarga do operador de fluxo << para que o cout possa receber um
-     *  objeto do tipo Carta para imprimi-lo.
+     *  objeto do tipo Carta e realize a impressão da carta já formatada.
      * 
      * @overload
      */
@@ -108,9 +108,11 @@ public:
 private:
 
     /**
-     * @brief metodo que formata o valor da carta.
+     * @brief metodo que formata o valor da carta. Converte o valor inteiro
+     *  para sua repreentação entre letras e números, como é encontrada em
+     *  baralhos convencionais.
      * 
-     * @return std::string.
+     * @return std::string Valor da carta convertido e formatado.
     */
     std::string formataValor() const;
 };
