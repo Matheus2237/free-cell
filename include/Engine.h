@@ -24,18 +24,23 @@
 class Engine {
 private:
 
-    // TODO: Documentar
+    /**
+     * @brief Status da partida em questão. A partida pode assumit três estados: vitória quando
+     *  as 52 cartas foram movimentadas para a coluna de saída; derrota quando não há mais 
+     *  movimentações possíveis e em andamento enquando ainda há jogadas a serem feitas.
+     * 
+     */
     enum class StatusPartida {
         EM_ANDAMENTO, VITORIA, DERROTA
     };
 
     /**
-     * @brief Flag que determina se o jogo está ganho ou não. Por padrão é falsa,
-     *  significando que o jogo ainda não está terminado. Quando o valor true for
-     *  atribuido, então o jogo passa a ter o estado de finalizado.
+     * @brief Atributo que determina a situação do jogo. Por padrão é em andamento,
+     *  pois o jogo inicia sempre com jogadas a serem feitas. Pode assumir também
+     *  tanto o valor de vitória ou de derrota, indicando que a partida deve ser
+     *  finalizada pois não há mais jogadas possíveis.
      * 
      */
-    // TODO: Corrigir documentação
     StatusPartida situacaoDaPartida;
 
     /**
@@ -71,13 +76,17 @@ public:
 
     /**
      * @brief Executa mais uma rodada do jogo. Em uma rodada, é exibido na tela o estado atual
-     *  das cartas na mesa, lida a póxima jogada do usuário e, se for válida, realiza a
+     *  das cartas na mesa, lida a póxima jogada do usuário e, se esta for válida, realiza a
      *  movimentação desejada.
      * 
      */
     void jogaProximaRodada();
 
-    // TODO: Ajustar documentação.
+    /**
+     * @brief Verifica em que situação o jogo se encontra baseando na disposição das cartas na mesa.
+     * 
+     * @return Engine::StatusPartida Retorna o status da partida em questão.
+     */
     Engine::StatusPartida verificaAndamentoJogo();
 
     /**
@@ -88,15 +97,21 @@ public:
 
 private:
     
-    // TODO: Ajustar documentação.
+    /**
+     * @brief Verifica se o usuário não tem mais possíveis jogadas a serem realizadas.
+     * 
+     * @return true Caso a condição acima seja satisfeita.
+     * @return false Caso o condição acima não esteja satisfeita.
+     */
     bool verificaSePerdeu();
 
     /**
      * @brief Realiza uma busca nas pilhas de saída verificando se todas as cartas do
-     *  topo são reis (K). Caso todas sejam, o atributo jogoGanho é alterado para true.
+     *  topo são reis (K).
      * 
+     * @return true Caso a condição acima seja satisfeita.
+     * @return false Caso o condição acima não esteja satisfeita.
      */
-    // TODO: Ajustar documentação.
     bool verificaSeGanhou();
 };
 
