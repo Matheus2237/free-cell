@@ -74,7 +74,7 @@ public:
      * 
      * @overload
      */
-    friend std::ostream& operator<<(std::ostream& cout, const Carta& carta);
+    friend std::ostream& operator<<(std::ostream& os, const Carta& carta);
 
     /**
     * @brief Recupera o atributo naipe.

@@ -294,7 +294,7 @@ void InterfaceDeUsuario::exibeFailWhale() {
         << "                     `'----'._\\--'                     " << std::endl
         << "                    vvvvvvvvvvvvvvvvvvvvv               " << std::endl
         << "                                                        " << std::endl
-        << "         Não há mais jogadas possíveis! Você perdeu! " << std::endl
+        << "         Não há mais jogadas possíveis! Você perdeu!    " << std::endl
         << "                                                        " << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1700));
 }
