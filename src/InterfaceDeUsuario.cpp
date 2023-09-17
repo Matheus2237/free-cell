@@ -175,15 +175,15 @@ void InterfaceDeUsuario::imprimeRegras(){
               << " |ordem crescente do as ate o rei.                                      |" << std::endl
               << " |                                                                      |" << std::endl
               << " |Visao geral do jogo:                                                  |" << std::endl  
-              << " |* No canto superior ESQUERDO tera 4 espaços vazios (chamados tambem   |" << std::endl
+              << " |* No canto superior ESQUERDO tera 4 espacos vazios (chamados tambem   |" << std::endl
               << " |de FreeCells), onde voce podera armazenar qualquer carta              |" << std::endl
               << " |temporariamente durante o jogo.                                       |" << std::endl
               << " |                                                                      |" << std::endl
-              << " |* No canto superior DIREITO tambem ha 4 espaços vazios. Estes são as  |" << std::endl
+              << " |* No canto superior DIREITO tambem ha 4 espacos vazios. Estes sao as  |" << std::endl
               << " |pilhas de saida.                                                      |" << std::endl
               << " |                                                                      |" << std::endl
               << " |* As cartas inicialmente sao dispostas em 8 colunas, sendo 7 cartas   |" << std::endl
-              << " | nas 4 primeiras e 6 cartas nas 4 últimas.                            |" << std::endl
+              << " | nas 4 primeiras e 6 cartas nas 4 ultimas.                            |" << std::endl
               << " |                                                                      |" << std::endl
               << " |Como jogar:                                                           |" << std::endl
               << " |->Retire cartas da parte inferior de cada coluna e mova-as da         |" << std::endl
@@ -197,7 +197,7 @@ void InterfaceDeUsuario::imprimeRegras(){
               << " |decrescente e e necessario alternar naipes vermelhos e pretos.        |" << std::endl
               << " |                                                                      |" << std::endl
               << " |* De uma coluna para uma celula inicial. Cada pilha deve consistir    |" << std::endl
-              << " \\de um unico naipe e começar pelo as.                                 /" << std::endl
+              << " \\de um unico naipe e comecar pelo as.                                 /" << std::endl
               << "  ----------------------------------------------------------------------" << std::endl
               << "             \\    ,-^-." << std::endl
               << "              \\   !oYo!" << std::endl
