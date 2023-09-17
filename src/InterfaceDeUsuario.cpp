@@ -170,7 +170,7 @@ void InterfaceDeUsuario::imprimeRegras(){
               << "                            ********************" << std::endl
               << "  ______________________________________________________________________" << std::endl
               << " / Objetivo do jogo:                                                    \\" << std::endl
-              << " |* Mover para as saidas as 52 cartas do jogo. Terá uma pilha para cada |" << std::endl
+              << " |* Mover para as saidas as 52 cartas do jogo. Tera uma pilha para cada |" << std::endl
               << " |naipe do baralho e cada pilha deve ter as cartas movimentadas na      |" << std::endl
               << " |ordem crescente do as ate o rei.                                      |" << std::endl
               << " |                                                                      |" << std::endl
@@ -182,7 +182,7 @@ void InterfaceDeUsuario::imprimeRegras(){
               << " |* No canto superior DIREITO tambem ha 4 espaços vazios. Estes são as  |" << std::endl
               << " |pilhas de saida.                                                      |" << std::endl
               << " |                                                                      |" << std::endl
-              << " |* As cartas inicialmente são dispostas em 8 colunas, sendo 7 cartas   |" << std::endl
+              << " |* As cartas inicialmente sao dispostas em 8 colunas, sendo 7 cartas   |" << std::endl
               << " | nas 4 primeiras e 6 cartas nas 4 últimas.                            |" << std::endl
               << " |                                                                      |" << std::endl
               << " |Como jogar:                                                           |" << std::endl
@@ -194,7 +194,7 @@ void InterfaceDeUsuario::imprimeRegras(){
               << " |                                                                      |" << std::endl
               << " |* De uma coluna para outra (ou de uma free cell para uma coluna).     |" << std::endl
               << " |As cartas devem ser colocadas na coluna em ordem sequencial           |" << std::endl
-              << " |decrescente e e necessário alternar naipes vermelhos e pretos.        |" << std::endl
+              << " |decrescente e e necessario alternar naipes vermelhos e pretos.        |" << std::endl
               << " |                                                                      |" << std::endl
               << " |* De uma coluna para uma celula inicial. Cada pilha deve consistir    |" << std::endl
               << " \\de um unico naipe e começar pelo as.                                 /" << std::endl
