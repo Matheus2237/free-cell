@@ -33,7 +33,7 @@ public:
      *  e de topo da coluna.
      * 
      * @param colunaFinal Coluna de destino da movimentação.
-     * @return Verificacao* O objeto que implementa a regra de verificação.
+     * @return Verificacao* Ponteiro para o objeto que implementa a regra de verificação.
      */
     static Verificacao* criaVerificacao(unsigned short int colunaFinal);
 

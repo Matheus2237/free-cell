@@ -71,11 +71,11 @@ public:
 private:
 
     /**
-     * @brief Verifica se a carta de destino é de cor diferente da carta final
+     * @brief Verifica se a carta de destino é de cor diferente da carta final.
      * 
      * @param cartaMovimentacao Carta inicial.
      * @param cartaComparacao Carta final.
-     * @return true se as cartas forem de cores diferentes. 
+     * @return true se as cartas forem de cores diferentes.
     */
     bool corDiferente(const Carta cartaMovimentacao, const Carta cartaComparacao);
 

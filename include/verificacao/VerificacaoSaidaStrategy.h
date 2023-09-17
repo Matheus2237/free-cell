@@ -77,7 +77,7 @@ private:
      *  do que o valor da maior carta da pilha de saída.
      * 
      * @param cartaMovimentacao Carta a ser movimentadao.
-     * @param cartaComparacao Maior carta da pilha de saída;
+     * @param cartaComparacao Maior carta da pilha de saída.
      * @return true Caso a carta a ser movimentada seja imediatamente maior.
      * @return false Caso a carta a ser movimentada não seja imediatamente maior.
      */
