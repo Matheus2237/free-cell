@@ -32,7 +32,7 @@ private:
      * @brief Mensagem a ser exibida em caso de não permissão de movimentação para a saída.
      * 
      */
-    const std::string mensagemErro = "Carta não pode ser movimentada para saída! Tente novamente.";
+    const std::string mensagemErro = "Carta nao pode ser movimentada para saida! Tente novamente.";
 
 public:
 

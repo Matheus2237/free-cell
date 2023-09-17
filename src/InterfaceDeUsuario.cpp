@@ -116,16 +116,16 @@ unsigned short int InterfaceDeUsuario::leColunaInicial(const Mesa& mesa) {
 void InterfaceDeUsuario::trataErrosLeituraColunaInicial(const unsigned short int colunaInicial, 
         const Mesa& mesa) {
     if (colunaInicial == 0)
-        throw MovimentacaoIndevidaException("Não pode mover carta da saída, tente novamente. ");
+        throw MovimentacaoIndevidaException("Nao pode mover carta da saida, tente novamente. ");
     else if (mesa.encontraUltimaCartaDaColuna(colunaInicial) == COLUNA_VAZIA)
-        throw MovimentacaoIndevidaException("Não pode mover de uma coluna vazia, tente novamente. ");
+        throw MovimentacaoIndevidaException("Nao pode mover de uma coluna vazia, tente novamente. ");
 }
 
 unsigned short int InterfaceDeUsuario::leColunaFinal(unsigned short int colunaInicial) {
     const std::string mensagemLeitura = "Entre o valor da coluna final: ";
     unsigned short int colunaFinal = InterfaceDeUsuario::leColuna(mensagemLeitura);
     if (colunaFinal == colunaInicial)
-        throw MovimentacaoIndevidaException("Não pode mover a carta para a mesma coluna, tente novamente. ");
+        throw MovimentacaoIndevidaException("Nao pode mover a carta para a mesma coluna, tente novamente. ");
     InterfaceDeUsuario::exibeEntrada("Coluna final: ", colunaFinal);
     return colunaFinal;
 }
@@ -169,30 +169,30 @@ void InterfaceDeUsuario::imprimeRegras(){
               << "                            *                  * " << std::endl
               << "                            ********************" << std::endl
               << "  _______________________________________________________________________" << std::endl
-              << " / Visão geral do jogo:                                                 \\ " << std::endl  
-              << " |* No canto superior esquerdo terá 4 espaços vazios(chamados também de |" << std::endl
-              << " |FreeCells), onde você poderá armazenar temporariamente durante o jogo.|" << std::endl
+              << " / Visao geral do jogo:                                                 \\ " << std::endl  
+              << " |* No canto superior esquerdo tera 4 espaços vazios(chamados tambem de |" << std::endl
+              << " |FreeCells), onde você podera armazenar temporariamente durante o jogo.|" << std::endl
               << " |                                                                      |" << std::endl
-              << " |* No canto superior DIREITO também há 4 espaços vazios, mas neles     |" << std::endl
-              << " |é onde você fará as pilhas de saida.                                  |" << std::endl
+              << " |* No canto superior DIREITO tambem ha 4 espaços vazios, mas neles     |" << std::endl
+              << " |e onde você fara as pilhas de saida.                                  |" << std::endl
               << " |                                                                      |" << std::endl
               << " |Objetivo do jogo:                                                     |" << std::endl
               << " |* Fazer 4 pilhas de 13 cartas cada. Cada pilha deve ser feita na      |" << std::endl
-              << " |ordem crescente do ás até o rei.                                      |" << std::endl
+              << " |ordem crescente do as ate o rei.                                      |" << std::endl
               << " |                                                                      |" << std::endl
               << " |Como jogar:                                                           |" << std::endl
               << " |Retire cartas da parte inferior de cada coluna e mova-as da seguinte  |" << std::endl
               << " |maneira:                                                              |" << std::endl
               << " |                                                                      |" << std::endl
-              << " |* De uma coluna para uma célula vazia. As células vazias só podem     |" << std::endl
+              << " |* De uma coluna para uma celula vazia. As celulas vazias so podem     |" << std::endl
               << " |conter uma carta de cada vez.                                         |" << std::endl
               << " |                                                                      |" << std::endl
-              << " |* De uma coluna para outra (ou de uma célula vazia para uma coluna).  |" << std::endl
+              << " |* De uma coluna para outra (ou de uma celula vazia para uma coluna).  |" << std::endl
               << " |As cartas devem ser colocadas na coluna em ordem sequencial           |" << std::endl
-              << " |decrescente, e é necessário alternar naipes vermelhos e pretos.       |" << std::endl
+              << " |decrescente, e e necessário alternar naipes vermelhos e pretos.       |" << std::endl
               << " |                                                                      |" << std::endl
-              << " |* De uma coluna para uma célula inicial. Cada pilha deve consistir de |" << std::endl
-              << " \\um único naipe e começar por um ás.                                  /" << std::endl
+              << " |* De uma coluna para uma celula inicial. Cada pilha deve consistir de |" << std::endl
+              << " \\um unico naipe e começar por um as.                                  /" << std::endl
               << "  ----------------------------------------------------------------------" << std::endl
               << "             \\    ,-^-." << std::endl
               << "              \\   !oYo!" << std::endl
@@ -226,7 +226,7 @@ void InterfaceDeUsuario::exibeDevs() {
         << std::endl
         << std::endl
         << "              Desenvolvido por:                       " << std::endl
-        << "              Carlos Sérgio Fernandes Júnior          " << std::endl
+        << "              Carlos Sergio Fernandes Junior          " << std::endl
         << "              Matheus Paulino Ribeiro                 " << std::endl
         << "              Nicolas Fagundes Scarpa                 " << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1500));
@@ -276,7 +276,7 @@ void InterfaceDeUsuario::exibeTrofeu() {
         << "                        _.' '._             " << std::endl
         << "                       `\"\"\"\"\"\"\"`     " << std::endl
         << "                                            " << std::endl
-        << "                 Parabens! Você ganhou!     " << std::endl
+        << "                 Parabens! Voce ganhou!     " << std::endl
         << "                                            " << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1700));
 }
@@ -294,7 +294,7 @@ void InterfaceDeUsuario::exibeFailWhale() {
         << "                     `'----'._\\--'                     " << std::endl
         << "                    vvvvvvvvvvvvvvvvvvvvv               " << std::endl
         << "                                                        " << std::endl
-        << "         Não há mais jogadas possíveis! Você perdeu!    " << std::endl
+        << "         Nao ha mais jogadas possiveis! Voce perdeu!    " << std::endl
         << "                                                        " << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1700));
 }
