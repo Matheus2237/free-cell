@@ -74,7 +74,7 @@ void InterfaceDeUsuario::imprimeColunas(Mesa &mesa) {
         std::cout << std::endl;        
     }
     std::cout << "   1      2      3      4      5      6      7      8" << std::endl << std::endl;
-    std::cout << " Jogadas Possíveis: " <<mesa.checaMovimentacoesPossiveis() << std::endl;
+    std::cout << " Jogadas Possiveis: " <<mesa.checaMovimentacoesPossiveis() << std::endl;
     std::cout << std::endl;
 }
 
