@@ -47,10 +47,10 @@ void Engine::jogaProximaRodada() {
 }
 
 Engine::StatusPartida Engine::verificaAndamentoJogo() {
-    if (this->verificaSePerdeu())
-        return StatusPartida::DERROTA;
-    else if (this->verificaSeGanhou())
+    if (this->verificaSeGanhou())
         return StatusPartida::VITORIA;
+    else if (this->verificaSePerdeu())
+        return StatusPartida::DERROTA;
     else
         return StatusPartida::EM_ANDAMENTO;
 }
