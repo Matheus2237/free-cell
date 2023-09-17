@@ -80,6 +80,7 @@ public:
      */
     void jogaProximaRodada();
 
+    void voltaJogada();
 private:
 
     /**
@@ -88,6 +89,8 @@ private:
      * 
      */
     void verificaSeGanhou();
+
+    void verificaSePerdeu();
 };
 
 #endif

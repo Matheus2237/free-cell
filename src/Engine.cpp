@@ -57,3 +57,10 @@ void Engine::verificaSeGanhou() {
             return;
     this->jogoGanho = true;
 }
+
+void Engine::verificaSePerdeu() {
+    if(mesa.checaMovimentacoesPossiveis() == 0){
+        
+    }
+}
+

@@ -83,6 +83,7 @@ public:
      * @brief Retorna o vetor de cartas.
     */
     Carta* getCartas() const;
+    int checaMovimentacoesPossiveis();
 
 private:
 
@@ -91,6 +92,7 @@ private:
      * 
      */
     void distribuiEmColunas();
+
 };
 
 #endif

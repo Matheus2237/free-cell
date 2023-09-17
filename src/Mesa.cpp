@@ -12,6 +12,9 @@
  */
 
 #include "../include/Mesa.h"
+#include "../include/verificacao/Verificacao.h"
+#include "../include/verificacao/VerificacaoFactory.h"
+#include <stdexcept>
 
 Mesa::Mesa(Carta* cartas):
     cartas(cartas)
@@ -55,3 +58,21 @@ short int Mesa::encontraUltimaCartaSaida(Simbolo::Naipe naipe) const {
 Carta* Mesa::getCartas() const {
     return this->cartas;
 }
+
+int Mesa::checaMovimentacoesPossiveis() {
+    Verificacao* verificacao;
+    int movimentacoesPossiveis = 0;
+    for(int colunaI = 1; colunaI <= 12; colunaI++){
+        for(int colunaF = 0; colunaF <= 12; colunaF++){
+            verificacao = VerificacaoFactory::criaVerificacao(colunaF);
+            if(colunaI != colunaF && encontraUltimaCartaDaColuna(colunaI) != COLUNA_VAZIA && verificacao->podeMovimentar(colunaI, colunaF, *this))
+                movimentacoesPossiveis++;
+            delete verificacao;
+        }
+    }
+    return movimentacoesPossiveis;
+}
+
+
+
+
