@@ -28,9 +28,13 @@ seguinte maneira:
 
 ### Informações importantes para uso:
 - Para realizar o build do projeto, execute o seguinte comando, seguindo a estrutura indicada:
-> Em ambientes baseado em Unix:
-> 
->g++ -std=c++17 -Wall -Wextra -pedantic -o build/FreeCell FreeCell.cpp src/*.cpp 
+    > Em ambientes baseado em Unix:
+    >
+    >```g++ -std=c++17 -Wall -Wextra -pedantic -o FreeCell FreeCell.cpp src/*.cpp```
+    > 
+    > Em ambientes baseados no Windows:
+    >
+    >```g++ -std=c++17 -Wall -Wextra -pedantic -o FreeCell.exe FreeCell.cpp src\*.cpp src\verificacao\*.cpp```
 - Digite os dados requeridos no terminal apenas quando forem solicitados, pois entrada de dados antes do momento correto pode resultar em comportamentos indeterminados na aplicação.
 
 &nbsp;
