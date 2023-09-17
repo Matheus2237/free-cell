@@ -63,7 +63,7 @@ void InterfaceDeUsuario::imprimeCabecalho(Mesa &mesa){
         else
         std::cout << mesa.getCartas()[mesa.encontraUltimaCartaSaida(Simbolo::todos_naipes[naipe])];
     }
-    std::cout << std::endl << "   9      10     11     12                0" << std::endl;
+    std::cout << std::endl << "   9      10     11     12                0" << std::endl << std::endl;
 }
 
 void InterfaceDeUsuario::imprimeColunas(Mesa &mesa) {
@@ -77,7 +77,7 @@ void InterfaceDeUsuario::imprimeColunas(Mesa &mesa) {
         }
         std::cout << std::endl;        
     }
-    std::cout << "   1      2      3      4      5      6      7      8" << std::endl;
+    std::cout << "   1      2      3      4      5      6      7      8" << std::endl << std::endl;
     std::cout << " Jogadas Possíveis: " <<mesa.checaMovimentacoesPossiveis() << std::endl;
     std::cout << std::endl;
 }
