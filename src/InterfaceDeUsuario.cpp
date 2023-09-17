@@ -300,10 +300,8 @@ void InterfaceDeUsuario::exibeFailWhale() {
 }
 
 bool InterfaceDeUsuario::questionaNovaPartida() {
-    CLEAR_ALL;
     std::stringstream mensagemNovaPartida;
-    mensagemNovaPartida << std::endl << std::endl << std::endl << std::endl << std::endl
-        << "         Deseja jogar mais uma partida? [S/n] ";
+    mensagemNovaPartida << std::endl << "         Deseja jogar mais uma partida? [S/n] ";
     return InterfaceDeUsuario::confirmaAcao(mensagemNovaPartida.str());
 }
 
