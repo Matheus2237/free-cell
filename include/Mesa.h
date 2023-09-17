@@ -98,7 +98,6 @@ private:
      * 
      */
     void distribuiEmColunas();
-
 };
 
 #endif

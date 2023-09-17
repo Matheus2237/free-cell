@@ -80,7 +80,6 @@ public:
      */
     void jogaProximaRodada();
 
-    void voltaJogada();
 private:
 
     /**

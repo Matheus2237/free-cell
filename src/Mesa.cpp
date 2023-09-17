@@ -72,7 +72,3 @@ int Mesa::checaMovimentacoesPossiveis() {
     }
     return movimentacoesPossiveis;
 }
-
-
-
-
